@@ -8,14 +8,15 @@ part of 'company_model.dart';
 
 _$_CompanyModel _$$_CompanyModelFromJson(Map<String, dynamic> json) =>
     _$_CompanyModel(
+      EDI: json['EDI'] as String?,
       companyCode: json['companyCode'] as String,
-      companyName: json['companyName'] as String,
-      classification: json['classification'] as String,
       order: json['order'] as int,
+      classification: json['classification'] as String,
       companyNumber: json['companyNumber'] as int?,
       companyChildNumber: json['companyChildNumber'] as String?,
       invoiceNumber: json['invoiceNumber'] as String?,
       kubun: json['kubun'] as String,
+      companyName: json['companyName'] as String,
       companyKana: json['companyKana'] as String?,
       companyAbbriviation: json['companyAbbriviation'] as String?,
       kojin: json['kojin'] as String?,
@@ -48,7 +49,6 @@ _$_CompanyModel _$$_CompanyModelFromJson(Map<String, dynamic> json) =>
       transferFee: json['transferFee'] as String?,
       calcFee: json['calcFee'] as String?,
       minimumPayPrice: json['minimumPayPrice'] as String?,
-      EDI: json['EDI'] as String?,
       multipleAtOnce: json['multipleAtOnce'] as String?,
       payeeBank: json['payeeBank'] as String?,
       purchasingPattern: json['purchasingPattern'] as String?,
@@ -61,14 +61,15 @@ _$_CompanyModel _$$_CompanyModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_CompanyModelToJson(_$_CompanyModel instance) =>
     <String, dynamic>{
+      'EDI': instance.EDI,
       'companyCode': instance.companyCode,
-      'companyName': instance.companyName,
-      'classification': instance.classification,
       'order': instance.order,
+      'classification': instance.classification,
       'companyNumber': instance.companyNumber,
       'companyChildNumber': instance.companyChildNumber,
       'invoiceNumber': instance.invoiceNumber,
       'kubun': instance.kubun,
+      'companyName': instance.companyName,
       'companyKana': instance.companyKana,
       'companyAbbriviation': instance.companyAbbriviation,
       'kojin': instance.kojin,
@@ -101,7 +102,6 @@ Map<String, dynamic> _$$_CompanyModelToJson(_$_CompanyModel instance) =>
       'transferFee': instance.transferFee,
       'calcFee': instance.calcFee,
       'minimumPayPrice': instance.minimumPayPrice,
-      'EDI': instance.EDI,
       'multipleAtOnce': instance.multipleAtOnce,
       'payeeBank': instance.payeeBank,
       'purchasingPattern': instance.purchasingPattern,

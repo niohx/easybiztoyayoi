@@ -6,14 +6,16 @@ part 'company_model.g.dart';
 @freezed
 class CompanyModel with _$CompanyModel {
   factory CompanyModel({
+    // ignore: non_constant_identifier_names
+    String? EDI, // EDI申請ステータス
     required String companyCode, //仕入先コード
-    required String companyName, //仕入先名称
-    required String classification, //仕入先分類
     required int order, //表示順
+    required String classification, //仕入先分類
     int? companyNumber, //法人番号
     String? companyChildNumber, //法人番号枝番
     String? invoiceNumber, //適格請求書発行事業者登録番号
     required String kubun, //事業者区分
+    required String companyName, //仕入先名称
     String? companyKana, //仕入先カナ
     String? companyAbbriviation, //仕入先略称
     String? kojin, //個人
@@ -47,8 +49,6 @@ class CompanyModel with _$CompanyModel {
     String? transferFee, // 振込手数料負担
     String? calcFee, //手数料計算方法
     String? minimumPayPrice, // 最低支払金額
-    // ignore: non_constant_identifier_names
-    String? EDI, //EDI
     String? multipleAtOnce, // 複数仕入れの一括振込可否
     String? payeeBank, //振込先取引銀行
     String? purchasingPattern, //連動パターン

@@ -20,15 +20,16 @@ CompanyModel _$CompanyModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CompanyModel {
+  String? get EDI => throw _privateConstructorUsedError; // EDI申請ステータス
   String get companyCode => throw _privateConstructorUsedError; //仕入先コード
-  String get companyName => throw _privateConstructorUsedError; //仕入先名称
-  String get classification => throw _privateConstructorUsedError; //仕入先分類
   int get order => throw _privateConstructorUsedError; //表示順
+  String get classification => throw _privateConstructorUsedError; //仕入先分類
   int? get companyNumber => throw _privateConstructorUsedError; //法人番号
   String? get companyChildNumber => throw _privateConstructorUsedError; //法人番号枝番
   String? get invoiceNumber =>
       throw _privateConstructorUsedError; //適格請求書発行事業者登録番号
   String get kubun => throw _privateConstructorUsedError; //事業者区分
+  String get companyName => throw _privateConstructorUsedError; //仕入先名称
   String? get companyKana => throw _privateConstructorUsedError; //仕入先カナ
   String? get companyAbbriviation => throw _privateConstructorUsedError; //仕入先略称
   String? get kojin => throw _privateConstructorUsedError; //個人
@@ -65,7 +66,6 @@ mixin _$CompanyModel {
   String? get calcFee => throw _privateConstructorUsedError; //手数料計算方法
   String? get minimumPayPrice => throw _privateConstructorUsedError; // 最低支払金額
 // ignore: non_constant_identifier_names
-  String? get EDI => throw _privateConstructorUsedError; //EDI
   String? get multipleAtOnce =>
       throw _privateConstructorUsedError; // 複数仕入れの一括振込可否
   String? get payeeBank => throw _privateConstructorUsedError; //振込先取引銀行
@@ -90,14 +90,15 @@ abstract class $CompanyModelCopyWith<$Res> {
           CompanyModel value, $Res Function(CompanyModel) then) =
       _$CompanyModelCopyWithImpl<$Res>;
   $Res call(
-      {String companyCode,
-      String companyName,
-      String classification,
+      {String? EDI,
+      String companyCode,
       int order,
+      String classification,
       int? companyNumber,
       String? companyChildNumber,
       String? invoiceNumber,
       String kubun,
+      String companyName,
       String? companyKana,
       String? companyAbbriviation,
       String? kojin,
@@ -130,7 +131,6 @@ abstract class $CompanyModelCopyWith<$Res> {
       String? transferFee,
       String? calcFee,
       String? minimumPayPrice,
-      String? EDI,
       String? multipleAtOnce,
       String? payeeBank,
       String? purchasingPattern,
@@ -151,14 +151,15 @@ class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? EDI = freezed,
     Object? companyCode = freezed,
-    Object? companyName = freezed,
-    Object? classification = freezed,
     Object? order = freezed,
+    Object? classification = freezed,
     Object? companyNumber = freezed,
     Object? companyChildNumber = freezed,
     Object? invoiceNumber = freezed,
     Object? kubun = freezed,
+    Object? companyName = freezed,
     Object? companyKana = freezed,
     Object? companyAbbriviation = freezed,
     Object? kojin = freezed,
@@ -191,7 +192,6 @@ class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
     Object? transferFee = freezed,
     Object? calcFee = freezed,
     Object? minimumPayPrice = freezed,
-    Object? EDI = freezed,
     Object? multipleAtOnce = freezed,
     Object? payeeBank = freezed,
     Object? purchasingPattern = freezed,
@@ -202,22 +202,22 @@ class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
     Object? applicable = freezed,
   }) {
     return _then(_value.copyWith(
+      EDI: EDI == freezed
+          ? _value.EDI
+          : EDI // ignore: cast_nullable_to_non_nullable
+              as String?,
       companyCode: companyCode == freezed
           ? _value.companyCode
           : companyCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      companyName: companyName == freezed
-          ? _value.companyName
-          : companyName // ignore: cast_nullable_to_non_nullable
-              as String,
-      classification: classification == freezed
-          ? _value.classification
-          : classification // ignore: cast_nullable_to_non_nullable
               as String,
       order: order == freezed
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      classification: classification == freezed
+          ? _value.classification
+          : classification // ignore: cast_nullable_to_non_nullable
+              as String,
       companyNumber: companyNumber == freezed
           ? _value.companyNumber
           : companyNumber // ignore: cast_nullable_to_non_nullable
@@ -233,6 +233,10 @@ class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
       kubun: kubun == freezed
           ? _value.kubun
           : kubun // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyName: companyName == freezed
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
               as String,
       companyKana: companyKana == freezed
           ? _value.companyKana
@@ -361,10 +365,6 @@ class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
       minimumPayPrice: minimumPayPrice == freezed
           ? _value.minimumPayPrice
           : minimumPayPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      EDI: EDI == freezed
-          ? _value.EDI
-          : EDI // ignore: cast_nullable_to_non_nullable
               as String?,
       multipleAtOnce: multipleAtOnce == freezed
           ? _value.multipleAtOnce
@@ -410,14 +410,15 @@ abstract class _$CompanyModelCopyWith<$Res>
       __$CompanyModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String companyCode,
-      String companyName,
-      String classification,
+      {String? EDI,
+      String companyCode,
       int order,
+      String classification,
       int? companyNumber,
       String? companyChildNumber,
       String? invoiceNumber,
       String kubun,
+      String companyName,
       String? companyKana,
       String? companyAbbriviation,
       String? kojin,
@@ -450,7 +451,6 @@ abstract class _$CompanyModelCopyWith<$Res>
       String? transferFee,
       String? calcFee,
       String? minimumPayPrice,
-      String? EDI,
       String? multipleAtOnce,
       String? payeeBank,
       String? purchasingPattern,
@@ -473,14 +473,15 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? EDI = freezed,
     Object? companyCode = freezed,
-    Object? companyName = freezed,
-    Object? classification = freezed,
     Object? order = freezed,
+    Object? classification = freezed,
     Object? companyNumber = freezed,
     Object? companyChildNumber = freezed,
     Object? invoiceNumber = freezed,
     Object? kubun = freezed,
+    Object? companyName = freezed,
     Object? companyKana = freezed,
     Object? companyAbbriviation = freezed,
     Object? kojin = freezed,
@@ -513,7 +514,6 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
     Object? transferFee = freezed,
     Object? calcFee = freezed,
     Object? minimumPayPrice = freezed,
-    Object? EDI = freezed,
     Object? multipleAtOnce = freezed,
     Object? payeeBank = freezed,
     Object? purchasingPattern = freezed,
@@ -524,22 +524,22 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
     Object? applicable = freezed,
   }) {
     return _then(_CompanyModel(
+      EDI: EDI == freezed
+          ? _value.EDI
+          : EDI // ignore: cast_nullable_to_non_nullable
+              as String?,
       companyCode: companyCode == freezed
           ? _value.companyCode
           : companyCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      companyName: companyName == freezed
-          ? _value.companyName
-          : companyName // ignore: cast_nullable_to_non_nullable
-              as String,
-      classification: classification == freezed
-          ? _value.classification
-          : classification // ignore: cast_nullable_to_non_nullable
               as String,
       order: order == freezed
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      classification: classification == freezed
+          ? _value.classification
+          : classification // ignore: cast_nullable_to_non_nullable
+              as String,
       companyNumber: companyNumber == freezed
           ? _value.companyNumber
           : companyNumber // ignore: cast_nullable_to_non_nullable
@@ -555,6 +555,10 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
       kubun: kubun == freezed
           ? _value.kubun
           : kubun // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyName: companyName == freezed
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
               as String,
       companyKana: companyKana == freezed
           ? _value.companyKana
@@ -684,10 +688,6 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
           ? _value.minimumPayPrice
           : minimumPayPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      EDI: EDI == freezed
-          ? _value.EDI
-          : EDI // ignore: cast_nullable_to_non_nullable
-              as String?,
       multipleAtOnce: multipleAtOnce == freezed
           ? _value.multipleAtOnce
           : multipleAtOnce // ignore: cast_nullable_to_non_nullable
@@ -728,14 +728,15 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CompanyModel implements _CompanyModel {
   _$_CompanyModel(
-      {required this.companyCode,
-      required this.companyName,
-      required this.classification,
+      {this.EDI,
+      required this.companyCode,
       required this.order,
+      required this.classification,
       this.companyNumber,
       this.companyChildNumber,
       this.invoiceNumber,
       required this.kubun,
+      required this.companyName,
       this.companyKana,
       this.companyAbbriviation,
       this.kojin,
@@ -768,7 +769,6 @@ class _$_CompanyModel implements _CompanyModel {
       this.transferFee,
       this.calcFee,
       this.minimumPayPrice,
-      this.EDI,
       this.multipleAtOnce,
       this.payeeBank,
       this.purchasingPattern,
@@ -782,17 +782,17 @@ class _$_CompanyModel implements _CompanyModel {
       _$$_CompanyModelFromJson(json);
 
   @override
+  final String? EDI;
+// EDI申請ステータス
+  @override
   final String companyCode;
 //仕入先コード
   @override
-  final String companyName;
-//仕入先名称
+  final int order;
+//表示順
   @override
   final String classification;
 //仕入先分類
-  @override
-  final int order;
-//表示順
   @override
   final int? companyNumber;
 //法人番号
@@ -805,6 +805,9 @@ class _$_CompanyModel implements _CompanyModel {
   @override
   final String kubun;
 //事業者区分
+  @override
+  final String companyName;
+//仕入先名称
   @override
   final String? companyKana;
 //仕入先カナ
@@ -904,9 +907,6 @@ class _$_CompanyModel implements _CompanyModel {
 // 最低支払金額
 // ignore: non_constant_identifier_names
   @override
-  final String? EDI;
-//EDI
-  @override
   final String? multipleAtOnce;
 // 複数仕入れの一括振込可否
   @override
@@ -932,7 +932,7 @@ class _$_CompanyModel implements _CompanyModel {
 
   @override
   String toString() {
-    return 'CompanyModel(companyCode: $companyCode, companyName: $companyName, classification: $classification, order: $order, companyNumber: $companyNumber, companyChildNumber: $companyChildNumber, invoiceNumber: $invoiceNumber, kubun: $kubun, companyKana: $companyKana, companyAbbriviation: $companyAbbriviation, kojin: $kojin, postalcode: $postalcode, postalcodeChild: $postalcodeChild, addressA: $addressA, addressB: $addressB, person: $person, phoneNumberA: $phoneNumberA, phoneNumberB: $phoneNumberB, faxNumber: $faxNumber, email: $email, URI: $URI, responsiblePerson: $responsiblePerson, payClass: $payClass, closeGroup: $closeGroup, paymentConstant: $paymentConstant, paymentMethod: $paymentMethod, taxMethod: $taxMethod, fraction: $fraction, accountsPayable: $accountsPayable, payeeMemo: $payeeMemo, payeeBankCode: $payeeBankCode, payeeBankName: $payeeBankName, payeeBankBranchCode: $payeeBankBranchCode, payeeBankBranchName: $payeeBankBranchName, bankAccountType: $bankAccountType, bankAccountNumber: $bankAccountNumber, bankAcountName: $bankAcountName, transferFee: $transferFee, calcFee: $calcFee, minimumPayPrice: $minimumPayPrice, EDI: $EDI, multipleAtOnce: $multipleAtOnce, payeeBank: $payeeBank, purchasingPattern: $purchasingPattern, hidden: $hidden, payDayThresholdBefore: $payDayThresholdBefore, payDayThresholdAfter: $payDayThresholdAfter, payPriceJudge: $payPriceJudge, applicable: $applicable)';
+    return 'CompanyModel(EDI: $EDI, companyCode: $companyCode, order: $order, classification: $classification, companyNumber: $companyNumber, companyChildNumber: $companyChildNumber, invoiceNumber: $invoiceNumber, kubun: $kubun, companyName: $companyName, companyKana: $companyKana, companyAbbriviation: $companyAbbriviation, kojin: $kojin, postalcode: $postalcode, postalcodeChild: $postalcodeChild, addressA: $addressA, addressB: $addressB, person: $person, phoneNumberA: $phoneNumberA, phoneNumberB: $phoneNumberB, faxNumber: $faxNumber, email: $email, URI: $URI, responsiblePerson: $responsiblePerson, payClass: $payClass, closeGroup: $closeGroup, paymentConstant: $paymentConstant, paymentMethod: $paymentMethod, taxMethod: $taxMethod, fraction: $fraction, accountsPayable: $accountsPayable, payeeMemo: $payeeMemo, payeeBankCode: $payeeBankCode, payeeBankName: $payeeBankName, payeeBankBranchCode: $payeeBankBranchCode, payeeBankBranchName: $payeeBankBranchName, bankAccountType: $bankAccountType, bankAccountNumber: $bankAccountNumber, bankAcountName: $bankAcountName, transferFee: $transferFee, calcFee: $calcFee, minimumPayPrice: $minimumPayPrice, multipleAtOnce: $multipleAtOnce, payeeBank: $payeeBank, purchasingPattern: $purchasingPattern, hidden: $hidden, payDayThresholdBefore: $payDayThresholdBefore, payDayThresholdAfter: $payDayThresholdAfter, payPriceJudge: $payPriceJudge, applicable: $applicable)';
   }
 
   @override
@@ -940,13 +940,12 @@ class _$_CompanyModel implements _CompanyModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _CompanyModel &&
+            const DeepCollectionEquality().equals(other.EDI, EDI) &&
             const DeepCollectionEquality()
                 .equals(other.companyCode, companyCode) &&
-            const DeepCollectionEquality()
-                .equals(other.companyName, companyName) &&
+            const DeepCollectionEquality().equals(other.order, order) &&
             const DeepCollectionEquality()
                 .equals(other.classification, classification) &&
-            const DeepCollectionEquality().equals(other.order, order) &&
             const DeepCollectionEquality()
                 .equals(other.companyNumber, companyNumber) &&
             const DeepCollectionEquality()
@@ -954,6 +953,8 @@ class _$_CompanyModel implements _CompanyModel {
             const DeepCollectionEquality()
                 .equals(other.invoiceNumber, invoiceNumber) &&
             const DeepCollectionEquality().equals(other.kubun, kubun) &&
+            const DeepCollectionEquality()
+                .equals(other.companyName, companyName) &&
             const DeepCollectionEquality()
                 .equals(other.companyKana, companyKana) &&
             const DeepCollectionEquality()
@@ -1006,7 +1007,6 @@ class _$_CompanyModel implements _CompanyModel {
             const DeepCollectionEquality().equals(other.calcFee, calcFee) &&
             const DeepCollectionEquality()
                 .equals(other.minimumPayPrice, minimumPayPrice) &&
-            const DeepCollectionEquality().equals(other.EDI, EDI) &&
             const DeepCollectionEquality()
                 .equals(other.multipleAtOnce, multipleAtOnce) &&
             const DeepCollectionEquality().equals(other.payeeBank, payeeBank) &&
@@ -1027,14 +1027,15 @@ class _$_CompanyModel implements _CompanyModel {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
+        const DeepCollectionEquality().hash(EDI),
         const DeepCollectionEquality().hash(companyCode),
-        const DeepCollectionEquality().hash(companyName),
-        const DeepCollectionEquality().hash(classification),
         const DeepCollectionEquality().hash(order),
+        const DeepCollectionEquality().hash(classification),
         const DeepCollectionEquality().hash(companyNumber),
         const DeepCollectionEquality().hash(companyChildNumber),
         const DeepCollectionEquality().hash(invoiceNumber),
         const DeepCollectionEquality().hash(kubun),
+        const DeepCollectionEquality().hash(companyName),
         const DeepCollectionEquality().hash(companyKana),
         const DeepCollectionEquality().hash(companyAbbriviation),
         const DeepCollectionEquality().hash(kojin),
@@ -1067,7 +1068,6 @@ class _$_CompanyModel implements _CompanyModel {
         const DeepCollectionEquality().hash(transferFee),
         const DeepCollectionEquality().hash(calcFee),
         const DeepCollectionEquality().hash(minimumPayPrice),
-        const DeepCollectionEquality().hash(EDI),
         const DeepCollectionEquality().hash(multipleAtOnce),
         const DeepCollectionEquality().hash(payeeBank),
         const DeepCollectionEquality().hash(purchasingPattern),
@@ -1091,14 +1091,15 @@ class _$_CompanyModel implements _CompanyModel {
 
 abstract class _CompanyModel implements CompanyModel {
   factory _CompanyModel(
-      {required final String companyCode,
-      required final String companyName,
-      required final String classification,
+      {final String? EDI,
+      required final String companyCode,
       required final int order,
+      required final String classification,
       final int? companyNumber,
       final String? companyChildNumber,
       final String? invoiceNumber,
       required final String kubun,
+      required final String companyName,
       final String? companyKana,
       final String? companyAbbriviation,
       final String? kojin,
@@ -1131,7 +1132,6 @@ abstract class _CompanyModel implements CompanyModel {
       final String? transferFee,
       final String? calcFee,
       final String? minimumPayPrice,
-      final String? EDI,
       final String? multipleAtOnce,
       final String? payeeBank,
       final String? purchasingPattern,
@@ -1145,14 +1145,14 @@ abstract class _CompanyModel implements CompanyModel {
       _$_CompanyModel.fromJson;
 
   @override
+  String? get EDI => throw _privateConstructorUsedError;
+  @override // EDI申請ステータス
   String get companyCode => throw _privateConstructorUsedError;
   @override //仕入先コード
-  String get companyName => throw _privateConstructorUsedError;
-  @override //仕入先名称
-  String get classification => throw _privateConstructorUsedError;
-  @override //仕入先分類
   int get order => throw _privateConstructorUsedError;
   @override //表示順
+  String get classification => throw _privateConstructorUsedError;
+  @override //仕入先分類
   int? get companyNumber => throw _privateConstructorUsedError;
   @override //法人番号
   String? get companyChildNumber => throw _privateConstructorUsedError;
@@ -1161,6 +1161,8 @@ abstract class _CompanyModel implements CompanyModel {
   @override //適格請求書発行事業者登録番号
   String get kubun => throw _privateConstructorUsedError;
   @override //事業者区分
+  String get companyName => throw _privateConstructorUsedError;
+  @override //仕入先名称
   String? get companyKana => throw _privateConstructorUsedError;
   @override //仕入先カナ
   String? get companyAbbriviation => throw _privateConstructorUsedError;
@@ -1227,8 +1229,6 @@ abstract class _CompanyModel implements CompanyModel {
   String? get minimumPayPrice => throw _privateConstructorUsedError;
   @override // 最低支払金額
 // ignore: non_constant_identifier_names
-  String? get EDI => throw _privateConstructorUsedError;
-  @override //EDI
   String? get multipleAtOnce => throw _privateConstructorUsedError;
   @override // 複数仕入れの一括振込可否
   String? get payeeBank => throw _privateConstructorUsedError;
