@@ -20,21 +20,29 @@ class EasybizModel with _$EasybizModel {
     required String companyName, //仕入先名
     String? person, //仕入先担当者
     String? closePayingMethod, //締め支払い方法
-    String? paymentClassification,//支払い区分
-    String? paymentMethod,//支払い方法
-    String? closeDate,//仕入れ締め日
-    String? paymentSchedule,//支払い予定日
-    String? taxRate ,//消費税率
-    String? commentA,//検収書コメント上段
+    String? paymentClassification, //支払い区分
+    String? paymentMethod, //支払い方法
+    String? closeDate, //仕入れ締め日
+    String? paymentSchedule, //支払い予定日
+    String? taxRate, //消費税率
+    String? commentA, //検収書コメント上段
     String? commentB, //検収書コメント下段
-    String? commentC,//検収書コメントフッター
+    String? commentC, //検収書コメントフッター
     String? commentD, //支払明細書コメント上段
-    String? commentE , //支払明細書コメント下段
-    String? commentF , //支払明細書コメントフッター
-    String? 
-
-
-
+    String? commentE, //支払明細書コメント下段
+    String? commentF, //支払明細書コメントフッター
+    String? itemCode, //商品コード
+    String? itemName, //商品名
+    int? quantity, //数量
+    String? unit, //単位
+    int? price, // 仕入れ単価
+    String? taxClassification, //税区分
+    String? taxChargeMethod, //内外税
+    String? specialComment, //備考 ,
+    String? stockNumber, //倉庫割り振り連番
+    String? stockCode, //倉庫コード
+    int? stockQuantity, //倉庫数量
+    String? orderNumber, //発注番号
   }) = _EasybizModel;
 
   factory EasybizModel.fromJson(Map<String, dynamic> json) =>

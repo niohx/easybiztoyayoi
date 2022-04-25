@@ -20,6 +20,7 @@ CompanyModel _$CompanyModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CompanyModel {
+// ignore: non_constant_identifier_names
   String? get EDI => throw _privateConstructorUsedError; // EDI申請ステータス
   String get companyCode => throw _privateConstructorUsedError; //仕入先コード
   int get order => throw _privateConstructorUsedError; //表示順
@@ -65,7 +66,6 @@ mixin _$CompanyModel {
   String? get transferFee => throw _privateConstructorUsedError; // 振込手数料負担
   String? get calcFee => throw _privateConstructorUsedError; //手数料計算方法
   String? get minimumPayPrice => throw _privateConstructorUsedError; // 最低支払金額
-// ignore: non_constant_identifier_names
   String? get multipleAtOnce =>
       throw _privateConstructorUsedError; // 複数仕入れの一括振込可否
   String? get payeeBank => throw _privateConstructorUsedError; //振込先取引銀行
@@ -781,6 +781,7 @@ class _$_CompanyModel implements _CompanyModel {
   factory _$_CompanyModel.fromJson(Map<String, dynamic> json) =>
       _$$_CompanyModelFromJson(json);
 
+// ignore: non_constant_identifier_names
   @override
   final String? EDI;
 // EDI申請ステータス
@@ -905,7 +906,6 @@ class _$_CompanyModel implements _CompanyModel {
   @override
   final String? minimumPayPrice;
 // 最低支払金額
-// ignore: non_constant_identifier_names
   @override
   final String? multipleAtOnce;
 // 複数仕入れの一括振込可否
@@ -1144,7 +1144,7 @@ abstract class _CompanyModel implements CompanyModel {
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
       _$_CompanyModel.fromJson;
 
-  @override
+  @override // ignore: non_constant_identifier_names
   String? get EDI => throw _privateConstructorUsedError;
   @override // EDI申請ステータス
   String get companyCode => throw _privateConstructorUsedError;
@@ -1228,7 +1228,6 @@ abstract class _CompanyModel implements CompanyModel {
   @override //手数料計算方法
   String? get minimumPayPrice => throw _privateConstructorUsedError;
   @override // 最低支払金額
-// ignore: non_constant_identifier_names
   String? get multipleAtOnce => throw _privateConstructorUsedError;
   @override // 複数仕入れの一括振込可否
   String? get payeeBank => throw _privateConstructorUsedError;
