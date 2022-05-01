@@ -16,6 +16,7 @@ dependencies:
   freezed_annotation: ^2.0.1
   csv: ^5.0.1
   cupertino_icons: ^1.0.2
+  jcombu: ^1.0.1
 
 dev_dependencies:
   flutter_test:
