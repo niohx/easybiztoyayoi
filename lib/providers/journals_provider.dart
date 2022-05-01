@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:easybiz_to_yayoi/models/company_model.dart';
 import 'package:easybiz_to_yayoi/providers/companies_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/company_edit_model.dart';
 
@@ -32,4 +35,25 @@ class JournalsNotifier extends StateNotifier<List<Journal>> {
           journal
     ];
   }
+
+  Future<void> resume() async {}
+  Future<void> load() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    if (_prefs.containsKey("journals")) {
+      state = _prefs
+          .getStringList('journals')!
+          .map((e) => Journal.fromJson(jsonDecode(e)))
+          .toList();
+    }
+  }
+
+  Future<void> _save() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    final List<String> _values =
+        state.map((journal) => journal.toJson().toString()).toList();
+    await _prefs.setStringList('journals', _values);
+  }
+
+  void outputToYayoi() {}
+  void outputToEasyBiz() {}
 }
