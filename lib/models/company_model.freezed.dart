@@ -23,9 +23,9 @@ mixin _$CompanyModel {
 // ignore: non_constant_identifier_names
   String? get EDI => throw _privateConstructorUsedError; // EDI申請ステータス
   String get companyCode => throw _privateConstructorUsedError; //仕入先コード
-  int get order => throw _privateConstructorUsedError; //表示順
+  String get order => throw _privateConstructorUsedError; //表示順
   String get classification => throw _privateConstructorUsedError; //仕入先分類
-  int? get companyNumber => throw _privateConstructorUsedError; //法人番号
+  String? get companyNumber => throw _privateConstructorUsedError; //法人番号
   String? get companyChildNumber => throw _privateConstructorUsedError; //法人番号枝番
   String? get invoiceNumber =>
       throw _privateConstructorUsedError; //適格請求書発行事業者登録番号
@@ -92,9 +92,9 @@ abstract class $CompanyModelCopyWith<$Res> {
   $Res call(
       {String? EDI,
       String companyCode,
-      int order,
+      String order,
       String classification,
-      int? companyNumber,
+      String? companyNumber,
       String? companyChildNumber,
       String? invoiceNumber,
       String kubun,
@@ -213,7 +213,7 @@ class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
       order: order == freezed
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       classification: classification == freezed
           ? _value.classification
           : classification // ignore: cast_nullable_to_non_nullable
@@ -221,7 +221,7 @@ class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
       companyNumber: companyNumber == freezed
           ? _value.companyNumber
           : companyNumber // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       companyChildNumber: companyChildNumber == freezed
           ? _value.companyChildNumber
           : companyChildNumber // ignore: cast_nullable_to_non_nullable
@@ -412,9 +412,9 @@ abstract class _$CompanyModelCopyWith<$Res>
   $Res call(
       {String? EDI,
       String companyCode,
-      int order,
+      String order,
       String classification,
-      int? companyNumber,
+      String? companyNumber,
       String? companyChildNumber,
       String? invoiceNumber,
       String kubun,
@@ -535,7 +535,7 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
       order: order == freezed
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       classification: classification == freezed
           ? _value.classification
           : classification // ignore: cast_nullable_to_non_nullable
@@ -543,7 +543,7 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
       companyNumber: companyNumber == freezed
           ? _value.companyNumber
           : companyNumber // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       companyChildNumber: companyChildNumber == freezed
           ? _value.companyChildNumber
           : companyChildNumber // ignore: cast_nullable_to_non_nullable
@@ -789,13 +789,13 @@ class _$_CompanyModel implements _CompanyModel {
   final String companyCode;
 //仕入先コード
   @override
-  final int order;
+  final String order;
 //表示順
   @override
   final String classification;
 //仕入先分類
   @override
-  final int? companyNumber;
+  final String? companyNumber;
 //法人番号
   @override
   final String? companyChildNumber;
@@ -1093,9 +1093,9 @@ abstract class _CompanyModel implements CompanyModel {
   factory _CompanyModel(
       {final String? EDI,
       required final String companyCode,
-      required final int order,
+      required final String order,
       required final String classification,
-      final int? companyNumber,
+      final String? companyNumber,
       final String? companyChildNumber,
       final String? invoiceNumber,
       required final String kubun,
@@ -1149,11 +1149,11 @@ abstract class _CompanyModel implements CompanyModel {
   @override // EDI申請ステータス
   String get companyCode => throw _privateConstructorUsedError;
   @override //仕入先コード
-  int get order => throw _privateConstructorUsedError;
+  String get order => throw _privateConstructorUsedError;
   @override //表示順
   String get classification => throw _privateConstructorUsedError;
   @override //仕入先分類
-  int? get companyNumber => throw _privateConstructorUsedError;
+  String? get companyNumber => throw _privateConstructorUsedError;
   @override //法人番号
   String? get companyChildNumber => throw _privateConstructorUsedError;
   @override //法人番号枝番

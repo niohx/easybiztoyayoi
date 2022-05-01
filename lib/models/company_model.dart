@@ -9,9 +9,9 @@ class CompanyModel with _$CompanyModel {
     // ignore: non_constant_identifier_names
     String? EDI, // EDI申請ステータス
     required String companyCode, //仕入先コード
-    required int order, //表示順
+    required String order, //表示順
     required String classification, //仕入先分類
-    int? companyNumber, //法人番号
+    String? companyNumber, //法人番号
     String? companyChildNumber, //法人番号枝番
     String? invoiceNumber, //適格請求書発行事業者登録番号
     required String kubun, //事業者区分

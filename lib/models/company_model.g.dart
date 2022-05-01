@@ -10,9 +10,9 @@ _$_CompanyModel _$$_CompanyModelFromJson(Map<String, dynamic> json) =>
     _$_CompanyModel(
       EDI: json['EDI'] as String?,
       companyCode: json['companyCode'] as String,
-      order: json['order'] as int,
+      order: json['order'] as String,
       classification: json['classification'] as String,
-      companyNumber: json['companyNumber'] as int?,
+      companyNumber: json['companyNumber'] as String?,
       companyChildNumber: json['companyChildNumber'] as String?,
       invoiceNumber: json['invoiceNumber'] as String?,
       kubun: json['kubun'] as String,
