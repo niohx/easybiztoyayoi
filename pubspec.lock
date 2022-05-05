@@ -210,7 +210,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_hooks:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_hooks
       url: "https://pub.dartlang.org"
@@ -303,6 +303,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.17.0"
   io:
     dependency: transitive
     description:

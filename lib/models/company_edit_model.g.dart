@@ -8,7 +8,7 @@ part of 'company_edit_model.dart';
 
 _$_Journal _$$_JournalFromJson(Map<String, dynamic> json) => _$_Journal(
       company: CompanyModel.fromJson(json['company'] as Map<String, dynamic>),
-      price: json['price'] as int?,
+      price: json['price'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$_JournalToJson(_$_Journal instance) =>

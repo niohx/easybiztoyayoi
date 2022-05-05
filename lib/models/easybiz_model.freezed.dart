@@ -21,15 +21,16 @@ EasybizModel _$EasybizModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EasybizModel {
   String? get skipProcess => throw _privateConstructorUsedError; //処理スキップ
-  String get purchasingNumber => throw _privateConstructorUsedError; //処理番号
-  String get rowNumber => throw _privateConstructorUsedError; //行番号
+  String? get purchasingNumber => throw _privateConstructorUsedError; //処理番号
+  String? get rowNumber => throw _privateConstructorUsedError; //行番号
   String? get alignmentPattern => throw _privateConstructorUsedError; //連動パターン
   String? get departmentCode => throw _privateConstructorUsedError; //自社部門コード
   String? get departmentName => throw _privateConstructorUsedError; //自社部門名
   String? get personCode => throw _privateConstructorUsedError; //自社担当者
   String? get personName => throw _privateConstructorUsedError; //自社担当者名
   String? get printOrNot => throw _privateConstructorUsedError; //自社部門、担当者の印字
-  String? get subject => throw _privateConstructorUsedError;
+  String? get purchasingDate => throw _privateConstructorUsedError; //仕入れ日
+  String? get subject => throw _privateConstructorUsedError; //件名
   String get companyCode => throw _privateConstructorUsedError; //仕入先コード
   String get companyName => throw _privateConstructorUsedError; //仕入先名
   String? get person => throw _privateConstructorUsedError; //仕入先担当者
@@ -72,14 +73,15 @@ abstract class $EasybizModelCopyWith<$Res> {
       _$EasybizModelCopyWithImpl<$Res>;
   $Res call(
       {String? skipProcess,
-      String purchasingNumber,
-      String rowNumber,
+      String? purchasingNumber,
+      String? rowNumber,
       String? alignmentPattern,
       String? departmentCode,
       String? departmentName,
       String? personCode,
       String? personName,
       String? printOrNot,
+      String? purchasingDate,
       String? subject,
       String companyCode,
       String companyName,
@@ -129,6 +131,7 @@ class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
     Object? personCode = freezed,
     Object? personName = freezed,
     Object? printOrNot = freezed,
+    Object? purchasingDate = freezed,
     Object? subject = freezed,
     Object? companyCode = freezed,
     Object? companyName = freezed,
@@ -166,11 +169,11 @@ class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
       purchasingNumber: purchasingNumber == freezed
           ? _value.purchasingNumber
           : purchasingNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       rowNumber: rowNumber == freezed
           ? _value.rowNumber
           : rowNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       alignmentPattern: alignmentPattern == freezed
           ? _value.alignmentPattern
           : alignmentPattern // ignore: cast_nullable_to_non_nullable
@@ -194,6 +197,10 @@ class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
       printOrNot: printOrNot == freezed
           ? _value.printOrNot
           : printOrNot // ignore: cast_nullable_to_non_nullable
+              as String?,
+      purchasingDate: purchasingDate == freezed
+          ? _value.purchasingDate
+          : purchasingDate // ignore: cast_nullable_to_non_nullable
               as String?,
       subject: subject == freezed
           ? _value.subject
@@ -320,14 +327,15 @@ abstract class _$EasybizModelCopyWith<$Res>
   @override
   $Res call(
       {String? skipProcess,
-      String purchasingNumber,
-      String rowNumber,
+      String? purchasingNumber,
+      String? rowNumber,
       String? alignmentPattern,
       String? departmentCode,
       String? departmentName,
       String? personCode,
       String? personName,
       String? printOrNot,
+      String? purchasingDate,
       String? subject,
       String companyCode,
       String companyName,
@@ -379,6 +387,7 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
     Object? personCode = freezed,
     Object? personName = freezed,
     Object? printOrNot = freezed,
+    Object? purchasingDate = freezed,
     Object? subject = freezed,
     Object? companyCode = freezed,
     Object? companyName = freezed,
@@ -416,11 +425,11 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
       purchasingNumber: purchasingNumber == freezed
           ? _value.purchasingNumber
           : purchasingNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       rowNumber: rowNumber == freezed
           ? _value.rowNumber
           : rowNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       alignmentPattern: alignmentPattern == freezed
           ? _value.alignmentPattern
           : alignmentPattern // ignore: cast_nullable_to_non_nullable
@@ -444,6 +453,10 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
       printOrNot: printOrNot == freezed
           ? _value.printOrNot
           : printOrNot // ignore: cast_nullable_to_non_nullable
+              as String?,
+      purchasingDate: purchasingDate == freezed
+          ? _value.purchasingDate
+          : purchasingDate // ignore: cast_nullable_to_non_nullable
               as String?,
       subject: subject == freezed
           ? _value.subject
@@ -566,14 +579,15 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
 class _$_EasybizModel implements _EasybizModel {
   _$_EasybizModel(
       {this.skipProcess,
-      required this.purchasingNumber,
-      required this.rowNumber,
+      this.purchasingNumber,
+      this.rowNumber,
       this.alignmentPattern,
       this.departmentCode,
       this.departmentName,
       this.personCode,
       this.personName,
       this.printOrNot,
+      this.purchasingDate,
       this.subject,
       required this.companyCode,
       required this.companyName,
@@ -610,10 +624,10 @@ class _$_EasybizModel implements _EasybizModel {
   final String? skipProcess;
 //処理スキップ
   @override
-  final String purchasingNumber;
+  final String? purchasingNumber;
 //処理番号
   @override
-  final String rowNumber;
+  final String? rowNumber;
 //行番号
   @override
   final String? alignmentPattern;
@@ -634,7 +648,11 @@ class _$_EasybizModel implements _EasybizModel {
   final String? printOrNot;
 //自社部門、担当者の印字
   @override
+  final String? purchasingDate;
+//仕入れ日
+  @override
   final String? subject;
+//件名
   @override
   final String companyCode;
 //仕入先コード
@@ -718,7 +736,7 @@ class _$_EasybizModel implements _EasybizModel {
 
   @override
   String toString() {
-    return 'EasybizModel(skipProcess: $skipProcess, purchasingNumber: $purchasingNumber, rowNumber: $rowNumber, alignmentPattern: $alignmentPattern, departmentCode: $departmentCode, departmentName: $departmentName, personCode: $personCode, personName: $personName, printOrNot: $printOrNot, subject: $subject, companyCode: $companyCode, companyName: $companyName, person: $person, closePayingMethod: $closePayingMethod, paymentClassification: $paymentClassification, paymentMethod: $paymentMethod, closeDate: $closeDate, paymentSchedule: $paymentSchedule, taxRate: $taxRate, commentA: $commentA, commentB: $commentB, commentC: $commentC, commentD: $commentD, commentE: $commentE, commentF: $commentF, itemCode: $itemCode, itemName: $itemName, quantity: $quantity, unit: $unit, price: $price, taxClassification: $taxClassification, taxChargeMethod: $taxChargeMethod, specialComment: $specialComment, stockNumber: $stockNumber, stockCode: $stockCode, stockQuantity: $stockQuantity, orderNumber: $orderNumber)';
+    return 'EasybizModel(skipProcess: $skipProcess, purchasingNumber: $purchasingNumber, rowNumber: $rowNumber, alignmentPattern: $alignmentPattern, departmentCode: $departmentCode, departmentName: $departmentName, personCode: $personCode, personName: $personName, printOrNot: $printOrNot, purchasingDate: $purchasingDate, subject: $subject, companyCode: $companyCode, companyName: $companyName, person: $person, closePayingMethod: $closePayingMethod, paymentClassification: $paymentClassification, paymentMethod: $paymentMethod, closeDate: $closeDate, paymentSchedule: $paymentSchedule, taxRate: $taxRate, commentA: $commentA, commentB: $commentB, commentC: $commentC, commentD: $commentD, commentE: $commentE, commentF: $commentF, itemCode: $itemCode, itemName: $itemName, quantity: $quantity, unit: $unit, price: $price, taxClassification: $taxClassification, taxChargeMethod: $taxChargeMethod, specialComment: $specialComment, stockNumber: $stockNumber, stockCode: $stockCode, stockQuantity: $stockQuantity, orderNumber: $orderNumber)';
   }
 
   @override
@@ -743,6 +761,8 @@ class _$_EasybizModel implements _EasybizModel {
                 .equals(other.personName, personName) &&
             const DeepCollectionEquality()
                 .equals(other.printOrNot, printOrNot) &&
+            const DeepCollectionEquality()
+                .equals(other.purchasingDate, purchasingDate) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality()
                 .equals(other.companyCode, companyCode) &&
@@ -798,6 +818,7 @@ class _$_EasybizModel implements _EasybizModel {
         const DeepCollectionEquality().hash(personCode),
         const DeepCollectionEquality().hash(personName),
         const DeepCollectionEquality().hash(printOrNot),
+        const DeepCollectionEquality().hash(purchasingDate),
         const DeepCollectionEquality().hash(subject),
         const DeepCollectionEquality().hash(companyCode),
         const DeepCollectionEquality().hash(companyName),
@@ -842,14 +863,15 @@ class _$_EasybizModel implements _EasybizModel {
 abstract class _EasybizModel implements EasybizModel {
   factory _EasybizModel(
       {final String? skipProcess,
-      required final String purchasingNumber,
-      required final String rowNumber,
+      final String? purchasingNumber,
+      final String? rowNumber,
       final String? alignmentPattern,
       final String? departmentCode,
       final String? departmentName,
       final String? personCode,
       final String? personName,
       final String? printOrNot,
+      final String? purchasingDate,
       final String? subject,
       required final String companyCode,
       required final String companyName,
@@ -885,9 +907,9 @@ abstract class _EasybizModel implements EasybizModel {
   @override
   String? get skipProcess => throw _privateConstructorUsedError;
   @override //処理スキップ
-  String get purchasingNumber => throw _privateConstructorUsedError;
+  String? get purchasingNumber => throw _privateConstructorUsedError;
   @override //処理番号
-  String get rowNumber => throw _privateConstructorUsedError;
+  String? get rowNumber => throw _privateConstructorUsedError;
   @override //行番号
   String? get alignmentPattern => throw _privateConstructorUsedError;
   @override //連動パターン
@@ -901,8 +923,10 @@ abstract class _EasybizModel implements EasybizModel {
   @override //自社担当者名
   String? get printOrNot => throw _privateConstructorUsedError;
   @override //自社部門、担当者の印字
+  String? get purchasingDate => throw _privateConstructorUsedError;
+  @override //仕入れ日
   String? get subject => throw _privateConstructorUsedError;
-  @override
+  @override //件名
   String get companyCode => throw _privateConstructorUsedError;
   @override //仕入先コード
   String get companyName => throw _privateConstructorUsedError;

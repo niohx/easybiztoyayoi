@@ -7,15 +7,16 @@ part 'easybiz_model.g.dart';
 class EasybizModel with _$EasybizModel {
   factory EasybizModel({
     String? skipProcess, //処理スキップ
-    required String purchasingNumber, //処理番号
-    required String rowNumber, //行番号
+    String? purchasingNumber, //処理番号
+    String? rowNumber, //行番号
     String? alignmentPattern, //連動パターン
     String? departmentCode, //自社部門コード
     String? departmentName, //自社部門名
     String? personCode, //自社担当者
     String? personName, //自社担当者名
     String? printOrNot, //自社部門、担当者の印字
-    String? subject,
+    String? purchasingDate, //仕入れ日
+    String? subject, //件名
     required String companyCode, //仕入先コード
     required String companyName, //仕入先名
     String? person, //仕入先担当者

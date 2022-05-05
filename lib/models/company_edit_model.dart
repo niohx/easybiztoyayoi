@@ -10,7 +10,7 @@ class Journal with _$Journal {
   @JsonSerializable(explicitToJson: true)
   factory Journal(
       {required CompanyModel company, //会社
-      int? price}) = _Journal;
+      @Default(0) int price}) = _Journal;
 
   factory Journal.fromJson(Map<String, dynamic> json) =>
       _$JournalFromJson(json);

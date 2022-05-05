@@ -21,7 +21,7 @@ Journal _$JournalFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Journal {
   CompanyModel get company => throw _privateConstructorUsedError; //会社
-  int? get price => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +32,7 @@ mixin _$Journal {
 abstract class $JournalCopyWith<$Res> {
   factory $JournalCopyWith(Journal value, $Res Function(Journal) then) =
       _$JournalCopyWithImpl<$Res>;
-  $Res call({CompanyModel company, int? price});
+  $Res call({CompanyModel company, int price});
 
   $CompanyModelCopyWith<$Res> get company;
 }
@@ -58,7 +58,7 @@ class _$JournalCopyWithImpl<$Res> implements $JournalCopyWith<$Res> {
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 
@@ -75,7 +75,7 @@ abstract class _$JournalCopyWith<$Res> implements $JournalCopyWith<$Res> {
   factory _$JournalCopyWith(_Journal value, $Res Function(_Journal) then) =
       __$JournalCopyWithImpl<$Res>;
   @override
-  $Res call({CompanyModel company, int? price});
+  $Res call({CompanyModel company, int price});
 
   @override
   $CompanyModelCopyWith<$Res> get company;
@@ -103,7 +103,7 @@ class __$JournalCopyWithImpl<$Res> extends _$JournalCopyWithImpl<$Res>
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -112,7 +112,7 @@ class __$JournalCopyWithImpl<$Res> extends _$JournalCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true)
 class _$_Journal implements _Journal {
-  _$_Journal({required this.company, this.price});
+  _$_Journal({required this.company, this.price = 0});
 
   factory _$_Journal.fromJson(Map<String, dynamic> json) =>
       _$$_JournalFromJson(json);
@@ -121,7 +121,8 @@ class _$_Journal implements _Journal {
   final CompanyModel company;
 //会社
   @override
-  final int? price;
+  @JsonKey()
+  final int price;
 
   @override
   String toString() {
@@ -156,7 +157,7 @@ class _$_Journal implements _Journal {
 }
 
 abstract class _Journal implements Journal {
-  factory _Journal({required final CompanyModel company, final int? price}) =
+  factory _Journal({required final CompanyModel company, final int price}) =
       _$_Journal;
 
   factory _Journal.fromJson(Map<String, dynamic> json) = _$_Journal.fromJson;
@@ -164,7 +165,7 @@ abstract class _Journal implements Journal {
   @override
   CompanyModel get company => throw _privateConstructorUsedError;
   @override //会社
-  int? get price => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$JournalCopyWith<_Journal> get copyWith =>
