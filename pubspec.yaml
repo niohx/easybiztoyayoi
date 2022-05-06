@@ -19,6 +19,7 @@ dependencies:
   jcombu: ^1.0.1
   shared_preferences: ^2.0.13
   intl: ^0.17.0
+  charset_converter: ^2.1.0
 
 dev_dependencies:
   flutter_test:

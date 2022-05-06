@@ -29,6 +29,7 @@ mixin _$EasybizModel {
   String? get personCode => throw _privateConstructorUsedError; //自社担当者
   String? get personName => throw _privateConstructorUsedError; //自社担当者名
   String? get printOrNot => throw _privateConstructorUsedError; //自社部門、担当者の印字
+  String? get subjectNumber => throw _privateConstructorUsedError; //案件番号
   String? get purchasingDate => throw _privateConstructorUsedError; //仕入れ日
   String? get subject => throw _privateConstructorUsedError; //件名
   String get companyCode => throw _privateConstructorUsedError; //仕入先コード
@@ -81,6 +82,7 @@ abstract class $EasybizModelCopyWith<$Res> {
       String? personCode,
       String? personName,
       String? printOrNot,
+      String? subjectNumber,
       String? purchasingDate,
       String? subject,
       String companyCode,
@@ -131,6 +133,7 @@ class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
     Object? personCode = freezed,
     Object? personName = freezed,
     Object? printOrNot = freezed,
+    Object? subjectNumber = freezed,
     Object? purchasingDate = freezed,
     Object? subject = freezed,
     Object? companyCode = freezed,
@@ -197,6 +200,10 @@ class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
       printOrNot: printOrNot == freezed
           ? _value.printOrNot
           : printOrNot // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subjectNumber: subjectNumber == freezed
+          ? _value.subjectNumber
+          : subjectNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       purchasingDate: purchasingDate == freezed
           ? _value.purchasingDate
@@ -335,6 +342,7 @@ abstract class _$EasybizModelCopyWith<$Res>
       String? personCode,
       String? personName,
       String? printOrNot,
+      String? subjectNumber,
       String? purchasingDate,
       String? subject,
       String companyCode,
@@ -387,6 +395,7 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
     Object? personCode = freezed,
     Object? personName = freezed,
     Object? printOrNot = freezed,
+    Object? subjectNumber = freezed,
     Object? purchasingDate = freezed,
     Object? subject = freezed,
     Object? companyCode = freezed,
@@ -453,6 +462,10 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
       printOrNot: printOrNot == freezed
           ? _value.printOrNot
           : printOrNot // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subjectNumber: subjectNumber == freezed
+          ? _value.subjectNumber
+          : subjectNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       purchasingDate: purchasingDate == freezed
           ? _value.purchasingDate
@@ -587,6 +600,7 @@ class _$_EasybizModel implements _EasybizModel {
       this.personCode,
       this.personName,
       this.printOrNot,
+      this.subjectNumber,
       this.purchasingDate,
       this.subject,
       required this.companyCode,
@@ -647,6 +661,9 @@ class _$_EasybizModel implements _EasybizModel {
   @override
   final String? printOrNot;
 //自社部門、担当者の印字
+  @override
+  final String? subjectNumber;
+//案件番号
   @override
   final String? purchasingDate;
 //仕入れ日
@@ -736,7 +753,7 @@ class _$_EasybizModel implements _EasybizModel {
 
   @override
   String toString() {
-    return 'EasybizModel(skipProcess: $skipProcess, purchasingNumber: $purchasingNumber, rowNumber: $rowNumber, alignmentPattern: $alignmentPattern, departmentCode: $departmentCode, departmentName: $departmentName, personCode: $personCode, personName: $personName, printOrNot: $printOrNot, purchasingDate: $purchasingDate, subject: $subject, companyCode: $companyCode, companyName: $companyName, person: $person, closePayingMethod: $closePayingMethod, paymentClassification: $paymentClassification, paymentMethod: $paymentMethod, closeDate: $closeDate, paymentSchedule: $paymentSchedule, taxRate: $taxRate, commentA: $commentA, commentB: $commentB, commentC: $commentC, commentD: $commentD, commentE: $commentE, commentF: $commentF, itemCode: $itemCode, itemName: $itemName, quantity: $quantity, unit: $unit, price: $price, taxClassification: $taxClassification, taxChargeMethod: $taxChargeMethod, specialComment: $specialComment, stockNumber: $stockNumber, stockCode: $stockCode, stockQuantity: $stockQuantity, orderNumber: $orderNumber)';
+    return 'EasybizModel(skipProcess: $skipProcess, purchasingNumber: $purchasingNumber, rowNumber: $rowNumber, alignmentPattern: $alignmentPattern, departmentCode: $departmentCode, departmentName: $departmentName, personCode: $personCode, personName: $personName, printOrNot: $printOrNot, subjectNumber: $subjectNumber, purchasingDate: $purchasingDate, subject: $subject, companyCode: $companyCode, companyName: $companyName, person: $person, closePayingMethod: $closePayingMethod, paymentClassification: $paymentClassification, paymentMethod: $paymentMethod, closeDate: $closeDate, paymentSchedule: $paymentSchedule, taxRate: $taxRate, commentA: $commentA, commentB: $commentB, commentC: $commentC, commentD: $commentD, commentE: $commentE, commentF: $commentF, itemCode: $itemCode, itemName: $itemName, quantity: $quantity, unit: $unit, price: $price, taxClassification: $taxClassification, taxChargeMethod: $taxChargeMethod, specialComment: $specialComment, stockNumber: $stockNumber, stockCode: $stockCode, stockQuantity: $stockQuantity, orderNumber: $orderNumber)';
   }
 
   @override
@@ -761,6 +778,8 @@ class _$_EasybizModel implements _EasybizModel {
                 .equals(other.personName, personName) &&
             const DeepCollectionEquality()
                 .equals(other.printOrNot, printOrNot) &&
+            const DeepCollectionEquality()
+                .equals(other.subjectNumber, subjectNumber) &&
             const DeepCollectionEquality()
                 .equals(other.purchasingDate, purchasingDate) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
@@ -818,6 +837,7 @@ class _$_EasybizModel implements _EasybizModel {
         const DeepCollectionEquality().hash(personCode),
         const DeepCollectionEquality().hash(personName),
         const DeepCollectionEquality().hash(printOrNot),
+        const DeepCollectionEquality().hash(subjectNumber),
         const DeepCollectionEquality().hash(purchasingDate),
         const DeepCollectionEquality().hash(subject),
         const DeepCollectionEquality().hash(companyCode),
@@ -871,6 +891,7 @@ abstract class _EasybizModel implements EasybizModel {
       final String? personCode,
       final String? personName,
       final String? printOrNot,
+      final String? subjectNumber,
       final String? purchasingDate,
       final String? subject,
       required final String companyCode,
@@ -923,6 +944,8 @@ abstract class _EasybizModel implements EasybizModel {
   @override //自社担当者名
   String? get printOrNot => throw _privateConstructorUsedError;
   @override //自社部門、担当者の印字
+  String? get subjectNumber => throw _privateConstructorUsedError;
+  @override //案件番号
   String? get purchasingDate => throw _privateConstructorUsedError;
   @override //仕入れ日
   String? get subject => throw _privateConstructorUsedError;

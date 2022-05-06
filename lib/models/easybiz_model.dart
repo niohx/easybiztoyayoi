@@ -15,6 +15,7 @@ class EasybizModel with _$EasybizModel {
     String? personCode, //自社担当者
     String? personName, //自社担当者名
     String? printOrNot, //自社部門、担当者の印字
+    String? subjectNumber, //案件番号
     String? purchasingDate, //仕入れ日
     String? subject, //件名
     required String companyCode, //仕入先コード
