@@ -1,0 +1,50 @@
+Date : 2022-05-16 23:27:36
+Directory : c:\dev\easybiztoyayoi\lib
+Total : 22 files,  4276 codes, 217 comments, 246 blanks, all 4739 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Dart     |         22 |      4,276 |        217 |        246 |      4,739 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                             | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                |         22 |      4,276 |        217 |        246 |      4,739 |
+| models                                                           |         15 |      3,550 |        211 |        187 |      3,948 |
+| providers                                                        |          3 |        413 |          2 |         36 |        451 |
+| screens                                                          |          3 |        294 |          4 |         19 |        317 |
+| screens\widgets                                                  |          1 |        102 |          1 |          8 |        111 |
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                         | language | code       | comment    | blank      | total      |
++------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\dev\easybiztoyayoi\lib\main.dart                              | Dart     |         19 |          0 |          4 |         23 |
+| c:\dev\easybiztoyayoi\lib\models\company_edit_model.dart         | Dart     |         15 |          0 |          5 |         20 |
+| c:\dev\easybiztoyayoi\lib\models\company_edit_model.freezed.dart | Dart     |        149 |         16 |         31 |        196 |
+| c:\dev\easybiztoyayoi\lib\models\company_edit_model.g.dart       | Dart     |         12 |          4 |          5 |         21 |
+| c:\dev\easybiztoyayoi\lib\models\company_model.dart              | Dart     |         59 |          2 |          4 |         65 |
+| c:\dev\easybiztoyayoi\lib\models\company_model.freezed.dart      | Dart     |      1,157 |         67 |         27 |      1,251 |
+| c:\dev\easybiztoyayoi\lib\models\company_model.g.dart            | Dart     |        105 |          4 |          5 |        114 |
+| c:\dev\easybiztoyayoi\lib\models\easybiz_model.dart              | Dart     |         50 |          0 |          4 |         54 |
+| c:\dev\easybiztoyayoi\lib\models\easybiz_model.freezed.dart      | Dart     |        954 |         53 |         27 |      1,034 |
+| c:\dev\easybiztoyayoi\lib\models\easybiz_model.g.dart            | Dart     |         87 |          4 |          5 |         96 |
+| c:\dev\easybiztoyayoi\lib\models\journals_model.dart             | Dart     |         16 |          0 |          5 |         21 |
+| c:\dev\easybiztoyayoi\lib\models\journals_model.freezed.dart     | Dart     |        196 |         15 |         28 |        239 |
+| c:\dev\easybiztoyayoi\lib\models\journals_model.g.dart           | Dart     |         27 |          4 |          5 |         36 |
+| c:\dev\easybiztoyayoi\lib\models\yayoi_model.dart                | Dart     |         35 |          0 |          4 |         39 |
+| c:\dev\easybiztoyayoi\lib\models\yayoi_model.freezed.dart        | Dart     |        631 |         38 |         27 |        696 |
+| c:\dev\easybiztoyayoi\lib\models\yayoi_model.g.dart              | Dart     |         57 |          4 |          5 |         66 |
+| c:\dev\easybiztoyayoi\lib\providers\journals_edit_provider.dart  | Dart     |        304 |          0 |         25 |        329 |
+| c:\dev\easybiztoyayoi\lib\providers\journals_provider.dart       | Dart     |        100 |          2 |          6 |        108 |
+| c:\dev\easybiztoyayoi\lib\providers\providers.dart               | Dart     |          9 |          0 |          5 |         14 |
+| c:\dev\easybiztoyayoi\lib\screens\company_edit_page.dart         | Dart     |        135 |          1 |          6 |        142 |
+| c:\dev\easybiztoyayoi\lib\screens\welcome_page.dart              | Dart     |         57 |          2 |          5 |         64 |
+| c:\dev\easybiztoyayoi\lib\screens\widgets\current_journal.dart   | Dart     |        102 |          1 |          8 |        111 |
+| Total                                                            |          |      4,276 |        217 |        246 |      4,739 |
++------------------------------------------------------------------+----------+------------+------------+------------+------------+

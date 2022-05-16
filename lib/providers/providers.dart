@@ -9,3 +9,5 @@ final editModeProvider = StateProvider<EditMode>((ref) {
 final pathProvider = StateProvider<String?>((ref) {
   return null;
 });
+
+final searchWordProvider = StateProvider<String?>((ref) => null);

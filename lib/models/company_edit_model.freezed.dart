@@ -21,7 +21,8 @@ Journal _$JournalFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Journal {
   CompanyModel get company => throw _privateConstructorUsedError; //会社
-  int get price => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError; //金額
+  bool get willExport => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +33,7 @@ mixin _$Journal {
 abstract class $JournalCopyWith<$Res> {
   factory $JournalCopyWith(Journal value, $Res Function(Journal) then) =
       _$JournalCopyWithImpl<$Res>;
-  $Res call({CompanyModel company, int price});
+  $Res call({CompanyModel company, int price, bool willExport});
 
   $CompanyModelCopyWith<$Res> get company;
 }
@@ -49,6 +50,7 @@ class _$JournalCopyWithImpl<$Res> implements $JournalCopyWith<$Res> {
   $Res call({
     Object? company = freezed,
     Object? price = freezed,
+    Object? willExport = freezed,
   }) {
     return _then(_value.copyWith(
       company: company == freezed
@@ -59,6 +61,10 @@ class _$JournalCopyWithImpl<$Res> implements $JournalCopyWith<$Res> {
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
+      willExport: willExport == freezed
+          ? _value.willExport
+          : willExport // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -75,7 +81,7 @@ abstract class _$JournalCopyWith<$Res> implements $JournalCopyWith<$Res> {
   factory _$JournalCopyWith(_Journal value, $Res Function(_Journal) then) =
       __$JournalCopyWithImpl<$Res>;
   @override
-  $Res call({CompanyModel company, int price});
+  $Res call({CompanyModel company, int price, bool willExport});
 
   @override
   $CompanyModelCopyWith<$Res> get company;
@@ -94,6 +100,7 @@ class __$JournalCopyWithImpl<$Res> extends _$JournalCopyWithImpl<$Res>
   $Res call({
     Object? company = freezed,
     Object? price = freezed,
+    Object? willExport = freezed,
   }) {
     return _then(_Journal(
       company: company == freezed
@@ -104,6 +111,10 @@ class __$JournalCopyWithImpl<$Res> extends _$JournalCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
+      willExport: willExport == freezed
+          ? _value.willExport
+          : willExport // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -112,7 +123,7 @@ class __$JournalCopyWithImpl<$Res> extends _$JournalCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true)
 class _$_Journal implements _Journal {
-  _$_Journal({required this.company, this.price = 0});
+  _$_Journal({required this.company, this.price = 0, this.willExport = true});
 
   factory _$_Journal.fromJson(Map<String, dynamic> json) =>
       _$$_JournalFromJson(json);
@@ -123,10 +134,14 @@ class _$_Journal implements _Journal {
   @override
   @JsonKey()
   final int price;
+//金額
+  @override
+  @JsonKey()
+  final bool willExport;
 
   @override
   String toString() {
-    return 'Journal(company: $company, price: $price)';
+    return 'Journal(company: $company, price: $price, willExport: $willExport)';
   }
 
   @override
@@ -135,7 +150,9 @@ class _$_Journal implements _Journal {
         (other.runtimeType == runtimeType &&
             other is _Journal &&
             const DeepCollectionEquality().equals(other.company, company) &&
-            const DeepCollectionEquality().equals(other.price, price));
+            const DeepCollectionEquality().equals(other.price, price) &&
+            const DeepCollectionEquality()
+                .equals(other.willExport, willExport));
   }
 
   @JsonKey(ignore: true)
@@ -143,7 +160,8 @@ class _$_Journal implements _Journal {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(company),
-      const DeepCollectionEquality().hash(price));
+      const DeepCollectionEquality().hash(price),
+      const DeepCollectionEquality().hash(willExport));
 
   @JsonKey(ignore: true)
   @override
@@ -157,8 +175,10 @@ class _$_Journal implements _Journal {
 }
 
 abstract class _Journal implements Journal {
-  factory _Journal({required final CompanyModel company, final int price}) =
-      _$_Journal;
+  factory _Journal(
+      {required final CompanyModel company,
+      final int price,
+      final bool willExport}) = _$_Journal;
 
   factory _Journal.fromJson(Map<String, dynamic> json) = _$_Journal.fromJson;
 
@@ -166,6 +186,8 @@ abstract class _Journal implements Journal {
   CompanyModel get company => throw _privateConstructorUsedError;
   @override //会社
   int get price => throw _privateConstructorUsedError;
+  @override //金額
+  bool get willExport => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$JournalCopyWith<_Journal> get copyWith =>

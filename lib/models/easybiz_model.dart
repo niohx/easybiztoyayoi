@@ -35,6 +35,7 @@ class EasybizModel with _$EasybizModel {
     String? commentF, //支払明細書コメントフッター
     String? itemCode, //商品コード
     String? itemName, //商品名
+    String? itemNameChild, //商品名(下段)
     int? quantity, //数量
     String? unit, //単位
     int? price, // 仕入れ単価

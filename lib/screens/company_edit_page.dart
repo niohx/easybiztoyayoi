@@ -1,22 +1,68 @@
-import 'package:easybiz_to_yayoi/providers/journals_provider.dart';
+import 'package:easybiz_to_yayoi/providers/journals_edit_provider.dart';
+import 'package:easybiz_to_yayoi/providers/providers.dart';
 import 'package:easybiz_to_yayoi/screens/widgets/current_journal.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../models/company_edit_model.dart';
-import '../providers/companies_provider.dart';
+import '../providers/journals_provider.dart';
 
 class CSVEditScreen extends HookConsumerWidget {
   CSVEditScreen({Key? key}) : super(key: key);
   DateFormat outputFormat = DateFormat('yyyy/MM/dd');
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final journals = ref.watch(journalsProvider);
+    final journals = ref.watch(journalsEditProvider);
+    final filtered = ref.watch(filteredJournalsEditProvider);
+    // print(filtered);
+    final editMode = ref.watch(editModeProvider);
+    final _searchMode = useState(false);
+    print(editMode);
     // print(_list);
     return Scaffold(
-      appBar: AppBar(title: Text('csv ')),
+      appBar: AppBar(
+        title: _searchMode.value
+            ? TextField(
+                onChanged: (word) {
+                  ref.watch(searchWordProvider.state).state = word;
+                },
+                autofocus: true,
+                cursorColor: Colors.white,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+                textInputAction: TextInputAction.search,
+                decoration: const InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white)),
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white)),
+                  hintText: 'Search',
+                  hintStyle: TextStyle(
+                    color: Colors.white60,
+                    fontSize: 20,
+                  ),
+                ),
+              )
+            : const Text('csv '),
+        actions: [
+          IconButton(
+              onPressed: () {
+                if (_searchMode.value) {
+                  print('clear searchword');
+                  ref.watch(searchWordProvider.state).state = null;
+                }
+                _searchMode.value = !_searchMode.value;
+              },
+              icon: _searchMode.value
+                  ? const Icon(Icons.cancel)
+                  : const Icon(Icons.search))
+        ],
+      ),
       body: Column(
         children: [
           Padding(
@@ -33,7 +79,7 @@ class CSVEditScreen extends HookConsumerWidget {
                           firstDate: DateTime(DateTime.now().year - 1));
                       if (target != null) {
                         ref
-                            .read(journalsProvider.notifier)
+                            .read(journalsEditProvider.notifier)
                             .editPurchasingDate(target);
                       }
                     },
@@ -48,7 +94,7 @@ class CSVEditScreen extends HookConsumerWidget {
                           firstDate: DateTime(DateTime.now().year - 1));
                       if (target != null) {
                         ref
-                            .read(journalsProvider.notifier)
+                            .read(journalsEditProvider.notifier)
                             .editCloseDate(target);
                       }
                     },
@@ -62,7 +108,9 @@ class CSVEditScreen extends HookConsumerWidget {
                           lastDate: DateTime(DateTime.now().year + 1),
                           firstDate: DateTime(DateTime.now().year - 1));
                       if (target != null) {
-                        ref.read(journalsProvider.notifier).editPayDate(target);
+                        ref
+                            .read(journalsEditProvider.notifier)
+                            .editPayDate(target);
                       }
                     },
                     child: Text(
@@ -71,12 +119,13 @@ class CSVEditScreen extends HookConsumerWidget {
             ),
           ),
           Flexible(
-            child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: journals.journals.length,
+            child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 200.0),
+                itemCount: filtered.journals.length,
                 itemBuilder: (context, index) {
                   return ProviderScope(overrides: [
-                    currentJournal.overrideWithValue(journals.journals[index]!)
+                    currentJournal.overrideWithValue(filtered.journals[index]!)
                   ], child: JournalItem());
                 }),
           ),
@@ -95,6 +144,7 @@ class _BottomNavigationBar extends HookConsumerWidget {
   const _BottomNavigationBar({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final _journal = ref.watch(journalsEditProvider);
     final _currentIndex = ref.watch(_currentIndexProvider);
     return BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -105,17 +155,64 @@ class _BottomNavigationBar extends HookConsumerWidget {
             case 0:
               final path = await FilePicker.platform.getDirectoryPath();
               if (path != null) {
-                ref.read(journalsProvider.notifier).outputToYayoi(path: path);
+                if (_journal.closeDate != null &&
+                    _journal.payDate != null &&
+                    _journal.purchasingDate != null) {
+                  ref
+                      .read(journalsEditProvider.notifier)
+                      .outputToYayoi(path: path);
+                } else {
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (_) {
+                      return AlertDialog(
+                        title: const Text("書き出しできません"),
+                        content: const Text("支払日等を選択してください"),
+                        actions: [
+                          TextButton(
+                            child: const Text("OK"),
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                }
               }
               break;
             case 1:
               final path = await FilePicker.platform.getDirectoryPath();
               if (path != null) {
-                ref.read(journalsProvider.notifier).outputToEasyBiz(path: path);
+                if (_journal.closeDate != null &&
+                    _journal.payDate != null &&
+                    _journal.purchasingDate != null) {
+                  ref
+                      .read(journalsEditProvider.notifier)
+                      .outputToEasyBiz(path: path);
+                } else {
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (_) {
+                      return AlertDialog(
+                        title: const Text("書き出しできません"),
+                        content: const Text("支払日等を選択してください"),
+                        actions: [
+                          TextButton(
+                            child: const Text("OK"),
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                }
               }
               break;
             case 2:
-              await ref.read(journalsProvider.notifier).save();
+              await ref.read(journalsEditProvider.notifier).save();
+              Navigator.pop(context);
               break;
           }
         },

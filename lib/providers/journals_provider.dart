@@ -1,253 +1,107 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:charset_converter/charset_converter.dart';
 import 'package:csv/csv.dart';
-import 'package:easybiz_to_yayoi/models/company_model.dart';
-import 'package:easybiz_to_yayoi/models/easybiz_model.dart';
-import 'package:easybiz_to_yayoi/models/yayoi_model.dart';
-import 'package:easybiz_to_yayoi/providers/companies_provider.dart';
 import 'package:easybiz_to_yayoi/providers/providers.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/company_edit_model.dart';
+import '../models/company_model.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:jcombu/jcombu.dart' as jcombu;
+
 import '../models/journals_model.dart';
 
 final journalsProvider =
-    StateNotifierProvider.autoDispose<JournalsNotifier, Journals>((ref) {
-  final companies = ref.watch(companiesProvider);
+    StateNotifierProvider<JournalsNotifier, Journals>((ref) {
   final editMode = ref.watch(editModeProvider);
-
-  return JournalsNotifier(companies: companies, editMode: editMode);
+  final path = ref.watch(pathProvider);
+  return JournalsNotifier(editMode: editMode, path: path);
 });
 
 class JournalsNotifier extends StateNotifier<Journals> {
-  JournalsNotifier({required this.companies, required this.editMode})
+  JournalsNotifier({required this.path, required this.editMode})
       : super(Journals()) {
     _initialize();
   }
-  final List<CompanyModel> companies;
+  final String? path;
   final EditMode editMode;
-  void _initialize() async {
+  Future<void> _initialize() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (editMode == EditMode.resume) {
+    if (editMode == EditMode.resume && path == null) {
+      print('proceed');
       final journalsString = prefs.getString('journals')!;
       final t = jsonDecode(journalsString);
-      state = Journals.fromJson(t);
+      final journals = Journals.fromJson(t);
+      state = journals;
     } else {
-      final journals =
-          companies.map((company) => Journal(company: company)).toList();
-      state = Journals(
-          payDate: DateTime.now(),
-          closeDate: DateTime.now(),
-          purchasingDate: DateTime.now(),
-          journals: journals);
-    }
-  }
-
-  void editPurchasingDate(DateTime target) {
-    state = state.copyWith(purchasingDate: target);
-  }
-
-  void editCloseDate(DateTime target) {
-    state = state.copyWith(closeDate: target);
-  }
-
-  void editPayDate(DateTime target) {
-    state = state.copyWith(payDate: target);
-  }
-
-  void toggleHasResume() {
-    state = state.copyWith(hasResume: !state.hasResume);
-  }
-
-  void editJournal({required String id, required int price}) {
-    state = state.copyWith(journals: [
-      for (final journal in state.journals)
-        if (journal!.company.companyCode == id)
-          Journal(company: journal.company, price: price)
-        else
-          journal
-    ]);
-  }
-
-  Future<void> save() async {
-    SharedPreferences _prefs = await SharedPreferences.getInstance();
-    _prefs.setString('journals', json.encode(state.toJson()));
-  }
-
-  Future<void> outputToYayoi({required String path}) async {
-    final file = File(path + '/outputYayoi.csv');
-    final easybizModels = convertToEasybizModel(state);
-    final _listoflist = convertToSCVStringfromEasybizModels(easybizModels);
-    final csv = ListToCsvConverter().convert(_listoflist);
-    final encoded = await CharsetConverter.encode("Shift_JIS", csv);
-    file.writeAsBytes(encoded);
-  }
-
-  List<YayoiModel> convertToYayoiModel(Journals journals) {
-    DateFormat outputFormat = DateFormat('yyyy/MM/dd');
-    String creditAccount(CompanyModel company) {
-      switch (company.classification) {
-        case "買掛金":
-          return "買掛金";
-        case "未払費用":
-          return "未払費用";
-        case "未払金":
-          return "未払金";
+      if (path != null) {
+        // print('fromCSV');
+        final _file = File(path!).openRead();
+        final elements = await jcombu
+            .convertShiftJisStream(_file)
+            .transform(const CsvToListConverter(eol: "\n"))
+            .toList();
+        List<CompanyModel> companies = elements
+            .skip(5)
+            .map((elm) => CompanyModel(
+                EDI: elm[1].toString(),
+                companyCode: elm[2].toString(),
+                order: elm[3].toString(),
+                classification: elm[4].toString(),
+                companyNumber: elm[5],
+                companyChildNumber: elm[6].toString(),
+                invoiceNumber: elm[7].toString(),
+                kubun: elm[8].toString(),
+                companyName: elm[9].toString(),
+                companyKana: elm[10].toString(),
+                companyAbbriviation: elm[11].toString(),
+                kojin: elm[12].toString(),
+                postalcode: elm[13].toString(),
+                postalcodeChild: elm[14].toString(),
+                addressA: elm[15].toString(),
+                addressB: elm[16].toString(),
+                person: elm[17].toString(),
+                phoneNumberA: elm[18].toString(),
+                phoneNumberB: elm[19].toString(),
+                faxNumber: elm[20].toString(),
+                email: elm[21].toString(),
+                URI: elm[22].toString(),
+                responsiblePerson: elm[23].toString(),
+                payClass: elm[24].toString(),
+                closeGroup: elm[25].toString(),
+                paymentConstant: elm[26].toString(),
+                paymentMethod: elm[27].toString(),
+                taxMethod: elm[28].toString(),
+                fraction: elm[29].toString(),
+                accountsPayable: elm[30].toString(),
+                payeeMemo: elm[31].toString(),
+                payeeBankCode: elm[32].toString(),
+                payeeBankBranchCode: elm[33].toString(),
+                payeeBankBranchName: elm[34].toString(),
+                bankAccountType: elm[35].toString(),
+                bankAccountNumber: elm[36].toString(),
+                bankAcountName: elm[37].toString(),
+                transferFee: elm[38].toString(),
+                calcFee: elm[39].toString(),
+                minimumPayPrice: elm[40].toString(),
+                multipleAtOnce: elm[41].toString(),
+                payeeBank: elm[42].toString(),
+                purchasingPattern: elm[43].toString(),
+                hidden: elm[44].toString(),
+                payDayThresholdBefore: elm[45].toString(),
+                payDayThresholdAfter: elm[46].toString(),
+                payPriceJudge: elm[47].toString(),
+                applicable: elm[48].toString()))
+            .toList();
+        // print(companies);
+        if (elements[0][1].toString() == "仕入先マスタ出力") {
+          state = Journals(
+              journals: companies
+                  .map((company) => Journal(company: company, price: 0))
+                  .toList());
+        }
       }
-      return "";
     }
-
-    String debitTaxClass(CompanyModel company) {
-      switch(){}
-      return "";
-    }
-    return journals.journals
-        .map((journal) => YayoiModel(
-            regFlag: 2111.toString(),
-            transactionDate: outputFormat.format(state.purchasingDate!),
-            debitAccount: "雑費",
-            debitTaxClass: debitTaxClass(journal!.company),
-            debitPrice: debitPrice,
-            creditAccount: creditAccount(journal.company),
-            creditTaxClass: "対象外",
-            creditPrice: creditPrice,
-            dataType: dataType,
-            adjustment: "no"))
-        .toList();
-  }
-
-  List<List<dynamic>> convertToSCVStringfromYayoiModels(List<YayoiModel> list) {
-    return list.map((yayoi) => []).toList();
-  }
-
-  Future<void> outputToEasyBiz({required String path}) async {
-    final file = File(path + '/outputEasyBiz.csv');
-    final easybizModels = convertToEasybizModel(state);
-    final _listoflist = convertToSCVStringfromEasybizModels(easybizModels);
-    final csv = ListToCsvConverter().convert(_listoflist);
-    final encoded = await CharsetConverter.encode("Shift_JIS", csv);
-    file.writeAsBytes(encoded);
-  }
-
-  List<EasybizModel> convertToEasybizModel(Journals journals) {
-    DateFormat outputFormat = DateFormat('yyyy/MM/dd');
-    return journals.journals
-        .map((journal) => EasybizModel(
-              rowNumber: 1.toString(),
-              alignmentPattern: 1.toString(),
-              departmentCode: 0.toString(),
-              departmentName: '部門なし',
-              printOrNot: '印字しない',
-              purchasingDate: outputFormat.format(state.purchasingDate!),
-              companyCode: journal!.company.companyCode,
-              companyName: journal.company.companyName,
-              paymentClassification: '締め',
-              paymentMethod: '普通預金',
-              closeDate: outputFormat.format(state.closeDate!),
-              paymentSchedule: outputFormat.format(state.payDate!),
-              taxRate: 10.toString(),
-              itemCode: 10010.toString(),
-              itemName: '仕入',
-              quantity: 1,
-              price: journal.price,
-              taxClassification: '課税(標準)',
-              taxChargeMethod: '内税',
-            ))
-        .toList();
-  }
-
-  List<List<dynamic>> convertToSCVStringfromEasybizModels(
-      List<EasybizModel> list) {
-    return [
-      [
-        "処理スキップ",
-        "仕入番号",
-        "行番号",
-        "連動パターンNo",
-        "自社部門コード",
-        "自社部門名",
-        "自社担当者コード",
-        "自社担当者名",
-        "自社部門、担当者の印字",
-        "案件番号",
-        "仕入日",
-        "件名",
-        "仕入先コード",
-        "仕入先名",
-        "仕入先担当者",
-        "締め支払方法",
-        "支払区分",
-        "支払方法",
-        "仕入締日",
-        "支払予定日",
-        "消費税率",
-        "検収書コメント(上段)",
-        "検収書コメント(下段)",
-        "検収書コメント(フッター)",
-        "支払明細書コメント(上段)",
-        "支払明細書コメント(下段)",
-        "支払明細書コメント(フッター)",
-        "商品コード",
-        "商品名",
-        "商品名（下段）",
-        "数量",
-        "単位",
-        "仕入単価",
-        "税区分",
-        "内外税",
-        "備考",
-        "倉庫割振り連番",
-        "倉庫コード",
-        "倉庫数量",
-        "発注番号"
-      ],
-      ...list
-          .map((m) => [
-                m.skipProcess ?? "",
-                m.purchasingNumber ?? "",
-                m.rowNumber ?? "",
-                m.alignmentPattern ?? "",
-                m.departmentCode ?? "",
-                m.departmentName ?? "",
-                m.personCode ?? "",
-                m.personName ?? "",
-                m.printOrNot ?? "",
-                m.subjectNumber ?? "",
-                m.purchasingDate ?? "",
-                m.subject ?? "",
-                m.companyCode,
-                m.companyName,
-                m.person ?? "",
-                m.closePayingMethod ?? "",
-                m.paymentClassification ?? "",
-                m.paymentMethod ?? "",
-                m.closeDate ?? "",
-                m.paymentSchedule ?? "",
-                m.taxRate ?? "",
-                m.commentA ?? "",
-                m.commentB ?? "",
-                m.commentC ?? "",
-                m.commentD ?? "",
-                m.commentE ?? "",
-                m.commentF ?? "",
-                m.itemCode ?? "",
-                m.itemName ?? "",
-                m.quantity ?? "",
-                m.unit ?? "",
-                m.price ?? "",
-                m.taxClassification ?? "",
-                m.taxChargeMethod ?? "",
-                m.specialComment ?? "",
-                m.stockNumber ?? "",
-                m.stockCode ?? "",
-                m.stockQuantity ?? "",
-                m.orderNumber ?? ""
-              ])
-          .toList()
-    ];
   }
 }

@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:csv/csv.dart';
-import 'package:easybiz_to_yayoi/providers/companies_provider.dart';
+import 'package:easybiz_to_yayoi/providers/journals_provider.dart';
 import 'package:easybiz_to_yayoi/providers/providers.dart';
 import 'package:easybiz_to_yayoi/screens/company_edit_page.dart';
 import 'package:file_picker/file_picker.dart';
@@ -25,6 +25,7 @@ class _WelcomePageBody extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final editMode = ref.watch(editModeProvider);
     return Center(
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         OutlinedButton(
@@ -35,6 +36,7 @@ class _WelcomePageBody extends HookConsumerWidget {
                 String path = result.files.first.path!;
                 ref.read(pathProvider.state).state = path;
                 ref.read(editModeProvider.state).state = EditMode.fromCSV;
+                print(editMode);
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (_) => CSVEditScreen()));
               } else {
@@ -45,11 +47,14 @@ class _WelcomePageBody extends HookConsumerWidget {
         OutlinedButton(
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
-              final str = prefs.getString('journals');
-              print(str);
-              ref.read(editModeProvider.state).state = EditMode.resume;
-              // Navigator.of(context)
-              //     .push(MaterialPageRoute(builder: (_) => CSVEditScreen()));
+              if (prefs.containsKey('journals')) {
+                print('canresume');
+                ref.read(editModeProvider.state).state = EditMode.resume;
+                ref.read(pathProvider.state).state = null;
+                // print(editMode);
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (_) => CSVEditScreen()));
+              }
             },
             child: Text('途中から'))
       ]),

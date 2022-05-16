@@ -1,9 +1,10 @@
-import 'package:easybiz_to_yayoi/providers/journals_provider.dart';
+import 'package:easybiz_to_yayoi/providers/journals_edit_provider.dart';
 import 'package:easybiz_to_yayoi/screens/company_edit_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/intl.dart';
 
 class JournalItem extends HookConsumerWidget {
   const JournalItem({Key? key}) : super(key: key);
@@ -17,6 +18,10 @@ class JournalItem extends HookConsumerWidget {
     final textEditingController = useTextEditingController();
     final textFieldFocusNode = useFocusNode();
 
+    final numberFormatter = NumberFormat("#,###");
+
+    final _screenSize = MediaQuery.of(context).size;
+    // print("price is ${journal.price}");
     return Material(
       child: Focus(
         focusNode: itemFocusNode,
@@ -24,28 +29,67 @@ class JournalItem extends HookConsumerWidget {
           if (focused) {
             textEditingController.text = journal.price.toString();
           } else {
-            ref.read(journalsProvider.notifier).editJournal(
-                id: journal.company.companyCode,
-                price: int.parse(textEditingController.text));
+            ref.read(journalsEditProvider.notifier).editJournal(
+                  id: journal.company.companyCode,
+                  price: int.parse(textEditingController.text),
+                );
           }
         },
-        child: ListTile(
-          onTap: () {
-            itemFocusNode.requestFocus();
-            textFieldFocusNode.requestFocus();
-          },
-          title: Text(journal.company.companyName),
-          subtitle: itemIsFocused
-              ? TextField(
-                  autofocus: true,
-                  focusNode: textFieldFocusNode,
-                  controller: textEditingController,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))
-                  ],
-                )
-              : Text(journal.price.toString()),
+        child: Card(
+          color: journal.willExport
+              ? journal.price == 0
+                  ? Colors.white
+                  : Colors.yellow[200]
+              : Colors.grey[400],
+          child: InkWell(
+              onTap: () {
+                itemFocusNode.requestFocus();
+                textFieldFocusNode.requestFocus();
+              },
+              child: Container(
+                width: _screenSize.width * 0.2,
+                height: _screenSize.height * 0.2,
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Checkbox(
+                              value: journal.willExport,
+                              onChanged: (e) {
+                                ref
+                                    .read(journalsEditProvider.notifier)
+                                    .toggleWillExport(
+                                        id: journal.company.companyCode);
+                              }),
+                          Flexible(
+                            child: Text(
+                              journal.company.companyName,
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Expanded(
+                        child: itemIsFocused
+                            ? TextField(
+                                autofocus: true,
+                                focusNode: textFieldFocusNode,
+                                controller: textEditingController,
+                                keyboardType: TextInputType.number,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.allow(
+                                      RegExp(r'[0-9]'))
+                                ],
+                              )
+                            : Text(numberFormatter
+                                .format(journal.price)
+                                .toString()),
+                      ),
+                    ]),
+              )),
         ),
       ),
     );

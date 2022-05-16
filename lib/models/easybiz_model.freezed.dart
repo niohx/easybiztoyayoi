@@ -50,6 +50,7 @@ mixin _$EasybizModel {
   String? get commentF => throw _privateConstructorUsedError; //支払明細書コメントフッター
   String? get itemCode => throw _privateConstructorUsedError; //商品コード
   String? get itemName => throw _privateConstructorUsedError; //商品名
+  String? get itemNameChild => throw _privateConstructorUsedError; //商品名(下段)
   int? get quantity => throw _privateConstructorUsedError; //数量
   String? get unit => throw _privateConstructorUsedError; //単位
   int? get price => throw _privateConstructorUsedError; // 仕入れ単価
@@ -102,6 +103,7 @@ abstract class $EasybizModelCopyWith<$Res> {
       String? commentF,
       String? itemCode,
       String? itemName,
+      String? itemNameChild,
       int? quantity,
       String? unit,
       int? price,
@@ -153,6 +155,7 @@ class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
     Object? commentF = freezed,
     Object? itemCode = freezed,
     Object? itemName = freezed,
+    Object? itemNameChild = freezed,
     Object? quantity = freezed,
     Object? unit = freezed,
     Object? price = freezed,
@@ -281,6 +284,10 @@ class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
           ? _value.itemName
           : itemName // ignore: cast_nullable_to_non_nullable
               as String?,
+      itemNameChild: itemNameChild == freezed
+          ? _value.itemNameChild
+          : itemNameChild // ignore: cast_nullable_to_non_nullable
+              as String?,
       quantity: quantity == freezed
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
@@ -362,6 +369,7 @@ abstract class _$EasybizModelCopyWith<$Res>
       String? commentF,
       String? itemCode,
       String? itemName,
+      String? itemNameChild,
       int? quantity,
       String? unit,
       int? price,
@@ -415,6 +423,7 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
     Object? commentF = freezed,
     Object? itemCode = freezed,
     Object? itemName = freezed,
+    Object? itemNameChild = freezed,
     Object? quantity = freezed,
     Object? unit = freezed,
     Object? price = freezed,
@@ -543,6 +552,10 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
           ? _value.itemName
           : itemName // ignore: cast_nullable_to_non_nullable
               as String?,
+      itemNameChild: itemNameChild == freezed
+          ? _value.itemNameChild
+          : itemNameChild // ignore: cast_nullable_to_non_nullable
+              as String?,
       quantity: quantity == freezed
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
@@ -620,6 +633,7 @@ class _$_EasybizModel implements _EasybizModel {
       this.commentF,
       this.itemCode,
       this.itemName,
+      this.itemNameChild,
       this.quantity,
       this.unit,
       this.price,
@@ -722,6 +736,9 @@ class _$_EasybizModel implements _EasybizModel {
   final String? itemName;
 //商品名
   @override
+  final String? itemNameChild;
+//商品名(下段)
+  @override
   final int? quantity;
 //数量
   @override
@@ -753,7 +770,7 @@ class _$_EasybizModel implements _EasybizModel {
 
   @override
   String toString() {
-    return 'EasybizModel(skipProcess: $skipProcess, purchasingNumber: $purchasingNumber, rowNumber: $rowNumber, alignmentPattern: $alignmentPattern, departmentCode: $departmentCode, departmentName: $departmentName, personCode: $personCode, personName: $personName, printOrNot: $printOrNot, subjectNumber: $subjectNumber, purchasingDate: $purchasingDate, subject: $subject, companyCode: $companyCode, companyName: $companyName, person: $person, closePayingMethod: $closePayingMethod, paymentClassification: $paymentClassification, paymentMethod: $paymentMethod, closeDate: $closeDate, paymentSchedule: $paymentSchedule, taxRate: $taxRate, commentA: $commentA, commentB: $commentB, commentC: $commentC, commentD: $commentD, commentE: $commentE, commentF: $commentF, itemCode: $itemCode, itemName: $itemName, quantity: $quantity, unit: $unit, price: $price, taxClassification: $taxClassification, taxChargeMethod: $taxChargeMethod, specialComment: $specialComment, stockNumber: $stockNumber, stockCode: $stockCode, stockQuantity: $stockQuantity, orderNumber: $orderNumber)';
+    return 'EasybizModel(skipProcess: $skipProcess, purchasingNumber: $purchasingNumber, rowNumber: $rowNumber, alignmentPattern: $alignmentPattern, departmentCode: $departmentCode, departmentName: $departmentName, personCode: $personCode, personName: $personName, printOrNot: $printOrNot, subjectNumber: $subjectNumber, purchasingDate: $purchasingDate, subject: $subject, companyCode: $companyCode, companyName: $companyName, person: $person, closePayingMethod: $closePayingMethod, paymentClassification: $paymentClassification, paymentMethod: $paymentMethod, closeDate: $closeDate, paymentSchedule: $paymentSchedule, taxRate: $taxRate, commentA: $commentA, commentB: $commentB, commentC: $commentC, commentD: $commentD, commentE: $commentE, commentF: $commentF, itemCode: $itemCode, itemName: $itemName, itemNameChild: $itemNameChild, quantity: $quantity, unit: $unit, price: $price, taxClassification: $taxClassification, taxChargeMethod: $taxChargeMethod, specialComment: $specialComment, stockNumber: $stockNumber, stockCode: $stockCode, stockQuantity: $stockQuantity, orderNumber: $orderNumber)';
   }
 
   @override
@@ -806,6 +823,8 @@ class _$_EasybizModel implements _EasybizModel {
             const DeepCollectionEquality().equals(other.commentF, commentF) &&
             const DeepCollectionEquality().equals(other.itemCode, itemCode) &&
             const DeepCollectionEquality().equals(other.itemName, itemName) &&
+            const DeepCollectionEquality()
+                .equals(other.itemNameChild, itemNameChild) &&
             const DeepCollectionEquality().equals(other.quantity, quantity) &&
             const DeepCollectionEquality().equals(other.unit, unit) &&
             const DeepCollectionEquality().equals(other.price, price) &&
@@ -857,6 +876,7 @@ class _$_EasybizModel implements _EasybizModel {
         const DeepCollectionEquality().hash(commentF),
         const DeepCollectionEquality().hash(itemCode),
         const DeepCollectionEquality().hash(itemName),
+        const DeepCollectionEquality().hash(itemNameChild),
         const DeepCollectionEquality().hash(quantity),
         const DeepCollectionEquality().hash(unit),
         const DeepCollectionEquality().hash(price),
@@ -911,6 +931,7 @@ abstract class _EasybizModel implements EasybizModel {
       final String? commentF,
       final String? itemCode,
       final String? itemName,
+      final String? itemNameChild,
       final int? quantity,
       final String? unit,
       final int? price,
@@ -984,6 +1005,8 @@ abstract class _EasybizModel implements EasybizModel {
   @override //商品コード
   String? get itemName => throw _privateConstructorUsedError;
   @override //商品名
+  String? get itemNameChild => throw _privateConstructorUsedError;
+  @override //商品名(下段)
   int? get quantity => throw _privateConstructorUsedError;
   @override //数量
   String? get unit => throw _privateConstructorUsedError;
