@@ -1,16 +1,52 @@
 # easybiz_to_yayoi
 
-A new Flutter project.
+[十八親和銀行EasyBiz](https://www.easybiz.18shinwabank.co.jp/)から会社明細CSVを読み込み、
+仕入用CSVと弥生読み込み用CSVを吐き出すものです。
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+このプロジェクトをCloneして使用するか、自分でビルドして利用ください。
 
-A few resources to get you started if this is your first Flutter project:
+Table Of Contents
+- [easybiz_to_yayoi](#easybiz_to_yayoi)
+  - [Getting Started](#getting-started)
+  - [CSVのEasyBizからの書き出しと読み込み](#csvのeasybizからの書き出しと読み込み)
+  - [EasyBizコンバーターの利用方法(読み込み)](#easybizコンバーターの利用方法読み込み)
+  - [EasyBizコンバーターの利用方法（入力・書き出し）](#easybizコンバーターの利用方法入力書き出し)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## CSVのEasyBizからの書き出しと読み込み
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. 会社明細のCSVを取得する  
+   [ログイン画面](https://portal.easybiz.18shinwabank.co.jp/login)よりログインし、
+   『販売』→『販売設定』→『仕入先』をクリック
+   ![sample](./lib/sample/ss1.png)
+   その後、『CSV出力』をクリック
+   ![ss2](./lib/sample/ss3.png)
+   これでCSVをダウンロードできます。  
+
+1. アプリを起動し、『CSV読み込み』をクリックし、先程ダウンロードしたCSVファイルを読み込みさせてください。  
+
+## EasyBizコンバーターの利用方法(読み込み)
+
+1. ダウンロードしたCSVファイルを読み込む  
+   ![](./lib/sample/ss4.png)
+
+1. 読み込みが成功したら以下の画面に遷移します。
+   ![](./lib/sample/ss6.png)
+
+## EasyBizコンバーターの利用方法（入力・書き出し）
+
+1. まず仕入日・締め日・支払い日を設定してください。
+   こちらは<b>書き出し時に必須</b>となります。
+   ![](./lib/sample/ss7.png)
+
+1. 各ブロックをクリックすると数字が編集できます。
+   ![](./lib/sample/ss8.png)
+1. また、チェックボックス☑を外すと書き出し時に外された会社は書き出しされません。
+
+1. 書き出しは下部のボタンでフォルダを選び、書き出しします。
+   書き出しファイル名はそれぞれoutputYayoi.csv , outputEasyBiz.csvとなります。
+
+   ![](./lib/sample/ss9.png)
+   同様に一時保存もこちらで利用できます。
+
