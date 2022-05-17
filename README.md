@@ -2,6 +2,8 @@
 
 [十八親和銀行EasyBiz](https://www.easybiz.18shinwabank.co.jp/)から会社明細CSVを読み込み、
 仕入用CSVと弥生読み込み用CSVを吐き出すものです。
+こちらは個人用ツールとして作成したものをOpenにしているものです。
+利用に関しては自己責任でご利用ください。
 
 ## Getting Started
 
@@ -13,6 +15,8 @@ Table Of Contents
   - [CSVのEasyBizからの書き出しと読み込み](#csvのeasybizからの書き出しと読み込み)
   - [EasyBizコンバーターの利用方法(読み込み)](#easybizコンバーターの利用方法読み込み)
   - [EasyBizコンバーターの利用方法（入力・書き出し）](#easybizコンバーターの利用方法入力書き出し)
+  - [outputEasyBiz.csvの読み込み](#outputeasybizcsvの読み込み)
+  - [outputYayoi.csvの読み込み](#outputyayoicsvの読み込み)
 
 ## CSVのEasyBizからの書き出しと読み込み
 
@@ -50,3 +54,15 @@ Table Of Contents
    ![](./lib/sample/ss9.png)
    同様に一時保存もこちらで利用できます。
 
+## outputEasyBiz.csvの読み込み
+
+1. 『販売』→『CSVインポート』→『仕入インポート』にて行なえます。
+   ![](./lib/sample/ss10.png)
+
+## outputYayoi.csvの読み込み
+
+1. 弥生インポートを利用する際はEasybizの『仕入先分類』が『買掛金』『未払費用』『未払金』のいずれかに入力されている必要があります。  
+<b>こちらが入力されてないとエラーとなりますのでご注意ください。</b>
+   ![](./lib/sample/ss11.png)
+
+1. 
