@@ -37,8 +37,8 @@ class _WelcomePageBody extends HookConsumerWidget {
                 ref.read(pathProvider.state).state = path;
                 ref.read(editModeProvider.state).state = EditMode.fromCSV;
                 print(editMode);
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (_) => CSVEditScreen()));
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (_) => CSVEditScreen()));
               } else {
                 // User canceled the picker
               }
