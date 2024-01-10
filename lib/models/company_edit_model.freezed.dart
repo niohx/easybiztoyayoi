@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'company_edit_model.dart';
 
@@ -32,55 +32,62 @@ mixin _$Journal {
 /// @nodoc
 abstract class $JournalCopyWith<$Res> {
   factory $JournalCopyWith(Journal value, $Res Function(Journal) then) =
-      _$JournalCopyWithImpl<$Res>;
+      _$JournalCopyWithImpl<$Res, Journal>;
+  @useResult
   $Res call({CompanyModel company, int price, bool willExport});
 
   $CompanyModelCopyWith<$Res> get company;
 }
 
 /// @nodoc
-class _$JournalCopyWithImpl<$Res> implements $JournalCopyWith<$Res> {
+class _$JournalCopyWithImpl<$Res, $Val extends Journal>
+    implements $JournalCopyWith<$Res> {
   _$JournalCopyWithImpl(this._value, this._then);
 
-  final Journal _value;
   // ignore: unused_field
-  final $Res Function(Journal) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? company = freezed,
-    Object? price = freezed,
-    Object? willExport = freezed,
+    Object? company = null,
+    Object? price = null,
+    Object? willExport = null,
   }) {
     return _then(_value.copyWith(
-      company: company == freezed
+      company: null == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as CompanyModel,
-      price: price == freezed
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
-      willExport: willExport == freezed
+      willExport: null == willExport
           ? _value.willExport
           : willExport // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CompanyModelCopyWith<$Res> get company {
     return $CompanyModelCopyWith<$Res>(_value.company, (value) {
-      return _then(_value.copyWith(company: value));
+      return _then(_value.copyWith(company: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$JournalCopyWith<$Res> implements $JournalCopyWith<$Res> {
-  factory _$JournalCopyWith(_Journal value, $Res Function(_Journal) then) =
-      __$JournalCopyWithImpl<$Res>;
+abstract class _$$JournalImplCopyWith<$Res> implements $JournalCopyWith<$Res> {
+  factory _$$JournalImplCopyWith(
+          _$JournalImpl value, $Res Function(_$JournalImpl) then) =
+      __$$JournalImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({CompanyModel company, int price, bool willExport});
 
   @override
@@ -88,30 +95,30 @@ abstract class _$JournalCopyWith<$Res> implements $JournalCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$JournalCopyWithImpl<$Res> extends _$JournalCopyWithImpl<$Res>
-    implements _$JournalCopyWith<$Res> {
-  __$JournalCopyWithImpl(_Journal _value, $Res Function(_Journal) _then)
-      : super(_value, (v) => _then(v as _Journal));
+class __$$JournalImplCopyWithImpl<$Res>
+    extends _$JournalCopyWithImpl<$Res, _$JournalImpl>
+    implements _$$JournalImplCopyWith<$Res> {
+  __$$JournalImplCopyWithImpl(
+      _$JournalImpl _value, $Res Function(_$JournalImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Journal get _value => super._value as _Journal;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? company = freezed,
-    Object? price = freezed,
-    Object? willExport = freezed,
+    Object? company = null,
+    Object? price = null,
+    Object? willExport = null,
   }) {
-    return _then(_Journal(
-      company: company == freezed
+    return _then(_$JournalImpl(
+      company: null == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as CompanyModel,
-      price: price == freezed
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
-      willExport: willExport == freezed
+      willExport: null == willExport
           ? _value.willExport
           : willExport // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -122,11 +129,12 @@ class __$JournalCopyWithImpl<$Res> extends _$JournalCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_Journal implements _Journal {
-  _$_Journal({required this.company, this.price = 0, this.willExport = true});
+class _$JournalImpl implements _Journal {
+  _$JournalImpl(
+      {required this.company, this.price = 0, this.willExport = true});
 
-  factory _$_Journal.fromJson(Map<String, dynamic> json) =>
-      _$$_JournalFromJson(json);
+  factory _$JournalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$JournalImplFromJson(json);
 
   @override
   final CompanyModel company;
@@ -145,32 +153,31 @@ class _$_Journal implements _Journal {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Journal &&
-            const DeepCollectionEquality().equals(other.company, company) &&
-            const DeepCollectionEquality().equals(other.price, price) &&
-            const DeepCollectionEquality()
-                .equals(other.willExport, willExport));
+            other is _$JournalImpl &&
+            (identical(other.company, company) || other.company == company) &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.willExport, willExport) ||
+                other.willExport == willExport));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(company),
-      const DeepCollectionEquality().hash(price),
-      const DeepCollectionEquality().hash(willExport));
+  int get hashCode => Object.hash(runtimeType, company, price, willExport);
 
   @JsonKey(ignore: true)
   @override
-  _$JournalCopyWith<_Journal> get copyWith =>
-      __$JournalCopyWithImpl<_Journal>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$JournalImplCopyWith<_$JournalImpl> get copyWith =>
+      __$$JournalImplCopyWithImpl<_$JournalImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_JournalToJson(this);
+    return _$$JournalImplToJson(
+      this,
+    );
   }
 }
 
@@ -178,18 +185,18 @@ abstract class _Journal implements Journal {
   factory _Journal(
       {required final CompanyModel company,
       final int price,
-      final bool willExport}) = _$_Journal;
+      final bool willExport}) = _$JournalImpl;
 
-  factory _Journal.fromJson(Map<String, dynamic> json) = _$_Journal.fromJson;
+  factory _Journal.fromJson(Map<String, dynamic> json) = _$JournalImpl.fromJson;
 
   @override
-  CompanyModel get company => throw _privateConstructorUsedError;
+  CompanyModel get company;
   @override //会社
-  int get price => throw _privateConstructorUsedError;
+  int get price;
   @override //金額
-  bool get willExport => throw _privateConstructorUsedError;
+  bool get willExport;
   @override
   @JsonKey(ignore: true)
-  _$JournalCopyWith<_Journal> get copyWith =>
+  _$$JournalImplCopyWith<_$JournalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

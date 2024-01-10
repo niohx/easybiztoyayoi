@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'yayoi_model.dart';
 
@@ -56,7 +56,8 @@ mixin _$YayoiModel {
 abstract class $YayoiModelCopyWith<$Res> {
   factory $YayoiModelCopyWith(
           YayoiModel value, $Res Function(YayoiModel) then) =
-      _$YayoiModelCopyWithImpl<$Res>;
+      _$YayoiModelCopyWithImpl<$Res, YayoiModel>;
+  @useResult
   $Res call(
       {String regFlag,
       int? slipNumber,
@@ -86,152 +87,157 @@ abstract class $YayoiModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$YayoiModelCopyWithImpl<$Res> implements $YayoiModelCopyWith<$Res> {
+class _$YayoiModelCopyWithImpl<$Res, $Val extends YayoiModel>
+    implements $YayoiModelCopyWith<$Res> {
   _$YayoiModelCopyWithImpl(this._value, this._then);
 
-  final YayoiModel _value;
   // ignore: unused_field
-  final $Res Function(YayoiModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? regFlag = freezed,
+    Object? regFlag = null,
     Object? slipNumber = freezed,
     Object? settle = freezed,
-    Object? transactionDate = freezed,
-    Object? debitAccount = freezed,
+    Object? transactionDate = null,
+    Object? debitAccount = null,
     Object? debitChildAccount = freezed,
     Object? debitDepartment = freezed,
-    Object? debitTaxClass = freezed,
-    Object? debitPrice = freezed,
+    Object? debitTaxClass = null,
+    Object? debitPrice = null,
     Object? debitTaxPrice = freezed,
-    Object? creditAccount = freezed,
+    Object? creditAccount = null,
     Object? creditChildAccount = freezed,
     Object? creditDepartment = freezed,
-    Object? creditTaxClass = freezed,
-    Object? creditPrice = freezed,
+    Object? creditTaxClass = null,
+    Object? creditPrice = null,
     Object? creditTaxPrice = freezed,
     Object? comment = freezed,
     Object? childNumber = freezed,
     Object? limitDate = freezed,
-    Object? dataType = freezed,
+    Object? dataType = null,
     Object? generateFrom = freezed,
     Object? memo = freezed,
     Object? commentA = freezed,
     Object? commentB = freezed,
-    Object? adjustment = freezed,
+    Object? adjustment = null,
   }) {
     return _then(_value.copyWith(
-      regFlag: regFlag == freezed
+      regFlag: null == regFlag
           ? _value.regFlag
           : regFlag // ignore: cast_nullable_to_non_nullable
               as String,
-      slipNumber: slipNumber == freezed
+      slipNumber: freezed == slipNumber
           ? _value.slipNumber
           : slipNumber // ignore: cast_nullable_to_non_nullable
               as int?,
-      settle: settle == freezed
+      settle: freezed == settle
           ? _value.settle
           : settle // ignore: cast_nullable_to_non_nullable
               as String?,
-      transactionDate: transactionDate == freezed
+      transactionDate: null == transactionDate
           ? _value.transactionDate
           : transactionDate // ignore: cast_nullable_to_non_nullable
               as String,
-      debitAccount: debitAccount == freezed
+      debitAccount: null == debitAccount
           ? _value.debitAccount
           : debitAccount // ignore: cast_nullable_to_non_nullable
               as String,
-      debitChildAccount: debitChildAccount == freezed
+      debitChildAccount: freezed == debitChildAccount
           ? _value.debitChildAccount
           : debitChildAccount // ignore: cast_nullable_to_non_nullable
               as String?,
-      debitDepartment: debitDepartment == freezed
+      debitDepartment: freezed == debitDepartment
           ? _value.debitDepartment
           : debitDepartment // ignore: cast_nullable_to_non_nullable
               as String?,
-      debitTaxClass: debitTaxClass == freezed
+      debitTaxClass: null == debitTaxClass
           ? _value.debitTaxClass
           : debitTaxClass // ignore: cast_nullable_to_non_nullable
               as String,
-      debitPrice: debitPrice == freezed
+      debitPrice: null == debitPrice
           ? _value.debitPrice
           : debitPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      debitTaxPrice: debitTaxPrice == freezed
+      debitTaxPrice: freezed == debitTaxPrice
           ? _value.debitTaxPrice
           : debitTaxPrice // ignore: cast_nullable_to_non_nullable
               as int?,
-      creditAccount: creditAccount == freezed
+      creditAccount: null == creditAccount
           ? _value.creditAccount
           : creditAccount // ignore: cast_nullable_to_non_nullable
               as String,
-      creditChildAccount: creditChildAccount == freezed
+      creditChildAccount: freezed == creditChildAccount
           ? _value.creditChildAccount
           : creditChildAccount // ignore: cast_nullable_to_non_nullable
               as String?,
-      creditDepartment: creditDepartment == freezed
+      creditDepartment: freezed == creditDepartment
           ? _value.creditDepartment
           : creditDepartment // ignore: cast_nullable_to_non_nullable
               as String?,
-      creditTaxClass: creditTaxClass == freezed
+      creditTaxClass: null == creditTaxClass
           ? _value.creditTaxClass
           : creditTaxClass // ignore: cast_nullable_to_non_nullable
               as String,
-      creditPrice: creditPrice == freezed
+      creditPrice: null == creditPrice
           ? _value.creditPrice
           : creditPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      creditTaxPrice: creditTaxPrice == freezed
+      creditTaxPrice: freezed == creditTaxPrice
           ? _value.creditTaxPrice
           : creditTaxPrice // ignore: cast_nullable_to_non_nullable
               as int?,
-      comment: comment == freezed
+      comment: freezed == comment
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      childNumber: childNumber == freezed
+      childNumber: freezed == childNumber
           ? _value.childNumber
           : childNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      limitDate: limitDate == freezed
+      limitDate: freezed == limitDate
           ? _value.limitDate
           : limitDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      dataType: dataType == freezed
+      dataType: null == dataType
           ? _value.dataType
           : dataType // ignore: cast_nullable_to_non_nullable
               as int,
-      generateFrom: generateFrom == freezed
+      generateFrom: freezed == generateFrom
           ? _value.generateFrom
           : generateFrom // ignore: cast_nullable_to_non_nullable
               as String?,
-      memo: memo == freezed
+      memo: freezed == memo
           ? _value.memo
           : memo // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentA: commentA == freezed
+      commentA: freezed == commentA
           ? _value.commentA
           : commentA // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentB: commentB == freezed
+      commentB: freezed == commentB
           ? _value.commentB
           : commentB // ignore: cast_nullable_to_non_nullable
               as String?,
-      adjustment: adjustment == freezed
+      adjustment: null == adjustment
           ? _value.adjustment
           : adjustment // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$YayoiModelCopyWith<$Res> implements $YayoiModelCopyWith<$Res> {
-  factory _$YayoiModelCopyWith(
-          _YayoiModel value, $Res Function(_YayoiModel) then) =
-      __$YayoiModelCopyWithImpl<$Res>;
+abstract class _$$YayoiModelImplCopyWith<$Res>
+    implements $YayoiModelCopyWith<$Res> {
+  factory _$$YayoiModelImplCopyWith(
+          _$YayoiModelImpl value, $Res Function(_$YayoiModelImpl) then) =
+      __$$YayoiModelImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String regFlag,
       int? slipNumber,
@@ -261,141 +267,140 @@ abstract class _$YayoiModelCopyWith<$Res> implements $YayoiModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$YayoiModelCopyWithImpl<$Res> extends _$YayoiModelCopyWithImpl<$Res>
-    implements _$YayoiModelCopyWith<$Res> {
-  __$YayoiModelCopyWithImpl(
-      _YayoiModel _value, $Res Function(_YayoiModel) _then)
-      : super(_value, (v) => _then(v as _YayoiModel));
+class __$$YayoiModelImplCopyWithImpl<$Res>
+    extends _$YayoiModelCopyWithImpl<$Res, _$YayoiModelImpl>
+    implements _$$YayoiModelImplCopyWith<$Res> {
+  __$$YayoiModelImplCopyWithImpl(
+      _$YayoiModelImpl _value, $Res Function(_$YayoiModelImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _YayoiModel get _value => super._value as _YayoiModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? regFlag = freezed,
+    Object? regFlag = null,
     Object? slipNumber = freezed,
     Object? settle = freezed,
-    Object? transactionDate = freezed,
-    Object? debitAccount = freezed,
+    Object? transactionDate = null,
+    Object? debitAccount = null,
     Object? debitChildAccount = freezed,
     Object? debitDepartment = freezed,
-    Object? debitTaxClass = freezed,
-    Object? debitPrice = freezed,
+    Object? debitTaxClass = null,
+    Object? debitPrice = null,
     Object? debitTaxPrice = freezed,
-    Object? creditAccount = freezed,
+    Object? creditAccount = null,
     Object? creditChildAccount = freezed,
     Object? creditDepartment = freezed,
-    Object? creditTaxClass = freezed,
-    Object? creditPrice = freezed,
+    Object? creditTaxClass = null,
+    Object? creditPrice = null,
     Object? creditTaxPrice = freezed,
     Object? comment = freezed,
     Object? childNumber = freezed,
     Object? limitDate = freezed,
-    Object? dataType = freezed,
+    Object? dataType = null,
     Object? generateFrom = freezed,
     Object? memo = freezed,
     Object? commentA = freezed,
     Object? commentB = freezed,
-    Object? adjustment = freezed,
+    Object? adjustment = null,
   }) {
-    return _then(_YayoiModel(
-      regFlag: regFlag == freezed
+    return _then(_$YayoiModelImpl(
+      regFlag: null == regFlag
           ? _value.regFlag
           : regFlag // ignore: cast_nullable_to_non_nullable
               as String,
-      slipNumber: slipNumber == freezed
+      slipNumber: freezed == slipNumber
           ? _value.slipNumber
           : slipNumber // ignore: cast_nullable_to_non_nullable
               as int?,
-      settle: settle == freezed
+      settle: freezed == settle
           ? _value.settle
           : settle // ignore: cast_nullable_to_non_nullable
               as String?,
-      transactionDate: transactionDate == freezed
+      transactionDate: null == transactionDate
           ? _value.transactionDate
           : transactionDate // ignore: cast_nullable_to_non_nullable
               as String,
-      debitAccount: debitAccount == freezed
+      debitAccount: null == debitAccount
           ? _value.debitAccount
           : debitAccount // ignore: cast_nullable_to_non_nullable
               as String,
-      debitChildAccount: debitChildAccount == freezed
+      debitChildAccount: freezed == debitChildAccount
           ? _value.debitChildAccount
           : debitChildAccount // ignore: cast_nullable_to_non_nullable
               as String?,
-      debitDepartment: debitDepartment == freezed
+      debitDepartment: freezed == debitDepartment
           ? _value.debitDepartment
           : debitDepartment // ignore: cast_nullable_to_non_nullable
               as String?,
-      debitTaxClass: debitTaxClass == freezed
+      debitTaxClass: null == debitTaxClass
           ? _value.debitTaxClass
           : debitTaxClass // ignore: cast_nullable_to_non_nullable
               as String,
-      debitPrice: debitPrice == freezed
+      debitPrice: null == debitPrice
           ? _value.debitPrice
           : debitPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      debitTaxPrice: debitTaxPrice == freezed
+      debitTaxPrice: freezed == debitTaxPrice
           ? _value.debitTaxPrice
           : debitTaxPrice // ignore: cast_nullable_to_non_nullable
               as int?,
-      creditAccount: creditAccount == freezed
+      creditAccount: null == creditAccount
           ? _value.creditAccount
           : creditAccount // ignore: cast_nullable_to_non_nullable
               as String,
-      creditChildAccount: creditChildAccount == freezed
+      creditChildAccount: freezed == creditChildAccount
           ? _value.creditChildAccount
           : creditChildAccount // ignore: cast_nullable_to_non_nullable
               as String?,
-      creditDepartment: creditDepartment == freezed
+      creditDepartment: freezed == creditDepartment
           ? _value.creditDepartment
           : creditDepartment // ignore: cast_nullable_to_non_nullable
               as String?,
-      creditTaxClass: creditTaxClass == freezed
+      creditTaxClass: null == creditTaxClass
           ? _value.creditTaxClass
           : creditTaxClass // ignore: cast_nullable_to_non_nullable
               as String,
-      creditPrice: creditPrice == freezed
+      creditPrice: null == creditPrice
           ? _value.creditPrice
           : creditPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      creditTaxPrice: creditTaxPrice == freezed
+      creditTaxPrice: freezed == creditTaxPrice
           ? _value.creditTaxPrice
           : creditTaxPrice // ignore: cast_nullable_to_non_nullable
               as int?,
-      comment: comment == freezed
+      comment: freezed == comment
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      childNumber: childNumber == freezed
+      childNumber: freezed == childNumber
           ? _value.childNumber
           : childNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      limitDate: limitDate == freezed
+      limitDate: freezed == limitDate
           ? _value.limitDate
           : limitDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      dataType: dataType == freezed
+      dataType: null == dataType
           ? _value.dataType
           : dataType // ignore: cast_nullable_to_non_nullable
               as int,
-      generateFrom: generateFrom == freezed
+      generateFrom: freezed == generateFrom
           ? _value.generateFrom
           : generateFrom // ignore: cast_nullable_to_non_nullable
               as String?,
-      memo: memo == freezed
+      memo: freezed == memo
           ? _value.memo
           : memo // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentA: commentA == freezed
+      commentA: freezed == commentA
           ? _value.commentA
           : commentA // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentB: commentB == freezed
+      commentB: freezed == commentB
           ? _value.commentB
           : commentB // ignore: cast_nullable_to_non_nullable
               as String?,
-      adjustment: adjustment == freezed
+      adjustment: null == adjustment
           ? _value.adjustment
           : adjustment // ignore: cast_nullable_to_non_nullable
               as String,
@@ -405,8 +410,8 @@ class __$YayoiModelCopyWithImpl<$Res> extends _$YayoiModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_YayoiModel implements _YayoiModel {
-  _$_YayoiModel(
+class _$YayoiModelImpl implements _YayoiModel {
+  _$YayoiModelImpl(
       {required this.regFlag,
       this.slipNumber,
       this.settle,
@@ -433,8 +438,8 @@ class _$_YayoiModel implements _YayoiModel {
       this.commentB,
       required this.adjustment});
 
-  factory _$_YayoiModel.fromJson(Map<String, dynamic> json) =>
-      _$$_YayoiModelFromJson(json);
+  factory _$YayoiModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$YayoiModelImplFromJson(json);
 
   @override
   final String regFlag;
@@ -517,93 +522,100 @@ class _$_YayoiModel implements _YayoiModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _YayoiModel &&
-            const DeepCollectionEquality().equals(other.regFlag, regFlag) &&
-            const DeepCollectionEquality()
-                .equals(other.slipNumber, slipNumber) &&
-            const DeepCollectionEquality().equals(other.settle, settle) &&
-            const DeepCollectionEquality()
-                .equals(other.transactionDate, transactionDate) &&
-            const DeepCollectionEquality()
-                .equals(other.debitAccount, debitAccount) &&
-            const DeepCollectionEquality()
-                .equals(other.debitChildAccount, debitChildAccount) &&
-            const DeepCollectionEquality()
-                .equals(other.debitDepartment, debitDepartment) &&
-            const DeepCollectionEquality()
-                .equals(other.debitTaxClass, debitTaxClass) &&
-            const DeepCollectionEquality()
-                .equals(other.debitPrice, debitPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.debitTaxPrice, debitTaxPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.creditAccount, creditAccount) &&
-            const DeepCollectionEquality()
-                .equals(other.creditChildAccount, creditChildAccount) &&
-            const DeepCollectionEquality()
-                .equals(other.creditDepartment, creditDepartment) &&
-            const DeepCollectionEquality()
-                .equals(other.creditTaxClass, creditTaxClass) &&
-            const DeepCollectionEquality()
-                .equals(other.creditPrice, creditPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.creditTaxPrice, creditTaxPrice) &&
-            const DeepCollectionEquality().equals(other.comment, comment) &&
-            const DeepCollectionEquality()
-                .equals(other.childNumber, childNumber) &&
-            const DeepCollectionEquality().equals(other.limitDate, limitDate) &&
-            const DeepCollectionEquality().equals(other.dataType, dataType) &&
-            const DeepCollectionEquality()
-                .equals(other.generateFrom, generateFrom) &&
-            const DeepCollectionEquality().equals(other.memo, memo) &&
-            const DeepCollectionEquality().equals(other.commentA, commentA) &&
-            const DeepCollectionEquality().equals(other.commentB, commentB) &&
-            const DeepCollectionEquality()
-                .equals(other.adjustment, adjustment));
+            other is _$YayoiModelImpl &&
+            (identical(other.regFlag, regFlag) || other.regFlag == regFlag) &&
+            (identical(other.slipNumber, slipNumber) ||
+                other.slipNumber == slipNumber) &&
+            (identical(other.settle, settle) || other.settle == settle) &&
+            (identical(other.transactionDate, transactionDate) ||
+                other.transactionDate == transactionDate) &&
+            (identical(other.debitAccount, debitAccount) ||
+                other.debitAccount == debitAccount) &&
+            (identical(other.debitChildAccount, debitChildAccount) ||
+                other.debitChildAccount == debitChildAccount) &&
+            (identical(other.debitDepartment, debitDepartment) ||
+                other.debitDepartment == debitDepartment) &&
+            (identical(other.debitTaxClass, debitTaxClass) ||
+                other.debitTaxClass == debitTaxClass) &&
+            (identical(other.debitPrice, debitPrice) ||
+                other.debitPrice == debitPrice) &&
+            (identical(other.debitTaxPrice, debitTaxPrice) ||
+                other.debitTaxPrice == debitTaxPrice) &&
+            (identical(other.creditAccount, creditAccount) ||
+                other.creditAccount == creditAccount) &&
+            (identical(other.creditChildAccount, creditChildAccount) ||
+                other.creditChildAccount == creditChildAccount) &&
+            (identical(other.creditDepartment, creditDepartment) ||
+                other.creditDepartment == creditDepartment) &&
+            (identical(other.creditTaxClass, creditTaxClass) ||
+                other.creditTaxClass == creditTaxClass) &&
+            (identical(other.creditPrice, creditPrice) ||
+                other.creditPrice == creditPrice) &&
+            (identical(other.creditTaxPrice, creditTaxPrice) ||
+                other.creditTaxPrice == creditTaxPrice) &&
+            (identical(other.comment, comment) || other.comment == comment) &&
+            (identical(other.childNumber, childNumber) ||
+                other.childNumber == childNumber) &&
+            (identical(other.limitDate, limitDate) ||
+                other.limitDate == limitDate) &&
+            (identical(other.dataType, dataType) ||
+                other.dataType == dataType) &&
+            (identical(other.generateFrom, generateFrom) ||
+                other.generateFrom == generateFrom) &&
+            (identical(other.memo, memo) || other.memo == memo) &&
+            (identical(other.commentA, commentA) ||
+                other.commentA == commentA) &&
+            (identical(other.commentB, commentB) ||
+                other.commentB == commentB) &&
+            (identical(other.adjustment, adjustment) ||
+                other.adjustment == adjustment));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(regFlag),
-        const DeepCollectionEquality().hash(slipNumber),
-        const DeepCollectionEquality().hash(settle),
-        const DeepCollectionEquality().hash(transactionDate),
-        const DeepCollectionEquality().hash(debitAccount),
-        const DeepCollectionEquality().hash(debitChildAccount),
-        const DeepCollectionEquality().hash(debitDepartment),
-        const DeepCollectionEquality().hash(debitTaxClass),
-        const DeepCollectionEquality().hash(debitPrice),
-        const DeepCollectionEquality().hash(debitTaxPrice),
-        const DeepCollectionEquality().hash(creditAccount),
-        const DeepCollectionEquality().hash(creditChildAccount),
-        const DeepCollectionEquality().hash(creditDepartment),
-        const DeepCollectionEquality().hash(creditTaxClass),
-        const DeepCollectionEquality().hash(creditPrice),
-        const DeepCollectionEquality().hash(creditTaxPrice),
-        const DeepCollectionEquality().hash(comment),
-        const DeepCollectionEquality().hash(childNumber),
-        const DeepCollectionEquality().hash(limitDate),
-        const DeepCollectionEquality().hash(dataType),
-        const DeepCollectionEquality().hash(generateFrom),
-        const DeepCollectionEquality().hash(memo),
-        const DeepCollectionEquality().hash(commentA),
-        const DeepCollectionEquality().hash(commentB),
-        const DeepCollectionEquality().hash(adjustment)
+        regFlag,
+        slipNumber,
+        settle,
+        transactionDate,
+        debitAccount,
+        debitChildAccount,
+        debitDepartment,
+        debitTaxClass,
+        debitPrice,
+        debitTaxPrice,
+        creditAccount,
+        creditChildAccount,
+        creditDepartment,
+        creditTaxClass,
+        creditPrice,
+        creditTaxPrice,
+        comment,
+        childNumber,
+        limitDate,
+        dataType,
+        generateFrom,
+        memo,
+        commentA,
+        commentB,
+        adjustment
       ]);
 
   @JsonKey(ignore: true)
   @override
-  _$YayoiModelCopyWith<_YayoiModel> get copyWith =>
-      __$YayoiModelCopyWithImpl<_YayoiModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$YayoiModelImplCopyWith<_$YayoiModelImpl> get copyWith =>
+      __$$YayoiModelImplCopyWithImpl<_$YayoiModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_YayoiModelToJson(this);
+    return _$$YayoiModelImplToJson(
+      this,
+    );
   }
 }
 
@@ -633,63 +645,63 @@ abstract class _YayoiModel implements YayoiModel {
       final String? memo,
       final String? commentA,
       final String? commentB,
-      required final String adjustment}) = _$_YayoiModel;
+      required final String adjustment}) = _$YayoiModelImpl;
 
   factory _YayoiModel.fromJson(Map<String, dynamic> json) =
-      _$_YayoiModel.fromJson;
+      _$YayoiModelImpl.fromJson;
 
   @override
-  String get regFlag => throw _privateConstructorUsedError;
+  String get regFlag;
   @override //識別フラグ
-  int? get slipNumber => throw _privateConstructorUsedError;
+  int? get slipNumber;
   @override //伝票番号
-  String? get settle => throw _privateConstructorUsedError;
+  String? get settle;
   @override // 決算仕訳
-  String get transactionDate => throw _privateConstructorUsedError;
+  String get transactionDate;
   @override //取引日付
-  String get debitAccount => throw _privateConstructorUsedError;
+  String get debitAccount;
   @override //借方勘定科目
-  String? get debitChildAccount => throw _privateConstructorUsedError;
+  String? get debitChildAccount;
   @override //借方補助科目
-  String? get debitDepartment => throw _privateConstructorUsedError;
+  String? get debitDepartment;
   @override //借方部門
-  String get debitTaxClass => throw _privateConstructorUsedError;
+  String get debitTaxClass;
   @override //借方税区分
-  int get debitPrice => throw _privateConstructorUsedError;
+  int get debitPrice;
   @override //借方金額
-  int? get debitTaxPrice => throw _privateConstructorUsedError;
+  int? get debitTaxPrice;
   @override //借方税金額
-  String get creditAccount => throw _privateConstructorUsedError;
+  String get creditAccount;
   @override //貸方勘定科目
-  String? get creditChildAccount => throw _privateConstructorUsedError;
+  String? get creditChildAccount;
   @override //貸方補助科目
-  String? get creditDepartment => throw _privateConstructorUsedError;
+  String? get creditDepartment;
   @override //貸方部門
-  String get creditTaxClass => throw _privateConstructorUsedError;
+  String get creditTaxClass;
   @override //貸方税区分
-  int get creditPrice => throw _privateConstructorUsedError;
+  int get creditPrice;
   @override //貸方金額
-  int? get creditTaxPrice => throw _privateConstructorUsedError;
+  int? get creditTaxPrice;
   @override //貸方税金額
-  String? get comment => throw _privateConstructorUsedError;
+  String? get comment;
   @override //摘要
-  String? get childNumber => throw _privateConstructorUsedError;
+  String? get childNumber;
   @override //番号
-  String? get limitDate => throw _privateConstructorUsedError;
+  String? get limitDate;
   @override //期日
-  int get dataType => throw _privateConstructorUsedError;
+  int get dataType;
   @override //タイプ
-  String? get generateFrom => throw _privateConstructorUsedError;
+  String? get generateFrom;
   @override //生成元
-  String? get memo => throw _privateConstructorUsedError;
+  String? get memo;
   @override //仕訳メモ
-  String? get commentA => throw _privateConstructorUsedError;
+  String? get commentA;
   @override //付箋１
-  String? get commentB => throw _privateConstructorUsedError;
+  String? get commentB;
   @override //付箋２
-  String get adjustment => throw _privateConstructorUsedError;
+  String get adjustment;
   @override
   @JsonKey(ignore: true)
-  _$YayoiModelCopyWith<_YayoiModel> get copyWith =>
+  _$$YayoiModelImplCopyWith<_$YayoiModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

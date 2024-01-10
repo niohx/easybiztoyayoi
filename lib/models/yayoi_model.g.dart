@@ -6,8 +6,8 @@ part of 'yayoi_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_YayoiModel _$$_YayoiModelFromJson(Map<String, dynamic> json) =>
-    _$_YayoiModel(
+_$YayoiModelImpl _$$YayoiModelImplFromJson(Map<String, dynamic> json) =>
+    _$YayoiModelImpl(
       regFlag: json['regFlag'] as String,
       slipNumber: json['slipNumber'] as int?,
       settle: json['settle'] as String?,
@@ -35,7 +35,7 @@ _$_YayoiModel _$$_YayoiModelFromJson(Map<String, dynamic> json) =>
       adjustment: json['adjustment'] as String,
     );
 
-Map<String, dynamic> _$$_YayoiModelToJson(_$_YayoiModel instance) =>
+Map<String, dynamic> _$$YayoiModelImplToJson(_$YayoiModelImpl instance) =>
     <String, dynamic>{
       'regFlag': instance.regFlag,
       'slipNumber': instance.slipNumber,

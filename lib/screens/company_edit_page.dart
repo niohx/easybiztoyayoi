@@ -31,10 +31,10 @@ class CSVEditScreen extends HookConsumerWidget {
                 },
                 autofocus: true,
                 cursorColor: Colors.white,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
+                // style: const TextStyle(
+                //   color: Colors.white,
+                //   fontSize: 20,
+                // ),
                 textInputAction: TextInputAction.search,
                 decoration: const InputDecoration(
                   enabledBorder: UnderlineInputBorder(

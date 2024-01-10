@@ -6,7 +6,8 @@ part of 'journals_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Journals _$$_JournalsFromJson(Map<String, dynamic> json) => _$_Journals(
+_$JournalsImpl _$$JournalsImplFromJson(Map<String, dynamic> json) =>
+    _$JournalsImpl(
       purchasingDate: json['purchasingDate'] == null
           ? null
           : DateTime.parse(json['purchasingDate'] as String),
@@ -25,7 +26,7 @@ _$_Journals _$$_JournalsFromJson(Map<String, dynamic> json) => _$_Journals(
           const [],
     );
 
-Map<String, dynamic> _$$_JournalsToJson(_$_Journals instance) =>
+Map<String, dynamic> _$$JournalsImplToJson(_$JournalsImpl instance) =>
     <String, dynamic>{
       'purchasingDate': instance.purchasingDate?.toIso8601String(),
       'closeDate': instance.closeDate?.toIso8601String(),

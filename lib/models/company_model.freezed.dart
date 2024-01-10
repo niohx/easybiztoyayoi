@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'company_model.dart';
 
@@ -88,7 +88,8 @@ mixin _$CompanyModel {
 abstract class $CompanyModelCopyWith<$Res> {
   factory $CompanyModelCopyWith(
           CompanyModel value, $Res Function(CompanyModel) then) =
-      _$CompanyModelCopyWithImpl<$Res>;
+      _$CompanyModelCopyWithImpl<$Res, CompanyModel>;
+  @useResult
   $Res call(
       {String? EDI,
       String companyCode,
@@ -142,24 +143,27 @@ abstract class $CompanyModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
+class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
+    implements $CompanyModelCopyWith<$Res> {
   _$CompanyModelCopyWithImpl(this._value, this._then);
 
-  final CompanyModel _value;
   // ignore: unused_field
-  final $Res Function(CompanyModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? EDI = freezed,
-    Object? companyCode = freezed,
-    Object? order = freezed,
-    Object? classification = freezed,
+    Object? companyCode = null,
+    Object? order = null,
+    Object? classification = null,
     Object? companyNumber = freezed,
     Object? companyChildNumber = freezed,
     Object? invoiceNumber = freezed,
-    Object? kubun = freezed,
-    Object? companyName = freezed,
+    Object? kubun = null,
+    Object? companyName = null,
     Object? companyKana = freezed,
     Object? companyAbbriviation = freezed,
     Object? kojin = freezed,
@@ -202,213 +206,214 @@ class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
     Object? applicable = freezed,
   }) {
     return _then(_value.copyWith(
-      EDI: EDI == freezed
+      EDI: freezed == EDI
           ? _value.EDI
           : EDI // ignore: cast_nullable_to_non_nullable
               as String?,
-      companyCode: companyCode == freezed
+      companyCode: null == companyCode
           ? _value.companyCode
           : companyCode // ignore: cast_nullable_to_non_nullable
               as String,
-      order: order == freezed
+      order: null == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as String,
-      classification: classification == freezed
+      classification: null == classification
           ? _value.classification
           : classification // ignore: cast_nullable_to_non_nullable
               as String,
-      companyNumber: companyNumber == freezed
+      companyNumber: freezed == companyNumber
           ? _value.companyNumber
           : companyNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      companyChildNumber: companyChildNumber == freezed
+      companyChildNumber: freezed == companyChildNumber
           ? _value.companyChildNumber
           : companyChildNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      invoiceNumber: invoiceNumber == freezed
+      invoiceNumber: freezed == invoiceNumber
           ? _value.invoiceNumber
           : invoiceNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      kubun: kubun == freezed
+      kubun: null == kubun
           ? _value.kubun
           : kubun // ignore: cast_nullable_to_non_nullable
               as String,
-      companyName: companyName == freezed
+      companyName: null == companyName
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
               as String,
-      companyKana: companyKana == freezed
+      companyKana: freezed == companyKana
           ? _value.companyKana
           : companyKana // ignore: cast_nullable_to_non_nullable
               as String?,
-      companyAbbriviation: companyAbbriviation == freezed
+      companyAbbriviation: freezed == companyAbbriviation
           ? _value.companyAbbriviation
           : companyAbbriviation // ignore: cast_nullable_to_non_nullable
               as String?,
-      kojin: kojin == freezed
+      kojin: freezed == kojin
           ? _value.kojin
           : kojin // ignore: cast_nullable_to_non_nullable
               as String?,
-      postalcode: postalcode == freezed
+      postalcode: freezed == postalcode
           ? _value.postalcode
           : postalcode // ignore: cast_nullable_to_non_nullable
               as String?,
-      postalcodeChild: postalcodeChild == freezed
+      postalcodeChild: freezed == postalcodeChild
           ? _value.postalcodeChild
           : postalcodeChild // ignore: cast_nullable_to_non_nullable
               as String?,
-      addressA: addressA == freezed
+      addressA: freezed == addressA
           ? _value.addressA
           : addressA // ignore: cast_nullable_to_non_nullable
               as String?,
-      addressB: addressB == freezed
+      addressB: freezed == addressB
           ? _value.addressB
           : addressB // ignore: cast_nullable_to_non_nullable
               as String?,
-      person: person == freezed
+      person: freezed == person
           ? _value.person
           : person // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneNumberA: phoneNumberA == freezed
+      phoneNumberA: freezed == phoneNumberA
           ? _value.phoneNumberA
           : phoneNumberA // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneNumberB: phoneNumberB == freezed
+      phoneNumberB: freezed == phoneNumberB
           ? _value.phoneNumberB
           : phoneNumberB // ignore: cast_nullable_to_non_nullable
               as String?,
-      faxNumber: faxNumber == freezed
+      faxNumber: freezed == faxNumber
           ? _value.faxNumber
           : faxNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      URI: URI == freezed
+      URI: freezed == URI
           ? _value.URI
           : URI // ignore: cast_nullable_to_non_nullable
               as String?,
-      responsiblePerson: responsiblePerson == freezed
+      responsiblePerson: freezed == responsiblePerson
           ? _value.responsiblePerson
           : responsiblePerson // ignore: cast_nullable_to_non_nullable
               as String?,
-      payClass: payClass == freezed
+      payClass: freezed == payClass
           ? _value.payClass
           : payClass // ignore: cast_nullable_to_non_nullable
               as String?,
-      closeGroup: closeGroup == freezed
+      closeGroup: freezed == closeGroup
           ? _value.closeGroup
           : closeGroup // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentConstant: paymentConstant == freezed
+      paymentConstant: freezed == paymentConstant
           ? _value.paymentConstant
           : paymentConstant // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentMethod: paymentMethod == freezed
+      paymentMethod: freezed == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      taxMethod: taxMethod == freezed
+      taxMethod: freezed == taxMethod
           ? _value.taxMethod
           : taxMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      fraction: fraction == freezed
+      fraction: freezed == fraction
           ? _value.fraction
           : fraction // ignore: cast_nullable_to_non_nullable
               as String?,
-      accountsPayable: accountsPayable == freezed
+      accountsPayable: freezed == accountsPayable
           ? _value.accountsPayable
           : accountsPayable // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeMemo: payeeMemo == freezed
+      payeeMemo: freezed == payeeMemo
           ? _value.payeeMemo
           : payeeMemo // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBankCode: payeeBankCode == freezed
+      payeeBankCode: freezed == payeeBankCode
           ? _value.payeeBankCode
           : payeeBankCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBankName: payeeBankName == freezed
+      payeeBankName: freezed == payeeBankName
           ? _value.payeeBankName
           : payeeBankName // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBankBranchCode: payeeBankBranchCode == freezed
+      payeeBankBranchCode: freezed == payeeBankBranchCode
           ? _value.payeeBankBranchCode
           : payeeBankBranchCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBankBranchName: payeeBankBranchName == freezed
+      payeeBankBranchName: freezed == payeeBankBranchName
           ? _value.payeeBankBranchName
           : payeeBankBranchName // ignore: cast_nullable_to_non_nullable
               as String?,
-      bankAccountType: bankAccountType == freezed
+      bankAccountType: freezed == bankAccountType
           ? _value.bankAccountType
           : bankAccountType // ignore: cast_nullable_to_non_nullable
               as String?,
-      bankAccountNumber: bankAccountNumber == freezed
+      bankAccountNumber: freezed == bankAccountNumber
           ? _value.bankAccountNumber
           : bankAccountNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      bankAcountName: bankAcountName == freezed
+      bankAcountName: freezed == bankAcountName
           ? _value.bankAcountName
           : bankAcountName // ignore: cast_nullable_to_non_nullable
               as String?,
-      transferFee: transferFee == freezed
+      transferFee: freezed == transferFee
           ? _value.transferFee
           : transferFee // ignore: cast_nullable_to_non_nullable
               as String?,
-      calcFee: calcFee == freezed
+      calcFee: freezed == calcFee
           ? _value.calcFee
           : calcFee // ignore: cast_nullable_to_non_nullable
               as String?,
-      minimumPayPrice: minimumPayPrice == freezed
+      minimumPayPrice: freezed == minimumPayPrice
           ? _value.minimumPayPrice
           : minimumPayPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      multipleAtOnce: multipleAtOnce == freezed
+      multipleAtOnce: freezed == multipleAtOnce
           ? _value.multipleAtOnce
           : multipleAtOnce // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBank: payeeBank == freezed
+      payeeBank: freezed == payeeBank
           ? _value.payeeBank
           : payeeBank // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasingPattern: purchasingPattern == freezed
+      purchasingPattern: freezed == purchasingPattern
           ? _value.purchasingPattern
           : purchasingPattern // ignore: cast_nullable_to_non_nullable
               as String?,
-      hidden: hidden == freezed
+      hidden: freezed == hidden
           ? _value.hidden
           : hidden // ignore: cast_nullable_to_non_nullable
               as String?,
-      payDayThresholdBefore: payDayThresholdBefore == freezed
+      payDayThresholdBefore: freezed == payDayThresholdBefore
           ? _value.payDayThresholdBefore
           : payDayThresholdBefore // ignore: cast_nullable_to_non_nullable
               as String?,
-      payDayThresholdAfter: payDayThresholdAfter == freezed
+      payDayThresholdAfter: freezed == payDayThresholdAfter
           ? _value.payDayThresholdAfter
           : payDayThresholdAfter // ignore: cast_nullable_to_non_nullable
               as String?,
-      payPriceJudge: payPriceJudge == freezed
+      payPriceJudge: freezed == payPriceJudge
           ? _value.payPriceJudge
           : payPriceJudge // ignore: cast_nullable_to_non_nullable
               as String?,
-      applicable: applicable == freezed
+      applicable: freezed == applicable
           ? _value.applicable
           : applicable // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CompanyModelCopyWith<$Res>
+abstract class _$$CompanyModelImplCopyWith<$Res>
     implements $CompanyModelCopyWith<$Res> {
-  factory _$CompanyModelCopyWith(
-          _CompanyModel value, $Res Function(_CompanyModel) then) =
-      __$CompanyModelCopyWithImpl<$Res>;
+  factory _$$CompanyModelImplCopyWith(
+          _$CompanyModelImpl value, $Res Function(_$CompanyModelImpl) then) =
+      __$$CompanyModelImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? EDI,
       String companyCode,
@@ -462,26 +467,25 @@ abstract class _$CompanyModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
-    implements _$CompanyModelCopyWith<$Res> {
-  __$CompanyModelCopyWithImpl(
-      _CompanyModel _value, $Res Function(_CompanyModel) _then)
-      : super(_value, (v) => _then(v as _CompanyModel));
+class __$$CompanyModelImplCopyWithImpl<$Res>
+    extends _$CompanyModelCopyWithImpl<$Res, _$CompanyModelImpl>
+    implements _$$CompanyModelImplCopyWith<$Res> {
+  __$$CompanyModelImplCopyWithImpl(
+      _$CompanyModelImpl _value, $Res Function(_$CompanyModelImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _CompanyModel get _value => super._value as _CompanyModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? EDI = freezed,
-    Object? companyCode = freezed,
-    Object? order = freezed,
-    Object? classification = freezed,
+    Object? companyCode = null,
+    Object? order = null,
+    Object? classification = null,
     Object? companyNumber = freezed,
     Object? companyChildNumber = freezed,
     Object? invoiceNumber = freezed,
-    Object? kubun = freezed,
-    Object? companyName = freezed,
+    Object? kubun = null,
+    Object? companyName = null,
     Object? companyKana = freezed,
     Object? companyAbbriviation = freezed,
     Object? kojin = freezed,
@@ -523,200 +527,200 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
     Object? payPriceJudge = freezed,
     Object? applicable = freezed,
   }) {
-    return _then(_CompanyModel(
-      EDI: EDI == freezed
+    return _then(_$CompanyModelImpl(
+      EDI: freezed == EDI
           ? _value.EDI
           : EDI // ignore: cast_nullable_to_non_nullable
               as String?,
-      companyCode: companyCode == freezed
+      companyCode: null == companyCode
           ? _value.companyCode
           : companyCode // ignore: cast_nullable_to_non_nullable
               as String,
-      order: order == freezed
+      order: null == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as String,
-      classification: classification == freezed
+      classification: null == classification
           ? _value.classification
           : classification // ignore: cast_nullable_to_non_nullable
               as String,
-      companyNumber: companyNumber == freezed
+      companyNumber: freezed == companyNumber
           ? _value.companyNumber
           : companyNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      companyChildNumber: companyChildNumber == freezed
+      companyChildNumber: freezed == companyChildNumber
           ? _value.companyChildNumber
           : companyChildNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      invoiceNumber: invoiceNumber == freezed
+      invoiceNumber: freezed == invoiceNumber
           ? _value.invoiceNumber
           : invoiceNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      kubun: kubun == freezed
+      kubun: null == kubun
           ? _value.kubun
           : kubun // ignore: cast_nullable_to_non_nullable
               as String,
-      companyName: companyName == freezed
+      companyName: null == companyName
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
               as String,
-      companyKana: companyKana == freezed
+      companyKana: freezed == companyKana
           ? _value.companyKana
           : companyKana // ignore: cast_nullable_to_non_nullable
               as String?,
-      companyAbbriviation: companyAbbriviation == freezed
+      companyAbbriviation: freezed == companyAbbriviation
           ? _value.companyAbbriviation
           : companyAbbriviation // ignore: cast_nullable_to_non_nullable
               as String?,
-      kojin: kojin == freezed
+      kojin: freezed == kojin
           ? _value.kojin
           : kojin // ignore: cast_nullable_to_non_nullable
               as String?,
-      postalcode: postalcode == freezed
+      postalcode: freezed == postalcode
           ? _value.postalcode
           : postalcode // ignore: cast_nullable_to_non_nullable
               as String?,
-      postalcodeChild: postalcodeChild == freezed
+      postalcodeChild: freezed == postalcodeChild
           ? _value.postalcodeChild
           : postalcodeChild // ignore: cast_nullable_to_non_nullable
               as String?,
-      addressA: addressA == freezed
+      addressA: freezed == addressA
           ? _value.addressA
           : addressA // ignore: cast_nullable_to_non_nullable
               as String?,
-      addressB: addressB == freezed
+      addressB: freezed == addressB
           ? _value.addressB
           : addressB // ignore: cast_nullable_to_non_nullable
               as String?,
-      person: person == freezed
+      person: freezed == person
           ? _value.person
           : person // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneNumberA: phoneNumberA == freezed
+      phoneNumberA: freezed == phoneNumberA
           ? _value.phoneNumberA
           : phoneNumberA // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneNumberB: phoneNumberB == freezed
+      phoneNumberB: freezed == phoneNumberB
           ? _value.phoneNumberB
           : phoneNumberB // ignore: cast_nullable_to_non_nullable
               as String?,
-      faxNumber: faxNumber == freezed
+      faxNumber: freezed == faxNumber
           ? _value.faxNumber
           : faxNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      URI: URI == freezed
+      URI: freezed == URI
           ? _value.URI
           : URI // ignore: cast_nullable_to_non_nullable
               as String?,
-      responsiblePerson: responsiblePerson == freezed
+      responsiblePerson: freezed == responsiblePerson
           ? _value.responsiblePerson
           : responsiblePerson // ignore: cast_nullable_to_non_nullable
               as String?,
-      payClass: payClass == freezed
+      payClass: freezed == payClass
           ? _value.payClass
           : payClass // ignore: cast_nullable_to_non_nullable
               as String?,
-      closeGroup: closeGroup == freezed
+      closeGroup: freezed == closeGroup
           ? _value.closeGroup
           : closeGroup // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentConstant: paymentConstant == freezed
+      paymentConstant: freezed == paymentConstant
           ? _value.paymentConstant
           : paymentConstant // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentMethod: paymentMethod == freezed
+      paymentMethod: freezed == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      taxMethod: taxMethod == freezed
+      taxMethod: freezed == taxMethod
           ? _value.taxMethod
           : taxMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      fraction: fraction == freezed
+      fraction: freezed == fraction
           ? _value.fraction
           : fraction // ignore: cast_nullable_to_non_nullable
               as String?,
-      accountsPayable: accountsPayable == freezed
+      accountsPayable: freezed == accountsPayable
           ? _value.accountsPayable
           : accountsPayable // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeMemo: payeeMemo == freezed
+      payeeMemo: freezed == payeeMemo
           ? _value.payeeMemo
           : payeeMemo // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBankCode: payeeBankCode == freezed
+      payeeBankCode: freezed == payeeBankCode
           ? _value.payeeBankCode
           : payeeBankCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBankName: payeeBankName == freezed
+      payeeBankName: freezed == payeeBankName
           ? _value.payeeBankName
           : payeeBankName // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBankBranchCode: payeeBankBranchCode == freezed
+      payeeBankBranchCode: freezed == payeeBankBranchCode
           ? _value.payeeBankBranchCode
           : payeeBankBranchCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBankBranchName: payeeBankBranchName == freezed
+      payeeBankBranchName: freezed == payeeBankBranchName
           ? _value.payeeBankBranchName
           : payeeBankBranchName // ignore: cast_nullable_to_non_nullable
               as String?,
-      bankAccountType: bankAccountType == freezed
+      bankAccountType: freezed == bankAccountType
           ? _value.bankAccountType
           : bankAccountType // ignore: cast_nullable_to_non_nullable
               as String?,
-      bankAccountNumber: bankAccountNumber == freezed
+      bankAccountNumber: freezed == bankAccountNumber
           ? _value.bankAccountNumber
           : bankAccountNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      bankAcountName: bankAcountName == freezed
+      bankAcountName: freezed == bankAcountName
           ? _value.bankAcountName
           : bankAcountName // ignore: cast_nullable_to_non_nullable
               as String?,
-      transferFee: transferFee == freezed
+      transferFee: freezed == transferFee
           ? _value.transferFee
           : transferFee // ignore: cast_nullable_to_non_nullable
               as String?,
-      calcFee: calcFee == freezed
+      calcFee: freezed == calcFee
           ? _value.calcFee
           : calcFee // ignore: cast_nullable_to_non_nullable
               as String?,
-      minimumPayPrice: minimumPayPrice == freezed
+      minimumPayPrice: freezed == minimumPayPrice
           ? _value.minimumPayPrice
           : minimumPayPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      multipleAtOnce: multipleAtOnce == freezed
+      multipleAtOnce: freezed == multipleAtOnce
           ? _value.multipleAtOnce
           : multipleAtOnce // ignore: cast_nullable_to_non_nullable
               as String?,
-      payeeBank: payeeBank == freezed
+      payeeBank: freezed == payeeBank
           ? _value.payeeBank
           : payeeBank // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasingPattern: purchasingPattern == freezed
+      purchasingPattern: freezed == purchasingPattern
           ? _value.purchasingPattern
           : purchasingPattern // ignore: cast_nullable_to_non_nullable
               as String?,
-      hidden: hidden == freezed
+      hidden: freezed == hidden
           ? _value.hidden
           : hidden // ignore: cast_nullable_to_non_nullable
               as String?,
-      payDayThresholdBefore: payDayThresholdBefore == freezed
+      payDayThresholdBefore: freezed == payDayThresholdBefore
           ? _value.payDayThresholdBefore
           : payDayThresholdBefore // ignore: cast_nullable_to_non_nullable
               as String?,
-      payDayThresholdAfter: payDayThresholdAfter == freezed
+      payDayThresholdAfter: freezed == payDayThresholdAfter
           ? _value.payDayThresholdAfter
           : payDayThresholdAfter // ignore: cast_nullable_to_non_nullable
               as String?,
-      payPriceJudge: payPriceJudge == freezed
+      payPriceJudge: freezed == payPriceJudge
           ? _value.payPriceJudge
           : payPriceJudge // ignore: cast_nullable_to_non_nullable
               as String?,
-      applicable: applicable == freezed
+      applicable: freezed == applicable
           ? _value.applicable
           : applicable // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -726,8 +730,8 @@ class __$CompanyModelCopyWithImpl<$Res> extends _$CompanyModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CompanyModel implements _CompanyModel {
-  _$_CompanyModel(
+class _$CompanyModelImpl implements _CompanyModel {
+  _$CompanyModelImpl(
       {this.EDI,
       required this.companyCode,
       required this.order,
@@ -778,8 +782,8 @@ class _$_CompanyModel implements _CompanyModel {
       this.payPriceJudge,
       this.applicable});
 
-  factory _$_CompanyModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CompanyModelFromJson(json);
+  factory _$CompanyModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CompanyModelImplFromJson(json);
 
 // ignore: non_constant_identifier_names
   @override
@@ -936,156 +940,167 @@ class _$_CompanyModel implements _CompanyModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CompanyModel &&
-            const DeepCollectionEquality().equals(other.EDI, EDI) &&
-            const DeepCollectionEquality()
-                .equals(other.companyCode, companyCode) &&
-            const DeepCollectionEquality().equals(other.order, order) &&
-            const DeepCollectionEquality()
-                .equals(other.classification, classification) &&
-            const DeepCollectionEquality()
-                .equals(other.companyNumber, companyNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.companyChildNumber, companyChildNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.invoiceNumber, invoiceNumber) &&
-            const DeepCollectionEquality().equals(other.kubun, kubun) &&
-            const DeepCollectionEquality()
-                .equals(other.companyName, companyName) &&
-            const DeepCollectionEquality()
-                .equals(other.companyKana, companyKana) &&
-            const DeepCollectionEquality()
-                .equals(other.companyAbbriviation, companyAbbriviation) &&
-            const DeepCollectionEquality().equals(other.kojin, kojin) &&
-            const DeepCollectionEquality()
-                .equals(other.postalcode, postalcode) &&
-            const DeepCollectionEquality()
-                .equals(other.postalcodeChild, postalcodeChild) &&
-            const DeepCollectionEquality().equals(other.addressA, addressA) &&
-            const DeepCollectionEquality().equals(other.addressB, addressB) &&
-            const DeepCollectionEquality().equals(other.person, person) &&
-            const DeepCollectionEquality()
-                .equals(other.phoneNumberA, phoneNumberA) &&
-            const DeepCollectionEquality()
-                .equals(other.phoneNumberB, phoneNumberB) &&
-            const DeepCollectionEquality().equals(other.faxNumber, faxNumber) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.URI, URI) &&
-            const DeepCollectionEquality()
-                .equals(other.responsiblePerson, responsiblePerson) &&
-            const DeepCollectionEquality().equals(other.payClass, payClass) &&
-            const DeepCollectionEquality()
-                .equals(other.closeGroup, closeGroup) &&
-            const DeepCollectionEquality()
-                .equals(other.paymentConstant, paymentConstant) &&
-            const DeepCollectionEquality()
-                .equals(other.paymentMethod, paymentMethod) &&
-            const DeepCollectionEquality().equals(other.taxMethod, taxMethod) &&
-            const DeepCollectionEquality().equals(other.fraction, fraction) &&
-            const DeepCollectionEquality()
-                .equals(other.accountsPayable, accountsPayable) &&
-            const DeepCollectionEquality().equals(other.payeeMemo, payeeMemo) &&
-            const DeepCollectionEquality()
-                .equals(other.payeeBankCode, payeeBankCode) &&
-            const DeepCollectionEquality()
-                .equals(other.payeeBankName, payeeBankName) &&
-            const DeepCollectionEquality()
-                .equals(other.payeeBankBranchCode, payeeBankBranchCode) &&
-            const DeepCollectionEquality()
-                .equals(other.payeeBankBranchName, payeeBankBranchName) &&
-            const DeepCollectionEquality()
-                .equals(other.bankAccountType, bankAccountType) &&
-            const DeepCollectionEquality()
-                .equals(other.bankAccountNumber, bankAccountNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.bankAcountName, bankAcountName) &&
-            const DeepCollectionEquality()
-                .equals(other.transferFee, transferFee) &&
-            const DeepCollectionEquality().equals(other.calcFee, calcFee) &&
-            const DeepCollectionEquality()
-                .equals(other.minimumPayPrice, minimumPayPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.multipleAtOnce, multipleAtOnce) &&
-            const DeepCollectionEquality().equals(other.payeeBank, payeeBank) &&
-            const DeepCollectionEquality()
-                .equals(other.purchasingPattern, purchasingPattern) &&
-            const DeepCollectionEquality().equals(other.hidden, hidden) &&
-            const DeepCollectionEquality()
-                .equals(other.payDayThresholdBefore, payDayThresholdBefore) &&
-            const DeepCollectionEquality()
-                .equals(other.payDayThresholdAfter, payDayThresholdAfter) &&
-            const DeepCollectionEquality()
-                .equals(other.payPriceJudge, payPriceJudge) &&
-            const DeepCollectionEquality()
-                .equals(other.applicable, applicable));
+            other is _$CompanyModelImpl &&
+            (identical(other.EDI, EDI) || other.EDI == EDI) &&
+            (identical(other.companyCode, companyCode) ||
+                other.companyCode == companyCode) &&
+            (identical(other.order, order) || other.order == order) &&
+            (identical(other.classification, classification) ||
+                other.classification == classification) &&
+            (identical(other.companyNumber, companyNumber) ||
+                other.companyNumber == companyNumber) &&
+            (identical(other.companyChildNumber, companyChildNumber) ||
+                other.companyChildNumber == companyChildNumber) &&
+            (identical(other.invoiceNumber, invoiceNumber) ||
+                other.invoiceNumber == invoiceNumber) &&
+            (identical(other.kubun, kubun) || other.kubun == kubun) &&
+            (identical(other.companyName, companyName) ||
+                other.companyName == companyName) &&
+            (identical(other.companyKana, companyKana) ||
+                other.companyKana == companyKana) &&
+            (identical(other.companyAbbriviation, companyAbbriviation) ||
+                other.companyAbbriviation == companyAbbriviation) &&
+            (identical(other.kojin, kojin) || other.kojin == kojin) &&
+            (identical(other.postalcode, postalcode) ||
+                other.postalcode == postalcode) &&
+            (identical(other.postalcodeChild, postalcodeChild) ||
+                other.postalcodeChild == postalcodeChild) &&
+            (identical(other.addressA, addressA) ||
+                other.addressA == addressA) &&
+            (identical(other.addressB, addressB) ||
+                other.addressB == addressB) &&
+            (identical(other.person, person) || other.person == person) &&
+            (identical(other.phoneNumberA, phoneNumberA) ||
+                other.phoneNumberA == phoneNumberA) &&
+            (identical(other.phoneNumberB, phoneNumberB) ||
+                other.phoneNumberB == phoneNumberB) &&
+            (identical(other.faxNumber, faxNumber) ||
+                other.faxNumber == faxNumber) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.URI, URI) || other.URI == URI) &&
+            (identical(other.responsiblePerson, responsiblePerson) ||
+                other.responsiblePerson == responsiblePerson) &&
+            (identical(other.payClass, payClass) ||
+                other.payClass == payClass) &&
+            (identical(other.closeGroup, closeGroup) ||
+                other.closeGroup == closeGroup) &&
+            (identical(other.paymentConstant, paymentConstant) ||
+                other.paymentConstant == paymentConstant) &&
+            (identical(other.paymentMethod, paymentMethod) ||
+                other.paymentMethod == paymentMethod) &&
+            (identical(other.taxMethod, taxMethod) ||
+                other.taxMethod == taxMethod) &&
+            (identical(other.fraction, fraction) ||
+                other.fraction == fraction) &&
+            (identical(other.accountsPayable, accountsPayable) ||
+                other.accountsPayable == accountsPayable) &&
+            (identical(other.payeeMemo, payeeMemo) ||
+                other.payeeMemo == payeeMemo) &&
+            (identical(other.payeeBankCode, payeeBankCode) ||
+                other.payeeBankCode == payeeBankCode) &&
+            (identical(other.payeeBankName, payeeBankName) ||
+                other.payeeBankName == payeeBankName) &&
+            (identical(other.payeeBankBranchCode, payeeBankBranchCode) ||
+                other.payeeBankBranchCode == payeeBankBranchCode) &&
+            (identical(other.payeeBankBranchName, payeeBankBranchName) ||
+                other.payeeBankBranchName == payeeBankBranchName) &&
+            (identical(other.bankAccountType, bankAccountType) ||
+                other.bankAccountType == bankAccountType) &&
+            (identical(other.bankAccountNumber, bankAccountNumber) ||
+                other.bankAccountNumber == bankAccountNumber) &&
+            (identical(other.bankAcountName, bankAcountName) ||
+                other.bankAcountName == bankAcountName) &&
+            (identical(other.transferFee, transferFee) ||
+                other.transferFee == transferFee) &&
+            (identical(other.calcFee, calcFee) || other.calcFee == calcFee) &&
+            (identical(other.minimumPayPrice, minimumPayPrice) ||
+                other.minimumPayPrice == minimumPayPrice) &&
+            (identical(other.multipleAtOnce, multipleAtOnce) ||
+                other.multipleAtOnce == multipleAtOnce) &&
+            (identical(other.payeeBank, payeeBank) ||
+                other.payeeBank == payeeBank) &&
+            (identical(other.purchasingPattern, purchasingPattern) ||
+                other.purchasingPattern == purchasingPattern) &&
+            (identical(other.hidden, hidden) || other.hidden == hidden) &&
+            (identical(other.payDayThresholdBefore, payDayThresholdBefore) ||
+                other.payDayThresholdBefore == payDayThresholdBefore) &&
+            (identical(other.payDayThresholdAfter, payDayThresholdAfter) ||
+                other.payDayThresholdAfter == payDayThresholdAfter) &&
+            (identical(other.payPriceJudge, payPriceJudge) ||
+                other.payPriceJudge == payPriceJudge) &&
+            (identical(other.applicable, applicable) ||
+                other.applicable == applicable));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(EDI),
-        const DeepCollectionEquality().hash(companyCode),
-        const DeepCollectionEquality().hash(order),
-        const DeepCollectionEquality().hash(classification),
-        const DeepCollectionEquality().hash(companyNumber),
-        const DeepCollectionEquality().hash(companyChildNumber),
-        const DeepCollectionEquality().hash(invoiceNumber),
-        const DeepCollectionEquality().hash(kubun),
-        const DeepCollectionEquality().hash(companyName),
-        const DeepCollectionEquality().hash(companyKana),
-        const DeepCollectionEquality().hash(companyAbbriviation),
-        const DeepCollectionEquality().hash(kojin),
-        const DeepCollectionEquality().hash(postalcode),
-        const DeepCollectionEquality().hash(postalcodeChild),
-        const DeepCollectionEquality().hash(addressA),
-        const DeepCollectionEquality().hash(addressB),
-        const DeepCollectionEquality().hash(person),
-        const DeepCollectionEquality().hash(phoneNumberA),
-        const DeepCollectionEquality().hash(phoneNumberB),
-        const DeepCollectionEquality().hash(faxNumber),
-        const DeepCollectionEquality().hash(email),
-        const DeepCollectionEquality().hash(URI),
-        const DeepCollectionEquality().hash(responsiblePerson),
-        const DeepCollectionEquality().hash(payClass),
-        const DeepCollectionEquality().hash(closeGroup),
-        const DeepCollectionEquality().hash(paymentConstant),
-        const DeepCollectionEquality().hash(paymentMethod),
-        const DeepCollectionEquality().hash(taxMethod),
-        const DeepCollectionEquality().hash(fraction),
-        const DeepCollectionEquality().hash(accountsPayable),
-        const DeepCollectionEquality().hash(payeeMemo),
-        const DeepCollectionEquality().hash(payeeBankCode),
-        const DeepCollectionEquality().hash(payeeBankName),
-        const DeepCollectionEquality().hash(payeeBankBranchCode),
-        const DeepCollectionEquality().hash(payeeBankBranchName),
-        const DeepCollectionEquality().hash(bankAccountType),
-        const DeepCollectionEquality().hash(bankAccountNumber),
-        const DeepCollectionEquality().hash(bankAcountName),
-        const DeepCollectionEquality().hash(transferFee),
-        const DeepCollectionEquality().hash(calcFee),
-        const DeepCollectionEquality().hash(minimumPayPrice),
-        const DeepCollectionEquality().hash(multipleAtOnce),
-        const DeepCollectionEquality().hash(payeeBank),
-        const DeepCollectionEquality().hash(purchasingPattern),
-        const DeepCollectionEquality().hash(hidden),
-        const DeepCollectionEquality().hash(payDayThresholdBefore),
-        const DeepCollectionEquality().hash(payDayThresholdAfter),
-        const DeepCollectionEquality().hash(payPriceJudge),
-        const DeepCollectionEquality().hash(applicable)
+        EDI,
+        companyCode,
+        order,
+        classification,
+        companyNumber,
+        companyChildNumber,
+        invoiceNumber,
+        kubun,
+        companyName,
+        companyKana,
+        companyAbbriviation,
+        kojin,
+        postalcode,
+        postalcodeChild,
+        addressA,
+        addressB,
+        person,
+        phoneNumberA,
+        phoneNumberB,
+        faxNumber,
+        email,
+        URI,
+        responsiblePerson,
+        payClass,
+        closeGroup,
+        paymentConstant,
+        paymentMethod,
+        taxMethod,
+        fraction,
+        accountsPayable,
+        payeeMemo,
+        payeeBankCode,
+        payeeBankName,
+        payeeBankBranchCode,
+        payeeBankBranchName,
+        bankAccountType,
+        bankAccountNumber,
+        bankAcountName,
+        transferFee,
+        calcFee,
+        minimumPayPrice,
+        multipleAtOnce,
+        payeeBank,
+        purchasingPattern,
+        hidden,
+        payDayThresholdBefore,
+        payDayThresholdAfter,
+        payPriceJudge,
+        applicable
       ]);
 
   @JsonKey(ignore: true)
   @override
-  _$CompanyModelCopyWith<_CompanyModel> get copyWith =>
-      __$CompanyModelCopyWithImpl<_CompanyModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$CompanyModelImplCopyWith<_$CompanyModelImpl> get copyWith =>
+      __$$CompanyModelImplCopyWithImpl<_$CompanyModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CompanyModelToJson(this);
+    return _$$CompanyModelImplToJson(
+      this,
+    );
   }
 }
 
@@ -1139,112 +1154,112 @@ abstract class _CompanyModel implements CompanyModel {
       final String? payDayThresholdBefore,
       final String? payDayThresholdAfter,
       final String? payPriceJudge,
-      final String? applicable}) = _$_CompanyModel;
+      final String? applicable}) = _$CompanyModelImpl;
 
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
-      _$_CompanyModel.fromJson;
+      _$CompanyModelImpl.fromJson;
 
   @override // ignore: non_constant_identifier_names
-  String? get EDI => throw _privateConstructorUsedError;
+  String? get EDI;
   @override // EDI申請ステータス
-  String get companyCode => throw _privateConstructorUsedError;
+  String get companyCode;
   @override //仕入先コード
-  String get order => throw _privateConstructorUsedError;
+  String get order;
   @override //表示順
-  String get classification => throw _privateConstructorUsedError;
+  String get classification;
   @override //仕入先分類
-  String? get companyNumber => throw _privateConstructorUsedError;
+  String? get companyNumber;
   @override //法人番号
-  String? get companyChildNumber => throw _privateConstructorUsedError;
+  String? get companyChildNumber;
   @override //法人番号枝番
-  String? get invoiceNumber => throw _privateConstructorUsedError;
+  String? get invoiceNumber;
   @override //適格請求書発行事業者登録番号
-  String get kubun => throw _privateConstructorUsedError;
+  String get kubun;
   @override //事業者区分
-  String get companyName => throw _privateConstructorUsedError;
+  String get companyName;
   @override //仕入先名称
-  String? get companyKana => throw _privateConstructorUsedError;
+  String? get companyKana;
   @override //仕入先カナ
-  String? get companyAbbriviation => throw _privateConstructorUsedError;
+  String? get companyAbbriviation;
   @override //仕入先略称
-  String? get kojin => throw _privateConstructorUsedError;
+  String? get kojin;
   @override //個人
-  String? get postalcode => throw _privateConstructorUsedError;
+  String? get postalcode;
   @override //郵便番号親番
-  String? get postalcodeChild => throw _privateConstructorUsedError;
+  String? get postalcodeChild;
   @override //郵便番号枝番
-  String? get addressA => throw _privateConstructorUsedError;
+  String? get addressA;
   @override //住所上段
-  String? get addressB => throw _privateConstructorUsedError;
+  String? get addressB;
   @override //住所下段
-  String? get person => throw _privateConstructorUsedError;
+  String? get person;
   @override //担当者
-  String? get phoneNumberA => throw _privateConstructorUsedError;
+  String? get phoneNumberA;
   @override //電話番号１
-  String? get phoneNumberB => throw _privateConstructorUsedError;
+  String? get phoneNumberB;
   @override //電話番号２
-  String? get faxNumber => throw _privateConstructorUsedError;
+  String? get faxNumber;
   @override //FAX番号
-  String? get email => throw _privateConstructorUsedError;
+  String? get email;
   @override //Email
 // ignore: non_constant_identifier_names
-  String? get URI => throw _privateConstructorUsedError;
+  String? get URI;
   @override //URI
-  String? get responsiblePerson => throw _privateConstructorUsedError;
+  String? get responsiblePerson;
   @override //自社担当者
-  String? get payClass => throw _privateConstructorUsedError;
+  String? get payClass;
   @override //支払い区分
-  String? get closeGroup => throw _privateConstructorUsedError;
+  String? get closeGroup;
   @override //締日グループ
-  String? get paymentConstant => throw _privateConstructorUsedError;
+  String? get paymentConstant;
   @override //支払条件
-  String? get paymentMethod => throw _privateConstructorUsedError;
+  String? get paymentMethod;
   @override //支払い方法
-  String? get taxMethod => throw _privateConstructorUsedError;
+  String? get taxMethod;
   @override //消費税計算
-  String? get fraction => throw _privateConstructorUsedError;
+  String? get fraction;
   @override //端数処理
-  String? get accountsPayable => throw _privateConstructorUsedError;
+  String? get accountsPayable;
   @override //買掛金
-  String? get payeeMemo => throw _privateConstructorUsedError;
+  String? get payeeMemo;
   @override //振込先メモ
-  String? get payeeBankCode => throw _privateConstructorUsedError;
+  String? get payeeBankCode;
   @override //振込先銀行番号
-  String? get payeeBankName => throw _privateConstructorUsedError;
+  String? get payeeBankName;
   @override //振込先銀行
-  String? get payeeBankBranchCode => throw _privateConstructorUsedError;
+  String? get payeeBankBranchCode;
   @override //振込先支店番号
-  String? get payeeBankBranchName => throw _privateConstructorUsedError;
+  String? get payeeBankBranchName;
   @override //振込先支店名
-  String? get bankAccountType => throw _privateConstructorUsedError;
+  String? get bankAccountType;
   @override //振込先預金種目
-  String? get bankAccountNumber => throw _privateConstructorUsedError;
+  String? get bankAccountNumber;
   @override //振込先口座番号
-  String? get bankAcountName => throw _privateConstructorUsedError;
+  String? get bankAcountName;
   @override //振込先口座名
-  String? get transferFee => throw _privateConstructorUsedError;
+  String? get transferFee;
   @override // 振込手数料負担
-  String? get calcFee => throw _privateConstructorUsedError;
+  String? get calcFee;
   @override //手数料計算方法
-  String? get minimumPayPrice => throw _privateConstructorUsedError;
+  String? get minimumPayPrice;
   @override // 最低支払金額
-  String? get multipleAtOnce => throw _privateConstructorUsedError;
+  String? get multipleAtOnce;
   @override // 複数仕入れの一括振込可否
-  String? get payeeBank => throw _privateConstructorUsedError;
+  String? get payeeBank;
   @override //振込先取引銀行
-  String? get purchasingPattern => throw _privateConstructorUsedError;
+  String? get purchasingPattern;
   @override //連動パターン
-  String? get hidden => throw _privateConstructorUsedError;
+  String? get hidden;
   @override //非表示
-  String? get payDayThresholdBefore => throw _privateConstructorUsedError;
+  String? get payDayThresholdBefore;
   @override //支払日判定誤差前
-  String? get payDayThresholdAfter => throw _privateConstructorUsedError;
+  String? get payDayThresholdAfter;
   @override //支払日判定誤差後
-  String? get payPriceJudge => throw _privateConstructorUsedError;
+  String? get payPriceJudge;
   @override //支払額判定誤差
-  String? get applicable => throw _privateConstructorUsedError;
+  String? get applicable;
   @override
   @JsonKey(ignore: true)
-  _$CompanyModelCopyWith<_CompanyModel> get copyWith =>
+  _$$CompanyModelImplCopyWith<_$CompanyModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

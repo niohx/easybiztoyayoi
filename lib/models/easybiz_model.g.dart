@@ -6,8 +6,8 @@ part of 'easybiz_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_EasybizModel _$$_EasybizModelFromJson(Map<String, dynamic> json) =>
-    _$_EasybizModel(
+_$EasybizModelImpl _$$EasybizModelImplFromJson(Map<String, dynamic> json) =>
+    _$EasybizModelImpl(
       skipProcess: json['skipProcess'] as String?,
       purchasingNumber: json['purchasingNumber'] as String?,
       rowNumber: json['rowNumber'] as String?,
@@ -50,7 +50,7 @@ _$_EasybizModel _$$_EasybizModelFromJson(Map<String, dynamic> json) =>
       orderNumber: json['orderNumber'] as String?,
     );
 
-Map<String, dynamic> _$$_EasybizModelToJson(_$_EasybizModel instance) =>
+Map<String, dynamic> _$$EasybizModelImplToJson(_$EasybizModelImpl instance) =>
     <String, dynamic>{
       'skipProcess': instance.skipProcess,
       'purchasingNumber': instance.purchasingNumber,

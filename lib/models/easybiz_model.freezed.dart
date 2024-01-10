@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'easybiz_model.dart';
 
@@ -72,7 +72,8 @@ mixin _$EasybizModel {
 abstract class $EasybizModelCopyWith<$Res> {
   factory $EasybizModelCopyWith(
           EasybizModel value, $Res Function(EasybizModel) then) =
-      _$EasybizModelCopyWithImpl<$Res>;
+      _$EasybizModelCopyWithImpl<$Res, EasybizModel>;
+  @useResult
   $Res call(
       {String? skipProcess,
       String? purchasingNumber,
@@ -117,13 +118,16 @@ abstract class $EasybizModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
+class _$EasybizModelCopyWithImpl<$Res, $Val extends EasybizModel>
+    implements $EasybizModelCopyWith<$Res> {
   _$EasybizModelCopyWithImpl(this._value, this._then);
 
-  final EasybizModel _value;
   // ignore: unused_field
-  final $Res Function(EasybizModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? skipProcess = freezed,
@@ -138,8 +142,8 @@ class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
     Object? subjectNumber = freezed,
     Object? purchasingDate = freezed,
     Object? subject = freezed,
-    Object? companyCode = freezed,
-    Object? companyName = freezed,
+    Object? companyCode = null,
+    Object? companyName = null,
     Object? person = freezed,
     Object? closePayingMethod = freezed,
     Object? paymentClassification = freezed,
@@ -168,177 +172,178 @@ class _$EasybizModelCopyWithImpl<$Res> implements $EasybizModelCopyWith<$Res> {
     Object? orderNumber = freezed,
   }) {
     return _then(_value.copyWith(
-      skipProcess: skipProcess == freezed
+      skipProcess: freezed == skipProcess
           ? _value.skipProcess
           : skipProcess // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasingNumber: purchasingNumber == freezed
+      purchasingNumber: freezed == purchasingNumber
           ? _value.purchasingNumber
           : purchasingNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      rowNumber: rowNumber == freezed
+      rowNumber: freezed == rowNumber
           ? _value.rowNumber
           : rowNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      alignmentPattern: alignmentPattern == freezed
+      alignmentPattern: freezed == alignmentPattern
           ? _value.alignmentPattern
           : alignmentPattern // ignore: cast_nullable_to_non_nullable
               as String?,
-      departmentCode: departmentCode == freezed
+      departmentCode: freezed == departmentCode
           ? _value.departmentCode
           : departmentCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      departmentName: departmentName == freezed
+      departmentName: freezed == departmentName
           ? _value.departmentName
           : departmentName // ignore: cast_nullable_to_non_nullable
               as String?,
-      personCode: personCode == freezed
+      personCode: freezed == personCode
           ? _value.personCode
           : personCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      personName: personName == freezed
+      personName: freezed == personName
           ? _value.personName
           : personName // ignore: cast_nullable_to_non_nullable
               as String?,
-      printOrNot: printOrNot == freezed
+      printOrNot: freezed == printOrNot
           ? _value.printOrNot
           : printOrNot // ignore: cast_nullable_to_non_nullable
               as String?,
-      subjectNumber: subjectNumber == freezed
+      subjectNumber: freezed == subjectNumber
           ? _value.subjectNumber
           : subjectNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasingDate: purchasingDate == freezed
+      purchasingDate: freezed == purchasingDate
           ? _value.purchasingDate
           : purchasingDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      companyCode: companyCode == freezed
+      companyCode: null == companyCode
           ? _value.companyCode
           : companyCode // ignore: cast_nullable_to_non_nullable
               as String,
-      companyName: companyName == freezed
+      companyName: null == companyName
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
               as String,
-      person: person == freezed
+      person: freezed == person
           ? _value.person
           : person // ignore: cast_nullable_to_non_nullable
               as String?,
-      closePayingMethod: closePayingMethod == freezed
+      closePayingMethod: freezed == closePayingMethod
           ? _value.closePayingMethod
           : closePayingMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentClassification: paymentClassification == freezed
+      paymentClassification: freezed == paymentClassification
           ? _value.paymentClassification
           : paymentClassification // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentMethod: paymentMethod == freezed
+      paymentMethod: freezed == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      closeDate: closeDate == freezed
+      closeDate: freezed == closeDate
           ? _value.closeDate
           : closeDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentSchedule: paymentSchedule == freezed
+      paymentSchedule: freezed == paymentSchedule
           ? _value.paymentSchedule
           : paymentSchedule // ignore: cast_nullable_to_non_nullable
               as String?,
-      taxRate: taxRate == freezed
+      taxRate: freezed == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentA: commentA == freezed
+      commentA: freezed == commentA
           ? _value.commentA
           : commentA // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentB: commentB == freezed
+      commentB: freezed == commentB
           ? _value.commentB
           : commentB // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentC: commentC == freezed
+      commentC: freezed == commentC
           ? _value.commentC
           : commentC // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentD: commentD == freezed
+      commentD: freezed == commentD
           ? _value.commentD
           : commentD // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentE: commentE == freezed
+      commentE: freezed == commentE
           ? _value.commentE
           : commentE // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentF: commentF == freezed
+      commentF: freezed == commentF
           ? _value.commentF
           : commentF // ignore: cast_nullable_to_non_nullable
               as String?,
-      itemCode: itemCode == freezed
+      itemCode: freezed == itemCode
           ? _value.itemCode
           : itemCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      itemName: itemName == freezed
+      itemName: freezed == itemName
           ? _value.itemName
           : itemName // ignore: cast_nullable_to_non_nullable
               as String?,
-      itemNameChild: itemNameChild == freezed
+      itemNameChild: freezed == itemNameChild
           ? _value.itemNameChild
           : itemNameChild // ignore: cast_nullable_to_non_nullable
               as String?,
-      quantity: quantity == freezed
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      price: price == freezed
+      price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int?,
-      taxClassification: taxClassification == freezed
+      taxClassification: freezed == taxClassification
           ? _value.taxClassification
           : taxClassification // ignore: cast_nullable_to_non_nullable
               as String?,
-      taxChargeMethod: taxChargeMethod == freezed
+      taxChargeMethod: freezed == taxChargeMethod
           ? _value.taxChargeMethod
           : taxChargeMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      specialComment: specialComment == freezed
+      specialComment: freezed == specialComment
           ? _value.specialComment
           : specialComment // ignore: cast_nullable_to_non_nullable
               as String?,
-      stockNumber: stockNumber == freezed
+      stockNumber: freezed == stockNumber
           ? _value.stockNumber
           : stockNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      stockCode: stockCode == freezed
+      stockCode: freezed == stockCode
           ? _value.stockCode
           : stockCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      stockQuantity: stockQuantity == freezed
+      stockQuantity: freezed == stockQuantity
           ? _value.stockQuantity
           : stockQuantity // ignore: cast_nullable_to_non_nullable
               as int?,
-      orderNumber: orderNumber == freezed
+      orderNumber: freezed == orderNumber
           ? _value.orderNumber
           : orderNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$EasybizModelCopyWith<$Res>
+abstract class _$$EasybizModelImplCopyWith<$Res>
     implements $EasybizModelCopyWith<$Res> {
-  factory _$EasybizModelCopyWith(
-          _EasybizModel value, $Res Function(_EasybizModel) then) =
-      __$EasybizModelCopyWithImpl<$Res>;
+  factory _$$EasybizModelImplCopyWith(
+          _$EasybizModelImpl value, $Res Function(_$EasybizModelImpl) then) =
+      __$$EasybizModelImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? skipProcess,
       String? purchasingNumber,
@@ -383,15 +388,14 @@ abstract class _$EasybizModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
-    implements _$EasybizModelCopyWith<$Res> {
-  __$EasybizModelCopyWithImpl(
-      _EasybizModel _value, $Res Function(_EasybizModel) _then)
-      : super(_value, (v) => _then(v as _EasybizModel));
+class __$$EasybizModelImplCopyWithImpl<$Res>
+    extends _$EasybizModelCopyWithImpl<$Res, _$EasybizModelImpl>
+    implements _$$EasybizModelImplCopyWith<$Res> {
+  __$$EasybizModelImplCopyWithImpl(
+      _$EasybizModelImpl _value, $Res Function(_$EasybizModelImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _EasybizModel get _value => super._value as _EasybizModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? skipProcess = freezed,
@@ -406,8 +410,8 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
     Object? subjectNumber = freezed,
     Object? purchasingDate = freezed,
     Object? subject = freezed,
-    Object? companyCode = freezed,
-    Object? companyName = freezed,
+    Object? companyCode = null,
+    Object? companyName = null,
     Object? person = freezed,
     Object? closePayingMethod = freezed,
     Object? paymentClassification = freezed,
@@ -435,164 +439,164 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
     Object? stockQuantity = freezed,
     Object? orderNumber = freezed,
   }) {
-    return _then(_EasybizModel(
-      skipProcess: skipProcess == freezed
+    return _then(_$EasybizModelImpl(
+      skipProcess: freezed == skipProcess
           ? _value.skipProcess
           : skipProcess // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasingNumber: purchasingNumber == freezed
+      purchasingNumber: freezed == purchasingNumber
           ? _value.purchasingNumber
           : purchasingNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      rowNumber: rowNumber == freezed
+      rowNumber: freezed == rowNumber
           ? _value.rowNumber
           : rowNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      alignmentPattern: alignmentPattern == freezed
+      alignmentPattern: freezed == alignmentPattern
           ? _value.alignmentPattern
           : alignmentPattern // ignore: cast_nullable_to_non_nullable
               as String?,
-      departmentCode: departmentCode == freezed
+      departmentCode: freezed == departmentCode
           ? _value.departmentCode
           : departmentCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      departmentName: departmentName == freezed
+      departmentName: freezed == departmentName
           ? _value.departmentName
           : departmentName // ignore: cast_nullable_to_non_nullable
               as String?,
-      personCode: personCode == freezed
+      personCode: freezed == personCode
           ? _value.personCode
           : personCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      personName: personName == freezed
+      personName: freezed == personName
           ? _value.personName
           : personName // ignore: cast_nullable_to_non_nullable
               as String?,
-      printOrNot: printOrNot == freezed
+      printOrNot: freezed == printOrNot
           ? _value.printOrNot
           : printOrNot // ignore: cast_nullable_to_non_nullable
               as String?,
-      subjectNumber: subjectNumber == freezed
+      subjectNumber: freezed == subjectNumber
           ? _value.subjectNumber
           : subjectNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasingDate: purchasingDate == freezed
+      purchasingDate: freezed == purchasingDate
           ? _value.purchasingDate
           : purchasingDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      companyCode: companyCode == freezed
+      companyCode: null == companyCode
           ? _value.companyCode
           : companyCode // ignore: cast_nullable_to_non_nullable
               as String,
-      companyName: companyName == freezed
+      companyName: null == companyName
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
               as String,
-      person: person == freezed
+      person: freezed == person
           ? _value.person
           : person // ignore: cast_nullable_to_non_nullable
               as String?,
-      closePayingMethod: closePayingMethod == freezed
+      closePayingMethod: freezed == closePayingMethod
           ? _value.closePayingMethod
           : closePayingMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentClassification: paymentClassification == freezed
+      paymentClassification: freezed == paymentClassification
           ? _value.paymentClassification
           : paymentClassification // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentMethod: paymentMethod == freezed
+      paymentMethod: freezed == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      closeDate: closeDate == freezed
+      closeDate: freezed == closeDate
           ? _value.closeDate
           : closeDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentSchedule: paymentSchedule == freezed
+      paymentSchedule: freezed == paymentSchedule
           ? _value.paymentSchedule
           : paymentSchedule // ignore: cast_nullable_to_non_nullable
               as String?,
-      taxRate: taxRate == freezed
+      taxRate: freezed == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentA: commentA == freezed
+      commentA: freezed == commentA
           ? _value.commentA
           : commentA // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentB: commentB == freezed
+      commentB: freezed == commentB
           ? _value.commentB
           : commentB // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentC: commentC == freezed
+      commentC: freezed == commentC
           ? _value.commentC
           : commentC // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentD: commentD == freezed
+      commentD: freezed == commentD
           ? _value.commentD
           : commentD // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentE: commentE == freezed
+      commentE: freezed == commentE
           ? _value.commentE
           : commentE // ignore: cast_nullable_to_non_nullable
               as String?,
-      commentF: commentF == freezed
+      commentF: freezed == commentF
           ? _value.commentF
           : commentF // ignore: cast_nullable_to_non_nullable
               as String?,
-      itemCode: itemCode == freezed
+      itemCode: freezed == itemCode
           ? _value.itemCode
           : itemCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      itemName: itemName == freezed
+      itemName: freezed == itemName
           ? _value.itemName
           : itemName // ignore: cast_nullable_to_non_nullable
               as String?,
-      itemNameChild: itemNameChild == freezed
+      itemNameChild: freezed == itemNameChild
           ? _value.itemNameChild
           : itemNameChild // ignore: cast_nullable_to_non_nullable
               as String?,
-      quantity: quantity == freezed
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      price: price == freezed
+      price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int?,
-      taxClassification: taxClassification == freezed
+      taxClassification: freezed == taxClassification
           ? _value.taxClassification
           : taxClassification // ignore: cast_nullable_to_non_nullable
               as String?,
-      taxChargeMethod: taxChargeMethod == freezed
+      taxChargeMethod: freezed == taxChargeMethod
           ? _value.taxChargeMethod
           : taxChargeMethod // ignore: cast_nullable_to_non_nullable
               as String?,
-      specialComment: specialComment == freezed
+      specialComment: freezed == specialComment
           ? _value.specialComment
           : specialComment // ignore: cast_nullable_to_non_nullable
               as String?,
-      stockNumber: stockNumber == freezed
+      stockNumber: freezed == stockNumber
           ? _value.stockNumber
           : stockNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      stockCode: stockCode == freezed
+      stockCode: freezed == stockCode
           ? _value.stockCode
           : stockCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      stockQuantity: stockQuantity == freezed
+      stockQuantity: freezed == stockQuantity
           ? _value.stockQuantity
           : stockQuantity // ignore: cast_nullable_to_non_nullable
               as int?,
-      orderNumber: orderNumber == freezed
+      orderNumber: freezed == orderNumber
           ? _value.orderNumber
           : orderNumber // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -602,8 +606,8 @@ class __$EasybizModelCopyWithImpl<$Res> extends _$EasybizModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EasybizModel implements _EasybizModel {
-  _$_EasybizModel(
+class _$EasybizModelImpl implements _EasybizModel {
+  _$EasybizModelImpl(
       {this.skipProcess,
       this.purchasingNumber,
       this.rowNumber,
@@ -645,8 +649,8 @@ class _$_EasybizModel implements _EasybizModel {
       this.stockQuantity,
       this.orderNumber});
 
-  factory _$_EasybizModel.fromJson(Map<String, dynamic> json) =>
-      _$$_EasybizModelFromJson(json);
+  factory _$EasybizModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EasybizModelImplFromJson(json);
 
   @override
   final String? skipProcess;
@@ -774,129 +778,144 @@ class _$_EasybizModel implements _EasybizModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EasybizModel &&
-            const DeepCollectionEquality()
-                .equals(other.skipProcess, skipProcess) &&
-            const DeepCollectionEquality()
-                .equals(other.purchasingNumber, purchasingNumber) &&
-            const DeepCollectionEquality().equals(other.rowNumber, rowNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.alignmentPattern, alignmentPattern) &&
-            const DeepCollectionEquality()
-                .equals(other.departmentCode, departmentCode) &&
-            const DeepCollectionEquality()
-                .equals(other.departmentName, departmentName) &&
-            const DeepCollectionEquality()
-                .equals(other.personCode, personCode) &&
-            const DeepCollectionEquality()
-                .equals(other.personName, personName) &&
-            const DeepCollectionEquality()
-                .equals(other.printOrNot, printOrNot) &&
-            const DeepCollectionEquality()
-                .equals(other.subjectNumber, subjectNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.purchasingDate, purchasingDate) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality()
-                .equals(other.companyCode, companyCode) &&
-            const DeepCollectionEquality()
-                .equals(other.companyName, companyName) &&
-            const DeepCollectionEquality().equals(other.person, person) &&
-            const DeepCollectionEquality()
-                .equals(other.closePayingMethod, closePayingMethod) &&
-            const DeepCollectionEquality()
-                .equals(other.paymentClassification, paymentClassification) &&
-            const DeepCollectionEquality()
-                .equals(other.paymentMethod, paymentMethod) &&
-            const DeepCollectionEquality().equals(other.closeDate, closeDate) &&
-            const DeepCollectionEquality()
-                .equals(other.paymentSchedule, paymentSchedule) &&
-            const DeepCollectionEquality().equals(other.taxRate, taxRate) &&
-            const DeepCollectionEquality().equals(other.commentA, commentA) &&
-            const DeepCollectionEquality().equals(other.commentB, commentB) &&
-            const DeepCollectionEquality().equals(other.commentC, commentC) &&
-            const DeepCollectionEquality().equals(other.commentD, commentD) &&
-            const DeepCollectionEquality().equals(other.commentE, commentE) &&
-            const DeepCollectionEquality().equals(other.commentF, commentF) &&
-            const DeepCollectionEquality().equals(other.itemCode, itemCode) &&
-            const DeepCollectionEquality().equals(other.itemName, itemName) &&
-            const DeepCollectionEquality()
-                .equals(other.itemNameChild, itemNameChild) &&
-            const DeepCollectionEquality().equals(other.quantity, quantity) &&
-            const DeepCollectionEquality().equals(other.unit, unit) &&
-            const DeepCollectionEquality().equals(other.price, price) &&
-            const DeepCollectionEquality()
-                .equals(other.taxClassification, taxClassification) &&
-            const DeepCollectionEquality()
-                .equals(other.taxChargeMethod, taxChargeMethod) &&
-            const DeepCollectionEquality()
-                .equals(other.specialComment, specialComment) &&
-            const DeepCollectionEquality()
-                .equals(other.stockNumber, stockNumber) &&
-            const DeepCollectionEquality().equals(other.stockCode, stockCode) &&
-            const DeepCollectionEquality()
-                .equals(other.stockQuantity, stockQuantity) &&
-            const DeepCollectionEquality()
-                .equals(other.orderNumber, orderNumber));
+            other is _$EasybizModelImpl &&
+            (identical(other.skipProcess, skipProcess) ||
+                other.skipProcess == skipProcess) &&
+            (identical(other.purchasingNumber, purchasingNumber) ||
+                other.purchasingNumber == purchasingNumber) &&
+            (identical(other.rowNumber, rowNumber) ||
+                other.rowNumber == rowNumber) &&
+            (identical(other.alignmentPattern, alignmentPattern) ||
+                other.alignmentPattern == alignmentPattern) &&
+            (identical(other.departmentCode, departmentCode) ||
+                other.departmentCode == departmentCode) &&
+            (identical(other.departmentName, departmentName) ||
+                other.departmentName == departmentName) &&
+            (identical(other.personCode, personCode) ||
+                other.personCode == personCode) &&
+            (identical(other.personName, personName) ||
+                other.personName == personName) &&
+            (identical(other.printOrNot, printOrNot) ||
+                other.printOrNot == printOrNot) &&
+            (identical(other.subjectNumber, subjectNumber) ||
+                other.subjectNumber == subjectNumber) &&
+            (identical(other.purchasingDate, purchasingDate) ||
+                other.purchasingDate == purchasingDate) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.companyCode, companyCode) ||
+                other.companyCode == companyCode) &&
+            (identical(other.companyName, companyName) ||
+                other.companyName == companyName) &&
+            (identical(other.person, person) || other.person == person) &&
+            (identical(other.closePayingMethod, closePayingMethod) ||
+                other.closePayingMethod == closePayingMethod) &&
+            (identical(other.paymentClassification, paymentClassification) ||
+                other.paymentClassification == paymentClassification) &&
+            (identical(other.paymentMethod, paymentMethod) ||
+                other.paymentMethod == paymentMethod) &&
+            (identical(other.closeDate, closeDate) ||
+                other.closeDate == closeDate) &&
+            (identical(other.paymentSchedule, paymentSchedule) ||
+                other.paymentSchedule == paymentSchedule) &&
+            (identical(other.taxRate, taxRate) || other.taxRate == taxRate) &&
+            (identical(other.commentA, commentA) ||
+                other.commentA == commentA) &&
+            (identical(other.commentB, commentB) ||
+                other.commentB == commentB) &&
+            (identical(other.commentC, commentC) ||
+                other.commentC == commentC) &&
+            (identical(other.commentD, commentD) ||
+                other.commentD == commentD) &&
+            (identical(other.commentE, commentE) ||
+                other.commentE == commentE) &&
+            (identical(other.commentF, commentF) ||
+                other.commentF == commentF) &&
+            (identical(other.itemCode, itemCode) ||
+                other.itemCode == itemCode) &&
+            (identical(other.itemName, itemName) ||
+                other.itemName == itemName) &&
+            (identical(other.itemNameChild, itemNameChild) ||
+                other.itemNameChild == itemNameChild) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.taxClassification, taxClassification) ||
+                other.taxClassification == taxClassification) &&
+            (identical(other.taxChargeMethod, taxChargeMethod) ||
+                other.taxChargeMethod == taxChargeMethod) &&
+            (identical(other.specialComment, specialComment) ||
+                other.specialComment == specialComment) &&
+            (identical(other.stockNumber, stockNumber) ||
+                other.stockNumber == stockNumber) &&
+            (identical(other.stockCode, stockCode) ||
+                other.stockCode == stockCode) &&
+            (identical(other.stockQuantity, stockQuantity) ||
+                other.stockQuantity == stockQuantity) &&
+            (identical(other.orderNumber, orderNumber) ||
+                other.orderNumber == orderNumber));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(skipProcess),
-        const DeepCollectionEquality().hash(purchasingNumber),
-        const DeepCollectionEquality().hash(rowNumber),
-        const DeepCollectionEquality().hash(alignmentPattern),
-        const DeepCollectionEquality().hash(departmentCode),
-        const DeepCollectionEquality().hash(departmentName),
-        const DeepCollectionEquality().hash(personCode),
-        const DeepCollectionEquality().hash(personName),
-        const DeepCollectionEquality().hash(printOrNot),
-        const DeepCollectionEquality().hash(subjectNumber),
-        const DeepCollectionEquality().hash(purchasingDate),
-        const DeepCollectionEquality().hash(subject),
-        const DeepCollectionEquality().hash(companyCode),
-        const DeepCollectionEquality().hash(companyName),
-        const DeepCollectionEquality().hash(person),
-        const DeepCollectionEquality().hash(closePayingMethod),
-        const DeepCollectionEquality().hash(paymentClassification),
-        const DeepCollectionEquality().hash(paymentMethod),
-        const DeepCollectionEquality().hash(closeDate),
-        const DeepCollectionEquality().hash(paymentSchedule),
-        const DeepCollectionEquality().hash(taxRate),
-        const DeepCollectionEquality().hash(commentA),
-        const DeepCollectionEquality().hash(commentB),
-        const DeepCollectionEquality().hash(commentC),
-        const DeepCollectionEquality().hash(commentD),
-        const DeepCollectionEquality().hash(commentE),
-        const DeepCollectionEquality().hash(commentF),
-        const DeepCollectionEquality().hash(itemCode),
-        const DeepCollectionEquality().hash(itemName),
-        const DeepCollectionEquality().hash(itemNameChild),
-        const DeepCollectionEquality().hash(quantity),
-        const DeepCollectionEquality().hash(unit),
-        const DeepCollectionEquality().hash(price),
-        const DeepCollectionEquality().hash(taxClassification),
-        const DeepCollectionEquality().hash(taxChargeMethod),
-        const DeepCollectionEquality().hash(specialComment),
-        const DeepCollectionEquality().hash(stockNumber),
-        const DeepCollectionEquality().hash(stockCode),
-        const DeepCollectionEquality().hash(stockQuantity),
-        const DeepCollectionEquality().hash(orderNumber)
+        skipProcess,
+        purchasingNumber,
+        rowNumber,
+        alignmentPattern,
+        departmentCode,
+        departmentName,
+        personCode,
+        personName,
+        printOrNot,
+        subjectNumber,
+        purchasingDate,
+        subject,
+        companyCode,
+        companyName,
+        person,
+        closePayingMethod,
+        paymentClassification,
+        paymentMethod,
+        closeDate,
+        paymentSchedule,
+        taxRate,
+        commentA,
+        commentB,
+        commentC,
+        commentD,
+        commentE,
+        commentF,
+        itemCode,
+        itemName,
+        itemNameChild,
+        quantity,
+        unit,
+        price,
+        taxClassification,
+        taxChargeMethod,
+        specialComment,
+        stockNumber,
+        stockCode,
+        stockQuantity,
+        orderNumber
       ]);
 
   @JsonKey(ignore: true)
   @override
-  _$EasybizModelCopyWith<_EasybizModel> get copyWith =>
-      __$EasybizModelCopyWithImpl<_EasybizModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$EasybizModelImplCopyWith<_$EasybizModelImpl> get copyWith =>
+      __$$EasybizModelImplCopyWithImpl<_$EasybizModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EasybizModelToJson(this);
+    return _$$EasybizModelImplToJson(
+      this,
+    );
   }
 }
 
@@ -941,93 +960,93 @@ abstract class _EasybizModel implements EasybizModel {
       final String? stockNumber,
       final String? stockCode,
       final int? stockQuantity,
-      final String? orderNumber}) = _$_EasybizModel;
+      final String? orderNumber}) = _$EasybizModelImpl;
 
   factory _EasybizModel.fromJson(Map<String, dynamic> json) =
-      _$_EasybizModel.fromJson;
+      _$EasybizModelImpl.fromJson;
 
   @override
-  String? get skipProcess => throw _privateConstructorUsedError;
+  String? get skipProcess;
   @override //処理スキップ
-  String? get purchasingNumber => throw _privateConstructorUsedError;
+  String? get purchasingNumber;
   @override //処理番号
-  String? get rowNumber => throw _privateConstructorUsedError;
+  String? get rowNumber;
   @override //行番号
-  String? get alignmentPattern => throw _privateConstructorUsedError;
+  String? get alignmentPattern;
   @override //連動パターン
-  String? get departmentCode => throw _privateConstructorUsedError;
+  String? get departmentCode;
   @override //自社部門コード
-  String? get departmentName => throw _privateConstructorUsedError;
+  String? get departmentName;
   @override //自社部門名
-  String? get personCode => throw _privateConstructorUsedError;
+  String? get personCode;
   @override //自社担当者
-  String? get personName => throw _privateConstructorUsedError;
+  String? get personName;
   @override //自社担当者名
-  String? get printOrNot => throw _privateConstructorUsedError;
+  String? get printOrNot;
   @override //自社部門、担当者の印字
-  String? get subjectNumber => throw _privateConstructorUsedError;
+  String? get subjectNumber;
   @override //案件番号
-  String? get purchasingDate => throw _privateConstructorUsedError;
+  String? get purchasingDate;
   @override //仕入れ日
-  String? get subject => throw _privateConstructorUsedError;
+  String? get subject;
   @override //件名
-  String get companyCode => throw _privateConstructorUsedError;
+  String get companyCode;
   @override //仕入先コード
-  String get companyName => throw _privateConstructorUsedError;
+  String get companyName;
   @override //仕入先名
-  String? get person => throw _privateConstructorUsedError;
+  String? get person;
   @override //仕入先担当者
-  String? get closePayingMethod => throw _privateConstructorUsedError;
+  String? get closePayingMethod;
   @override //締め支払い方法
-  String? get paymentClassification => throw _privateConstructorUsedError;
+  String? get paymentClassification;
   @override //支払い区分
-  String? get paymentMethod => throw _privateConstructorUsedError;
+  String? get paymentMethod;
   @override //支払い方法
-  String? get closeDate => throw _privateConstructorUsedError;
+  String? get closeDate;
   @override //仕入れ締め日
-  String? get paymentSchedule => throw _privateConstructorUsedError;
+  String? get paymentSchedule;
   @override //支払い予定日
-  String? get taxRate => throw _privateConstructorUsedError;
+  String? get taxRate;
   @override //消費税率
-  String? get commentA => throw _privateConstructorUsedError;
+  String? get commentA;
   @override //検収書コメント上段
-  String? get commentB => throw _privateConstructorUsedError;
+  String? get commentB;
   @override //検収書コメント下段
-  String? get commentC => throw _privateConstructorUsedError;
+  String? get commentC;
   @override //検収書コメントフッター
-  String? get commentD => throw _privateConstructorUsedError;
+  String? get commentD;
   @override //支払明細書コメント上段
-  String? get commentE => throw _privateConstructorUsedError;
+  String? get commentE;
   @override //支払明細書コメント下段
-  String? get commentF => throw _privateConstructorUsedError;
+  String? get commentF;
   @override //支払明細書コメントフッター
-  String? get itemCode => throw _privateConstructorUsedError;
+  String? get itemCode;
   @override //商品コード
-  String? get itemName => throw _privateConstructorUsedError;
+  String? get itemName;
   @override //商品名
-  String? get itemNameChild => throw _privateConstructorUsedError;
+  String? get itemNameChild;
   @override //商品名(下段)
-  int? get quantity => throw _privateConstructorUsedError;
+  int? get quantity;
   @override //数量
-  String? get unit => throw _privateConstructorUsedError;
+  String? get unit;
   @override //単位
-  int? get price => throw _privateConstructorUsedError;
+  int? get price;
   @override // 仕入れ単価
-  String? get taxClassification => throw _privateConstructorUsedError;
+  String? get taxClassification;
   @override //税区分
-  String? get taxChargeMethod => throw _privateConstructorUsedError;
+  String? get taxChargeMethod;
   @override //内外税
-  String? get specialComment => throw _privateConstructorUsedError;
+  String? get specialComment;
   @override //備考 ,
-  String? get stockNumber => throw _privateConstructorUsedError;
+  String? get stockNumber;
   @override //倉庫割り振り連番
-  String? get stockCode => throw _privateConstructorUsedError;
+  String? get stockCode;
   @override //倉庫コード
-  int? get stockQuantity => throw _privateConstructorUsedError;
+  int? get stockQuantity;
   @override //倉庫数量
-  String? get orderNumber => throw _privateConstructorUsedError;
+  String? get orderNumber;
   @override
   @JsonKey(ignore: true)
-  _$EasybizModelCopyWith<_EasybizModel> get copyWith =>
+  _$$EasybizModelImplCopyWith<_$EasybizModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

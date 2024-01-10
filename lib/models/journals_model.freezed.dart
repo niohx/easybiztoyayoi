@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'journals_model.dart';
 
@@ -35,7 +35,8 @@ mixin _$Journals {
 /// @nodoc
 abstract class $JournalsCopyWith<$Res> {
   factory $JournalsCopyWith(Journals value, $Res Function(Journals) then) =
-      _$JournalsCopyWithImpl<$Res>;
+      _$JournalsCopyWithImpl<$Res, Journals>;
+  @useResult
   $Res call(
       {DateTime? purchasingDate,
       DateTime? closeDate,
@@ -45,51 +46,57 @@ abstract class $JournalsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$JournalsCopyWithImpl<$Res> implements $JournalsCopyWith<$Res> {
+class _$JournalsCopyWithImpl<$Res, $Val extends Journals>
+    implements $JournalsCopyWith<$Res> {
   _$JournalsCopyWithImpl(this._value, this._then);
 
-  final Journals _value;
   // ignore: unused_field
-  final $Res Function(Journals) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? purchasingDate = freezed,
     Object? closeDate = freezed,
     Object? payDate = freezed,
-    Object? hasResume = freezed,
-    Object? journals = freezed,
+    Object? hasResume = null,
+    Object? journals = null,
   }) {
     return _then(_value.copyWith(
-      purchasingDate: purchasingDate == freezed
+      purchasingDate: freezed == purchasingDate
           ? _value.purchasingDate
           : purchasingDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      closeDate: closeDate == freezed
+      closeDate: freezed == closeDate
           ? _value.closeDate
           : closeDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      payDate: payDate == freezed
+      payDate: freezed == payDate
           ? _value.payDate
           : payDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      hasResume: hasResume == freezed
+      hasResume: null == hasResume
           ? _value.hasResume
           : hasResume // ignore: cast_nullable_to_non_nullable
               as bool,
-      journals: journals == freezed
+      journals: null == journals
           ? _value.journals
           : journals // ignore: cast_nullable_to_non_nullable
               as List<Journal?>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$JournalsCopyWith<$Res> implements $JournalsCopyWith<$Res> {
-  factory _$JournalsCopyWith(_Journals value, $Res Function(_Journals) then) =
-      __$JournalsCopyWithImpl<$Res>;
+abstract class _$$JournalsImplCopyWith<$Res>
+    implements $JournalsCopyWith<$Res> {
+  factory _$$JournalsImplCopyWith(
+          _$JournalsImpl value, $Res Function(_$JournalsImpl) then) =
+      __$$JournalsImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {DateTime? purchasingDate,
       DateTime? closeDate,
@@ -99,41 +106,41 @@ abstract class _$JournalsCopyWith<$Res> implements $JournalsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$JournalsCopyWithImpl<$Res> extends _$JournalsCopyWithImpl<$Res>
-    implements _$JournalsCopyWith<$Res> {
-  __$JournalsCopyWithImpl(_Journals _value, $Res Function(_Journals) _then)
-      : super(_value, (v) => _then(v as _Journals));
+class __$$JournalsImplCopyWithImpl<$Res>
+    extends _$JournalsCopyWithImpl<$Res, _$JournalsImpl>
+    implements _$$JournalsImplCopyWith<$Res> {
+  __$$JournalsImplCopyWithImpl(
+      _$JournalsImpl _value, $Res Function(_$JournalsImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Journals get _value => super._value as _Journals;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? purchasingDate = freezed,
     Object? closeDate = freezed,
     Object? payDate = freezed,
-    Object? hasResume = freezed,
-    Object? journals = freezed,
+    Object? hasResume = null,
+    Object? journals = null,
   }) {
-    return _then(_Journals(
-      purchasingDate: purchasingDate == freezed
+    return _then(_$JournalsImpl(
+      purchasingDate: freezed == purchasingDate
           ? _value.purchasingDate
           : purchasingDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      closeDate: closeDate == freezed
+      closeDate: freezed == closeDate
           ? _value.closeDate
           : closeDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      payDate: payDate == freezed
+      payDate: freezed == payDate
           ? _value.payDate
           : payDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      hasResume: hasResume == freezed
+      hasResume: null == hasResume
           ? _value.hasResume
           : hasResume // ignore: cast_nullable_to_non_nullable
               as bool,
-      journals: journals == freezed
-          ? _value.journals
+      journals: null == journals
+          ? _value._journals
           : journals // ignore: cast_nullable_to_non_nullable
               as List<Journal?>,
     ));
@@ -143,8 +150,8 @@ class __$JournalsCopyWithImpl<$Res> extends _$JournalsCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_Journals implements _Journals {
-  _$_Journals(
+class _$JournalsImpl implements _Journals {
+  _$JournalsImpl(
       {this.purchasingDate,
       this.closeDate,
       this.payDate,
@@ -152,8 +159,8 @@ class _$_Journals implements _Journals {
       final List<Journal?> journals = const []})
       : _journals = journals;
 
-  factory _$_Journals.fromJson(Map<String, dynamic> json) =>
-      _$$_JournalsFromJson(json);
+  factory _$JournalsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$JournalsImplFromJson(json);
 
   @override
   final DateTime? purchasingDate;
@@ -168,6 +175,7 @@ class _$_Journals implements _Journals {
   @override
   @JsonKey()
   List<Journal?> get journals {
+    if (_journals is EqualUnmodifiableListView) return _journals;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_journals);
   }
@@ -178,36 +186,36 @@ class _$_Journals implements _Journals {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Journals &&
-            const DeepCollectionEquality()
-                .equals(other.purchasingDate, purchasingDate) &&
-            const DeepCollectionEquality().equals(other.closeDate, closeDate) &&
-            const DeepCollectionEquality().equals(other.payDate, payDate) &&
-            const DeepCollectionEquality().equals(other.hasResume, hasResume) &&
-            const DeepCollectionEquality().equals(other.journals, journals));
+            other is _$JournalsImpl &&
+            (identical(other.purchasingDate, purchasingDate) ||
+                other.purchasingDate == purchasingDate) &&
+            (identical(other.closeDate, closeDate) ||
+                other.closeDate == closeDate) &&
+            (identical(other.payDate, payDate) || other.payDate == payDate) &&
+            (identical(other.hasResume, hasResume) ||
+                other.hasResume == hasResume) &&
+            const DeepCollectionEquality().equals(other._journals, _journals));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(purchasingDate),
-      const DeepCollectionEquality().hash(closeDate),
-      const DeepCollectionEquality().hash(payDate),
-      const DeepCollectionEquality().hash(hasResume),
-      const DeepCollectionEquality().hash(journals));
+  int get hashCode => Object.hash(runtimeType, purchasingDate, closeDate,
+      payDate, hasResume, const DeepCollectionEquality().hash(_journals));
 
   @JsonKey(ignore: true)
   @override
-  _$JournalsCopyWith<_Journals> get copyWith =>
-      __$JournalsCopyWithImpl<_Journals>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$JournalsImplCopyWith<_$JournalsImpl> get copyWith =>
+      __$$JournalsImplCopyWithImpl<_$JournalsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_JournalsToJson(this);
+    return _$$JournalsImplToJson(
+      this,
+    );
   }
 }
 
@@ -217,22 +225,23 @@ abstract class _Journals implements Journals {
       final DateTime? closeDate,
       final DateTime? payDate,
       final bool hasResume,
-      final List<Journal?> journals}) = _$_Journals;
+      final List<Journal?> journals}) = _$JournalsImpl;
 
-  factory _Journals.fromJson(Map<String, dynamic> json) = _$_Journals.fromJson;
+  factory _Journals.fromJson(Map<String, dynamic> json) =
+      _$JournalsImpl.fromJson;
 
   @override
-  DateTime? get purchasingDate => throw _privateConstructorUsedError;
+  DateTime? get purchasingDate;
   @override
-  DateTime? get closeDate => throw _privateConstructorUsedError;
+  DateTime? get closeDate;
   @override
-  DateTime? get payDate => throw _privateConstructorUsedError;
+  DateTime? get payDate;
   @override
-  bool get hasResume => throw _privateConstructorUsedError;
+  bool get hasResume;
   @override
-  List<Journal?> get journals => throw _privateConstructorUsedError;
+  List<Journal?> get journals;
   @override
   @JsonKey(ignore: true)
-  _$JournalsCopyWith<_Journals> get copyWith =>
+  _$$JournalsImplCopyWith<_$JournalsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
