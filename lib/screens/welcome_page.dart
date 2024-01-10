@@ -1,8 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-
-import 'package:csv/csv.dart';
-import 'package:easybiz_to_yayoi/providers/journals_provider.dart';
 import 'package:easybiz_to_yayoi/providers/providers.dart';
 import 'package:easybiz_to_yayoi/screens/company_edit_page.dart';
 import 'package:file_picker/file_picker.dart';
@@ -15,7 +10,7 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Welcome Page')),
-      body: _WelcomePageBody(),
+      body: const _WelcomePageBody(),
     );
   }
 }
@@ -43,7 +38,7 @@ class _WelcomePageBody extends HookConsumerWidget {
                 // User canceled the picker
               }
             },
-            child: Text('CSVの読み込み')),
+            child: const Text('CSVの読み込み')),
         OutlinedButton(
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -56,7 +51,7 @@ class _WelcomePageBody extends HookConsumerWidget {
                     .push(MaterialPageRoute(builder: (_) => CSVEditScreen()));
               }
             },
-            child: Text('途中から'))
+            child: const Text('途中から'))
       ]),
     );
   }

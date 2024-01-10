@@ -8,8 +8,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../models/company_edit_model.dart';
-import '../providers/journals_provider.dart';
 
+// ignore: must_be_immutable
 class CSVEditScreen extends HookConsumerWidget {
   CSVEditScreen({Key? key}) : super(key: key);
   DateFormat outputFormat = DateFormat('yyyy/MM/dd');
@@ -74,7 +74,7 @@ class CSVEditScreen extends HookConsumerWidget {
                     onPressed: () async {
                       final target = await showDatePicker(
                           context: context,
-                          initialDate: new DateTime.now(),
+                          initialDate: DateTime.now(),
                           lastDate: DateTime(DateTime.now().year + 1),
                           firstDate: DateTime(DateTime.now().year - 1));
                       if (target != null) {
@@ -120,13 +120,13 @@ class CSVEditScreen extends HookConsumerWidget {
           ),
           Flexible(
             child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200.0),
                 itemCount: filtered.journals.length,
                 itemBuilder: (context, index) {
                   return ProviderScope(overrides: [
                     currentJournal.overrideWithValue(filtered.journals[index]!)
-                  ], child: JournalItem());
+                  ], child: const JournalItem());
                 }),
           ),
         ],

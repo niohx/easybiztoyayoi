@@ -101,10 +101,10 @@ class JournalsEditNotifier extends StateNotifier<Journals> {
   }
 
   Future<void> outputToYayoi({required String path}) async {
-    final file = File(path + '/outputYayoi.csv');
+    final file = File('$path/outputYayoi.csv');
     final yayoiModels = convertToYayoiModel(state);
     final _listoflist = convertToSCVStringfromYayoiModels(yayoiModels);
-    final csv = ListToCsvConverter().convert(_listoflist);
+    final csv = const ListToCsvConverter().convert(_listoflist);
     final encoded = await CharsetConverter.encode("Shift_JIS", csv);
     file.writeAsBytes(encoded);
   }
@@ -198,10 +198,10 @@ class JournalsEditNotifier extends StateNotifier<Journals> {
   }
 
   Future<void> outputToEasyBiz({required String path}) async {
-    final file = File(path + '/outputEasyBiz.csv');
+    final file = File('$path/outputEasyBiz.csv');
     final easybizModels = convertToEasybizModel(state);
     final _listoflist = convertToSCVStringfromEasybizModels(easybizModels);
-    final csv = ListToCsvConverter().convert(_listoflist);
+    final csv = const ListToCsvConverter().convert(_listoflist);
     final encoded = await CharsetConverter.encode("Shift_JIS", csv);
     file.writeAsBytes(encoded);
   }
