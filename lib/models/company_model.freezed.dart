@@ -12,7 +12,7 @@ part of 'company_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CompanyModel _$CompanyModelFromJson(Map<String, dynamic> json) {
   return _CompanyModel.fromJson(json);
@@ -78,8 +78,12 @@ mixin _$CompanyModel {
   String? get payPriceJudge => throw _privateConstructorUsedError; //支払額判定誤差
   String? get applicable => throw _privateConstructorUsedError;
 
+  /// Serializes this CompanyModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CompanyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CompanyModelCopyWith<CompanyModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -152,6 +156,8 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CompanyModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -474,6 +480,8 @@ class __$$CompanyModelImplCopyWithImpl<$Res>
       _$CompanyModelImpl _value, $Res Function(_$CompanyModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CompanyModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1035,7 +1043,7 @@ class _$CompanyModelImpl implements _CompanyModel {
                 other.applicable == applicable));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1090,7 +1098,9 @@ class _$CompanyModelImpl implements _CompanyModel {
         applicable
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CompanyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CompanyModelImplCopyWith<_$CompanyModelImpl> get copyWith =>
@@ -1159,107 +1169,111 @@ abstract class _CompanyModel implements CompanyModel {
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
       _$CompanyModelImpl.fromJson;
 
-  @override // ignore: non_constant_identifier_names
-  String? get EDI;
-  @override // EDI申請ステータス
-  String get companyCode;
-  @override //仕入先コード
-  String get order;
-  @override //表示順
-  String get classification;
-  @override //仕入先分類
-  String? get companyNumber;
-  @override //法人番号
-  String? get companyChildNumber;
-  @override //法人番号枝番
-  String? get invoiceNumber;
-  @override //適格請求書発行事業者登録番号
-  String get kubun;
-  @override //事業者区分
-  String get companyName;
-  @override //仕入先名称
-  String? get companyKana;
-  @override //仕入先カナ
-  String? get companyAbbriviation;
-  @override //仕入先略称
-  String? get kojin;
-  @override //個人
-  String? get postalcode;
-  @override //郵便番号親番
-  String? get postalcodeChild;
-  @override //郵便番号枝番
-  String? get addressA;
-  @override //住所上段
-  String? get addressB;
-  @override //住所下段
-  String? get person;
-  @override //担当者
-  String? get phoneNumberA;
-  @override //電話番号１
-  String? get phoneNumberB;
-  @override //電話番号２
-  String? get faxNumber;
-  @override //FAX番号
-  String? get email;
-  @override //Email
 // ignore: non_constant_identifier_names
-  String? get URI;
-  @override //URI
-  String? get responsiblePerson;
-  @override //自社担当者
-  String? get payClass;
-  @override //支払い区分
-  String? get closeGroup;
-  @override //締日グループ
-  String? get paymentConstant;
-  @override //支払条件
-  String? get paymentMethod;
-  @override //支払い方法
-  String? get taxMethod;
-  @override //消費税計算
-  String? get fraction;
-  @override //端数処理
-  String? get accountsPayable;
-  @override //買掛金
-  String? get payeeMemo;
-  @override //振込先メモ
-  String? get payeeBankCode;
-  @override //振込先銀行番号
-  String? get payeeBankName;
-  @override //振込先銀行
-  String? get payeeBankBranchCode;
-  @override //振込先支店番号
-  String? get payeeBankBranchName;
-  @override //振込先支店名
-  String? get bankAccountType;
-  @override //振込先預金種目
-  String? get bankAccountNumber;
-  @override //振込先口座番号
-  String? get bankAcountName;
-  @override //振込先口座名
-  String? get transferFee;
-  @override // 振込手数料負担
-  String? get calcFee;
-  @override //手数料計算方法
-  String? get minimumPayPrice;
-  @override // 最低支払金額
-  String? get multipleAtOnce;
-  @override // 複数仕入れの一括振込可否
-  String? get payeeBank;
-  @override //振込先取引銀行
-  String? get purchasingPattern;
-  @override //連動パターン
-  String? get hidden;
-  @override //非表示
-  String? get payDayThresholdBefore;
-  @override //支払日判定誤差前
-  String? get payDayThresholdAfter;
-  @override //支払日判定誤差後
-  String? get payPriceJudge;
-  @override //支払額判定誤差
-  String? get applicable;
   @override
-  @JsonKey(ignore: true)
+  String? get EDI; // EDI申請ステータス
+  @override
+  String get companyCode; //仕入先コード
+  @override
+  String get order; //表示順
+  @override
+  String get classification; //仕入先分類
+  @override
+  String? get companyNumber; //法人番号
+  @override
+  String? get companyChildNumber; //法人番号枝番
+  @override
+  String? get invoiceNumber; //適格請求書発行事業者登録番号
+  @override
+  String get kubun; //事業者区分
+  @override
+  String get companyName; //仕入先名称
+  @override
+  String? get companyKana; //仕入先カナ
+  @override
+  String? get companyAbbriviation; //仕入先略称
+  @override
+  String? get kojin; //個人
+  @override
+  String? get postalcode; //郵便番号親番
+  @override
+  String? get postalcodeChild; //郵便番号枝番
+  @override
+  String? get addressA; //住所上段
+  @override
+  String? get addressB; //住所下段
+  @override
+  String? get person; //担当者
+  @override
+  String? get phoneNumberA; //電話番号１
+  @override
+  String? get phoneNumberB; //電話番号２
+  @override
+  String? get faxNumber; //FAX番号
+  @override
+  String? get email; //Email
+// ignore: non_constant_identifier_names
+  @override
+  String? get URI; //URI
+  @override
+  String? get responsiblePerson; //自社担当者
+  @override
+  String? get payClass; //支払い区分
+  @override
+  String? get closeGroup; //締日グループ
+  @override
+  String? get paymentConstant; //支払条件
+  @override
+  String? get paymentMethod; //支払い方法
+  @override
+  String? get taxMethod; //消費税計算
+  @override
+  String? get fraction; //端数処理
+  @override
+  String? get accountsPayable; //買掛金
+  @override
+  String? get payeeMemo; //振込先メモ
+  @override
+  String? get payeeBankCode; //振込先銀行番号
+  @override
+  String? get payeeBankName; //振込先銀行
+  @override
+  String? get payeeBankBranchCode; //振込先支店番号
+  @override
+  String? get payeeBankBranchName; //振込先支店名
+  @override
+  String? get bankAccountType; //振込先預金種目
+  @override
+  String? get bankAccountNumber; //振込先口座番号
+  @override
+  String? get bankAcountName; //振込先口座名
+  @override
+  String? get transferFee; // 振込手数料負担
+  @override
+  String? get calcFee; //手数料計算方法
+  @override
+  String? get minimumPayPrice; // 最低支払金額
+  @override
+  String? get multipleAtOnce; // 複数仕入れの一括振込可否
+  @override
+  String? get payeeBank; //振込先取引銀行
+  @override
+  String? get purchasingPattern; //連動パターン
+  @override
+  String? get hidden; //非表示
+  @override
+  String? get payDayThresholdBefore; //支払日判定誤差前
+  @override
+  String? get payDayThresholdAfter; //支払日判定誤差後
+  @override
+  String? get payPriceJudge; //支払額判定誤差
+  @override
+  String? get applicable;
+
+  /// Create a copy of CompanyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CompanyModelImplCopyWith<_$CompanyModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -9,7 +9,7 @@ part of 'company_edit_model.dart';
 _$JournalImpl _$$JournalImplFromJson(Map<String, dynamic> json) =>
     _$JournalImpl(
       company: CompanyModel.fromJson(json['company'] as Map<String, dynamic>),
-      price: json['price'] as int? ?? 0,
+      price: (json['price'] as num?)?.toInt() ?? 0,
       willExport: json['willExport'] as bool? ?? true,
     );
 

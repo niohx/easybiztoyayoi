@@ -48,10 +48,6 @@ class JournalsEditNotifier extends StateNotifier<Journals> {
     state = journals;
   }
 
-  void editPurchasingDate(DateTime target) {
-    state = state.copyWith(purchasingDate: target);
-  }
-
   void editCloseDate(DateTime target) {
     state = state.copyWith(closeDate: target);
   }
@@ -154,7 +150,7 @@ class JournalsEditNotifier extends StateNotifier<Journals> {
         .toList()
         .map((journal) => YayoiModel(
             regFlag: 2000.toString(),
-            transactionDate: outputFormat.format(state.purchasingDate!),
+            transactionDate: outputFormat.format(state.closeDate!),
             debitAccount: debitAccount(journal!.company),
             debitTaxClass: debitTaxClass(journal.company),
             debitPrice: journal.price,
@@ -218,7 +214,7 @@ class JournalsEditNotifier extends StateNotifier<Journals> {
               departmentCode: 0.toString(),
               departmentName: '部門なし',
               printOrNot: '印字しない',
-              purchasingDate: outputFormat.format(state.purchasingDate!),
+              purchasingDate: outputFormat.format(state.closeDate!),
               companyCode: journal!.company.companyCode,
               companyName: journal.company.companyName,
               paymentClassification: '締め',

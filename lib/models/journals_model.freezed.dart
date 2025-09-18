@@ -12,7 +12,7 @@ part of 'journals_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Journals _$JournalsFromJson(Map<String, dynamic> json) {
   return _Journals.fromJson(json);
@@ -20,14 +20,17 @@ Journals _$JournalsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Journals {
-  DateTime? get purchasingDate => throw _privateConstructorUsedError;
   DateTime? get closeDate => throw _privateConstructorUsedError;
   DateTime? get payDate => throw _privateConstructorUsedError;
   bool get hasResume => throw _privateConstructorUsedError;
   List<Journal?> get journals => throw _privateConstructorUsedError;
 
+  /// Serializes this Journals to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Journals
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $JournalsCopyWith<Journals> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -38,8 +41,7 @@ abstract class $JournalsCopyWith<$Res> {
       _$JournalsCopyWithImpl<$Res, Journals>;
   @useResult
   $Res call(
-      {DateTime? purchasingDate,
-      DateTime? closeDate,
+      {DateTime? closeDate,
       DateTime? payDate,
       bool hasResume,
       List<Journal?> journals});
@@ -55,20 +57,17 @@ class _$JournalsCopyWithImpl<$Res, $Val extends Journals>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Journals
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? purchasingDate = freezed,
     Object? closeDate = freezed,
     Object? payDate = freezed,
     Object? hasResume = null,
     Object? journals = null,
   }) {
     return _then(_value.copyWith(
-      purchasingDate: freezed == purchasingDate
-          ? _value.purchasingDate
-          : purchasingDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
       closeDate: freezed == closeDate
           ? _value.closeDate
           : closeDate // ignore: cast_nullable_to_non_nullable
@@ -98,8 +97,7 @@ abstract class _$$JournalsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? purchasingDate,
-      DateTime? closeDate,
+      {DateTime? closeDate,
       DateTime? payDate,
       bool hasResume,
       List<Journal?> journals});
@@ -113,20 +111,17 @@ class __$$JournalsImplCopyWithImpl<$Res>
       _$JournalsImpl _value, $Res Function(_$JournalsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Journals
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? purchasingDate = freezed,
     Object? closeDate = freezed,
     Object? payDate = freezed,
     Object? hasResume = null,
     Object? journals = null,
   }) {
     return _then(_$JournalsImpl(
-      purchasingDate: freezed == purchasingDate
-          ? _value.purchasingDate
-          : purchasingDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
       closeDate: freezed == closeDate
           ? _value.closeDate
           : closeDate // ignore: cast_nullable_to_non_nullable
@@ -152,8 +147,7 @@ class __$$JournalsImplCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$JournalsImpl implements _Journals {
   _$JournalsImpl(
-      {this.purchasingDate,
-      this.closeDate,
+      {this.closeDate,
       this.payDate,
       this.hasResume = false,
       final List<Journal?> journals = const []})
@@ -162,8 +156,6 @@ class _$JournalsImpl implements _Journals {
   factory _$JournalsImpl.fromJson(Map<String, dynamic> json) =>
       _$$JournalsImplFromJson(json);
 
-  @override
-  final DateTime? purchasingDate;
   @override
   final DateTime? closeDate;
   @override
@@ -182,7 +174,7 @@ class _$JournalsImpl implements _Journals {
 
   @override
   String toString() {
-    return 'Journals(purchasingDate: $purchasingDate, closeDate: $closeDate, payDate: $payDate, hasResume: $hasResume, journals: $journals)';
+    return 'Journals(closeDate: $closeDate, payDate: $payDate, hasResume: $hasResume, journals: $journals)';
   }
 
   @override
@@ -190,8 +182,6 @@ class _$JournalsImpl implements _Journals {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JournalsImpl &&
-            (identical(other.purchasingDate, purchasingDate) ||
-                other.purchasingDate == purchasingDate) &&
             (identical(other.closeDate, closeDate) ||
                 other.closeDate == closeDate) &&
             (identical(other.payDate, payDate) || other.payDate == payDate) &&
@@ -200,12 +190,14 @@ class _$JournalsImpl implements _Journals {
             const DeepCollectionEquality().equals(other._journals, _journals));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, purchasingDate, closeDate,
-      payDate, hasResume, const DeepCollectionEquality().hash(_journals));
+  int get hashCode => Object.hash(runtimeType, closeDate, payDate, hasResume,
+      const DeepCollectionEquality().hash(_journals));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Journals
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$JournalsImplCopyWith<_$JournalsImpl> get copyWith =>
@@ -221,8 +213,7 @@ class _$JournalsImpl implements _Journals {
 
 abstract class _Journals implements Journals {
   factory _Journals(
-      {final DateTime? purchasingDate,
-      final DateTime? closeDate,
+      {final DateTime? closeDate,
       final DateTime? payDate,
       final bool hasResume,
       final List<Journal?> journals}) = _$JournalsImpl;
@@ -231,8 +222,6 @@ abstract class _Journals implements Journals {
       _$JournalsImpl.fromJson;
 
   @override
-  DateTime? get purchasingDate;
-  @override
   DateTime? get closeDate;
   @override
   DateTime? get payDate;
@@ -240,8 +229,11 @@ abstract class _Journals implements Journals {
   bool get hasResume;
   @override
   List<Journal?> get journals;
+
+  /// Create a copy of Journals
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$JournalsImplCopyWith<_$JournalsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

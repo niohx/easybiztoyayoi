@@ -9,8 +9,7 @@ part 'journals_model.g.dart';
 class Journals with _$Journals {
   @JsonSerializable(explicitToJson: true)
   factory Journals(
-      {DateTime? purchasingDate,
-      DateTime? closeDate,
+      {DateTime? closeDate,
       DateTime? payDate,
       @Default(false) bool hasResume,
       @Default([]) List<Journal?> journals}) = _Journals;

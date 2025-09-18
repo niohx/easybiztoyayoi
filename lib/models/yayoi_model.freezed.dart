@@ -12,7 +12,7 @@ part of 'yayoi_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 YayoiModel _$YayoiModelFromJson(Map<String, dynamic> json) {
   return _YayoiModel.fromJson(json);
@@ -46,8 +46,12 @@ mixin _$YayoiModel {
   String? get commentB => throw _privateConstructorUsedError; //付箋２
   String get adjustment => throw _privateConstructorUsedError;
 
+  /// Serializes this YayoiModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of YayoiModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $YayoiModelCopyWith<YayoiModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -96,6 +100,8 @@ class _$YayoiModelCopyWithImpl<$Res, $Val extends YayoiModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of YayoiModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -274,6 +280,8 @@ class __$$YayoiModelImplCopyWithImpl<$Res>
       _$YayoiModelImpl _value, $Res Function(_$YayoiModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of YayoiModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -574,7 +582,7 @@ class _$YayoiModelImpl implements _YayoiModel {
                 other.adjustment == adjustment));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -605,7 +613,9 @@ class _$YayoiModelImpl implements _YayoiModel {
         adjustment
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of YayoiModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$YayoiModelImplCopyWith<_$YayoiModelImpl> get copyWith =>
@@ -651,57 +661,60 @@ abstract class _YayoiModel implements YayoiModel {
       _$YayoiModelImpl.fromJson;
 
   @override
-  String get regFlag;
-  @override //識別フラグ
-  int? get slipNumber;
-  @override //伝票番号
-  String? get settle;
-  @override // 決算仕訳
-  String get transactionDate;
-  @override //取引日付
-  String get debitAccount;
-  @override //借方勘定科目
-  String? get debitChildAccount;
-  @override //借方補助科目
-  String? get debitDepartment;
-  @override //借方部門
-  String get debitTaxClass;
-  @override //借方税区分
-  int get debitPrice;
-  @override //借方金額
-  int? get debitTaxPrice;
-  @override //借方税金額
-  String get creditAccount;
-  @override //貸方勘定科目
-  String? get creditChildAccount;
-  @override //貸方補助科目
-  String? get creditDepartment;
-  @override //貸方部門
-  String get creditTaxClass;
-  @override //貸方税区分
-  int get creditPrice;
-  @override //貸方金額
-  int? get creditTaxPrice;
-  @override //貸方税金額
-  String? get comment;
-  @override //摘要
-  String? get childNumber;
-  @override //番号
-  String? get limitDate;
-  @override //期日
-  int get dataType;
-  @override //タイプ
-  String? get generateFrom;
-  @override //生成元
-  String? get memo;
-  @override //仕訳メモ
-  String? get commentA;
-  @override //付箋１
-  String? get commentB;
-  @override //付箋２
-  String get adjustment;
+  String get regFlag; //識別フラグ
   @override
-  @JsonKey(ignore: true)
+  int? get slipNumber; //伝票番号
+  @override
+  String? get settle; // 決算仕訳
+  @override
+  String get transactionDate; //取引日付
+  @override
+  String get debitAccount; //借方勘定科目
+  @override
+  String? get debitChildAccount; //借方補助科目
+  @override
+  String? get debitDepartment; //借方部門
+  @override
+  String get debitTaxClass; //借方税区分
+  @override
+  int get debitPrice; //借方金額
+  @override
+  int? get debitTaxPrice; //借方税金額
+  @override
+  String get creditAccount; //貸方勘定科目
+  @override
+  String? get creditChildAccount; //貸方補助科目
+  @override
+  String? get creditDepartment; //貸方部門
+  @override
+  String get creditTaxClass; //貸方税区分
+  @override
+  int get creditPrice; //貸方金額
+  @override
+  int? get creditTaxPrice; //貸方税金額
+  @override
+  String? get comment; //摘要
+  @override
+  String? get childNumber; //番号
+  @override
+  String? get limitDate; //期日
+  @override
+  int get dataType; //タイプ
+  @override
+  String? get generateFrom; //生成元
+  @override
+  String? get memo; //仕訳メモ
+  @override
+  String? get commentA; //付箋１
+  @override
+  String? get commentB; //付箋２
+  @override
+  String get adjustment;
+
+  /// Create a copy of YayoiModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$YayoiModelImplCopyWith<_$YayoiModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

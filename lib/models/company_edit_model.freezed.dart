@@ -12,7 +12,7 @@ part of 'company_edit_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Journal _$JournalFromJson(Map<String, dynamic> json) {
   return _Journal.fromJson(json);
@@ -24,8 +24,12 @@ mixin _$Journal {
   int get price => throw _privateConstructorUsedError; //金額
   bool get willExport => throw _privateConstructorUsedError;
 
+  /// Serializes this Journal to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Journal
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $JournalCopyWith<Journal> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -49,6 +53,8 @@ class _$JournalCopyWithImpl<$Res, $Val extends Journal>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Journal
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -72,6 +78,8 @@ class _$JournalCopyWithImpl<$Res, $Val extends Journal>
     ) as $Val);
   }
 
+  /// Create a copy of Journal
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CompanyModelCopyWith<$Res> get company {
@@ -102,6 +110,8 @@ class __$$JournalImplCopyWithImpl<$Res>
       _$JournalImpl _value, $Res Function(_$JournalImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Journal
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,11 +173,13 @@ class _$JournalImpl implements _Journal {
                 other.willExport == willExport));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, company, price, willExport);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Journal
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$JournalImplCopyWith<_$JournalImpl> get copyWith =>
@@ -190,13 +202,16 @@ abstract class _Journal implements Journal {
   factory _Journal.fromJson(Map<String, dynamic> json) = _$JournalImpl.fromJson;
 
   @override
-  CompanyModel get company;
-  @override //会社
-  int get price;
-  @override //金額
-  bool get willExport;
+  CompanyModel get company; //会社
   @override
-  @JsonKey(ignore: true)
+  int get price; //金額
+  @override
+  bool get willExport;
+
+  /// Create a copy of Journal
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$JournalImplCopyWith<_$JournalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

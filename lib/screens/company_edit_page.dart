@@ -80,21 +80,6 @@ class CSVEditScreen extends HookConsumerWidget {
                       if (target != null) {
                         ref
                             .read(journalsEditProvider.notifier)
-                            .editPurchasingDate(target);
-                      }
-                    },
-                    child: Text(
-                        '仕入日 ${journals.purchasingDate != null ? outputFormat.format(journals.purchasingDate!) : '選択してください'}')),
-                OutlinedButton(
-                    onPressed: () async {
-                      final target = await showDatePicker(
-                          context: context,
-                          initialDate: DateTime.now(),
-                          lastDate: DateTime(DateTime.now().year + 1),
-                          firstDate: DateTime(DateTime.now().year - 1));
-                      if (target != null) {
-                        ref
-                            .read(journalsEditProvider.notifier)
                             .editCloseDate(target);
                       }
                     },
@@ -155,9 +140,7 @@ class _BottomNavigationBar extends HookConsumerWidget {
             case 0:
               final path = await FilePicker.platform.getDirectoryPath();
               if (path != null) {
-                if (_journal.closeDate != null &&
-                    _journal.payDate != null &&
-                    _journal.purchasingDate != null) {
+                if (_journal.closeDate != null && _journal.payDate != null) {
                   ref
                       .read(journalsEditProvider.notifier)
                       .outputToYayoi(path: path);
@@ -168,7 +151,7 @@ class _BottomNavigationBar extends HookConsumerWidget {
                     builder: (_) {
                       return AlertDialog(
                         title: const Text("書き出しできません"),
-                        content: const Text("支払日等を選択してください"),
+                        content: const Text("締め日と支払日を選択してください"),
                         actions: [
                           TextButton(
                             child: const Text("OK"),
@@ -184,9 +167,7 @@ class _BottomNavigationBar extends HookConsumerWidget {
             case 1:
               final path = await FilePicker.platform.getDirectoryPath();
               if (path != null) {
-                if (_journal.closeDate != null &&
-                    _journal.payDate != null &&
-                    _journal.purchasingDate != null) {
+                if (_journal.closeDate != null && _journal.payDate != null) {
                   ref
                       .read(journalsEditProvider.notifier)
                       .outputToEasyBiz(path: path);
@@ -197,7 +178,7 @@ class _BottomNavigationBar extends HookConsumerWidget {
                     builder: (_) {
                       return AlertDialog(
                         title: const Text("書き出しできません"),
-                        content: const Text("支払日等を選択してください"),
+                        content: const Text("締め日と支払日を選択してください"),
                         actions: [
                           TextButton(
                             child: const Text("OK"),

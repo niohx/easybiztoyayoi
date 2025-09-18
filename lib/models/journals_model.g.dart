@@ -8,9 +8,6 @@ part of 'journals_model.dart';
 
 _$JournalsImpl _$$JournalsImplFromJson(Map<String, dynamic> json) =>
     _$JournalsImpl(
-      purchasingDate: json['purchasingDate'] == null
-          ? null
-          : DateTime.parse(json['purchasingDate'] as String),
       closeDate: json['closeDate'] == null
           ? null
           : DateTime.parse(json['closeDate'] as String),
@@ -28,7 +25,6 @@ _$JournalsImpl _$$JournalsImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$JournalsImplToJson(_$JournalsImpl instance) =>
     <String, dynamic>{
-      'purchasingDate': instance.purchasingDate?.toIso8601String(),
       'closeDate': instance.closeDate?.toIso8601String(),
       'payDate': instance.payDate?.toIso8601String(),
       'hasResume': instance.hasResume,

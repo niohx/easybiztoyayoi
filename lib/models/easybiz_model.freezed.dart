@@ -12,7 +12,7 @@ part of 'easybiz_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 EasybizModel _$EasybizModelFromJson(Map<String, dynamic> json) {
   return _EasybizModel.fromJson(json);
@@ -30,7 +30,6 @@ mixin _$EasybizModel {
   String? get personName => throw _privateConstructorUsedError; //自社担当者名
   String? get printOrNot => throw _privateConstructorUsedError; //自社部門、担当者の印字
   String? get subjectNumber => throw _privateConstructorUsedError; //案件番号
-  String? get purchasingDate => throw _privateConstructorUsedError; //仕入れ日
   String? get subject => throw _privateConstructorUsedError; //件名
   String get companyCode => throw _privateConstructorUsedError; //仕入先コード
   String get companyName => throw _privateConstructorUsedError; //仕入先名
@@ -62,8 +61,12 @@ mixin _$EasybizModel {
   int? get stockQuantity => throw _privateConstructorUsedError; //倉庫数量
   String? get orderNumber => throw _privateConstructorUsedError;
 
+  /// Serializes this EasybizModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EasybizModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EasybizModelCopyWith<EasybizModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -85,7 +88,6 @@ abstract class $EasybizModelCopyWith<$Res> {
       String? personName,
       String? printOrNot,
       String? subjectNumber,
-      String? purchasingDate,
       String? subject,
       String companyCode,
       String companyName,
@@ -127,6 +129,8 @@ class _$EasybizModelCopyWithImpl<$Res, $Val extends EasybizModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EasybizModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,7 +144,6 @@ class _$EasybizModelCopyWithImpl<$Res, $Val extends EasybizModel>
     Object? personName = freezed,
     Object? printOrNot = freezed,
     Object? subjectNumber = freezed,
-    Object? purchasingDate = freezed,
     Object? subject = freezed,
     Object? companyCode = null,
     Object? companyName = null,
@@ -211,10 +214,6 @@ class _$EasybizModelCopyWithImpl<$Res, $Val extends EasybizModel>
       subjectNumber: freezed == subjectNumber
           ? _value.subjectNumber
           : subjectNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      purchasingDate: freezed == purchasingDate
-          ? _value.purchasingDate
-          : purchasingDate // ignore: cast_nullable_to_non_nullable
               as String?,
       subject: freezed == subject
           ? _value.subject
@@ -355,7 +354,6 @@ abstract class _$$EasybizModelImplCopyWith<$Res>
       String? personName,
       String? printOrNot,
       String? subjectNumber,
-      String? purchasingDate,
       String? subject,
       String companyCode,
       String companyName,
@@ -395,6 +393,8 @@ class __$$EasybizModelImplCopyWithImpl<$Res>
       _$EasybizModelImpl _value, $Res Function(_$EasybizModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EasybizModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -408,7 +408,6 @@ class __$$EasybizModelImplCopyWithImpl<$Res>
     Object? personName = freezed,
     Object? printOrNot = freezed,
     Object? subjectNumber = freezed,
-    Object? purchasingDate = freezed,
     Object? subject = freezed,
     Object? companyCode = null,
     Object? companyName = null,
@@ -479,10 +478,6 @@ class __$$EasybizModelImplCopyWithImpl<$Res>
       subjectNumber: freezed == subjectNumber
           ? _value.subjectNumber
           : subjectNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      purchasingDate: freezed == purchasingDate
-          ? _value.purchasingDate
-          : purchasingDate // ignore: cast_nullable_to_non_nullable
               as String?,
       subject: freezed == subject
           ? _value.subject
@@ -618,7 +613,6 @@ class _$EasybizModelImpl implements _EasybizModel {
       this.personName,
       this.printOrNot,
       this.subjectNumber,
-      this.purchasingDate,
       this.subject,
       required this.companyCode,
       required this.companyName,
@@ -682,9 +676,6 @@ class _$EasybizModelImpl implements _EasybizModel {
   @override
   final String? subjectNumber;
 //案件番号
-  @override
-  final String? purchasingDate;
-//仕入れ日
   @override
   final String? subject;
 //件名
@@ -774,7 +765,7 @@ class _$EasybizModelImpl implements _EasybizModel {
 
   @override
   String toString() {
-    return 'EasybizModel(skipProcess: $skipProcess, purchasingNumber: $purchasingNumber, rowNumber: $rowNumber, alignmentPattern: $alignmentPattern, departmentCode: $departmentCode, departmentName: $departmentName, personCode: $personCode, personName: $personName, printOrNot: $printOrNot, subjectNumber: $subjectNumber, purchasingDate: $purchasingDate, subject: $subject, companyCode: $companyCode, companyName: $companyName, person: $person, closePayingMethod: $closePayingMethod, paymentClassification: $paymentClassification, paymentMethod: $paymentMethod, closeDate: $closeDate, paymentSchedule: $paymentSchedule, taxRate: $taxRate, commentA: $commentA, commentB: $commentB, commentC: $commentC, commentD: $commentD, commentE: $commentE, commentF: $commentF, itemCode: $itemCode, itemName: $itemName, itemNameChild: $itemNameChild, quantity: $quantity, unit: $unit, price: $price, taxClassification: $taxClassification, taxChargeMethod: $taxChargeMethod, specialComment: $specialComment, stockNumber: $stockNumber, stockCode: $stockCode, stockQuantity: $stockQuantity, orderNumber: $orderNumber)';
+    return 'EasybizModel(skipProcess: $skipProcess, purchasingNumber: $purchasingNumber, rowNumber: $rowNumber, alignmentPattern: $alignmentPattern, departmentCode: $departmentCode, departmentName: $departmentName, personCode: $personCode, personName: $personName, printOrNot: $printOrNot, subjectNumber: $subjectNumber, subject: $subject, companyCode: $companyCode, companyName: $companyName, person: $person, closePayingMethod: $closePayingMethod, paymentClassification: $paymentClassification, paymentMethod: $paymentMethod, closeDate: $closeDate, paymentSchedule: $paymentSchedule, taxRate: $taxRate, commentA: $commentA, commentB: $commentB, commentC: $commentC, commentD: $commentD, commentE: $commentE, commentF: $commentF, itemCode: $itemCode, itemName: $itemName, itemNameChild: $itemNameChild, quantity: $quantity, unit: $unit, price: $price, taxClassification: $taxClassification, taxChargeMethod: $taxChargeMethod, specialComment: $specialComment, stockNumber: $stockNumber, stockCode: $stockCode, stockQuantity: $stockQuantity, orderNumber: $orderNumber)';
   }
 
   @override
@@ -802,8 +793,6 @@ class _$EasybizModelImpl implements _EasybizModel {
                 other.printOrNot == printOrNot) &&
             (identical(other.subjectNumber, subjectNumber) ||
                 other.subjectNumber == subjectNumber) &&
-            (identical(other.purchasingDate, purchasingDate) ||
-                other.purchasingDate == purchasingDate) &&
             (identical(other.subject, subject) || other.subject == subject) &&
             (identical(other.companyCode, companyCode) ||
                 other.companyCode == companyCode) &&
@@ -859,7 +848,7 @@ class _$EasybizModelImpl implements _EasybizModel {
                 other.orderNumber == orderNumber));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -873,7 +862,6 @@ class _$EasybizModelImpl implements _EasybizModel {
         personName,
         printOrNot,
         subjectNumber,
-        purchasingDate,
         subject,
         companyCode,
         companyName,
@@ -905,7 +893,9 @@ class _$EasybizModelImpl implements _EasybizModel {
         orderNumber
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EasybizModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EasybizModelImplCopyWith<_$EasybizModelImpl> get copyWith =>
@@ -931,7 +921,6 @@ abstract class _EasybizModel implements EasybizModel {
       final String? personName,
       final String? printOrNot,
       final String? subjectNumber,
-      final String? purchasingDate,
       final String? subject,
       required final String companyCode,
       required final String companyName,
@@ -966,87 +955,88 @@ abstract class _EasybizModel implements EasybizModel {
       _$EasybizModelImpl.fromJson;
 
   @override
-  String? get skipProcess;
-  @override //処理スキップ
-  String? get purchasingNumber;
-  @override //処理番号
-  String? get rowNumber;
-  @override //行番号
-  String? get alignmentPattern;
-  @override //連動パターン
-  String? get departmentCode;
-  @override //自社部門コード
-  String? get departmentName;
-  @override //自社部門名
-  String? get personCode;
-  @override //自社担当者
-  String? get personName;
-  @override //自社担当者名
-  String? get printOrNot;
-  @override //自社部門、担当者の印字
-  String? get subjectNumber;
-  @override //案件番号
-  String? get purchasingDate;
-  @override //仕入れ日
-  String? get subject;
-  @override //件名
-  String get companyCode;
-  @override //仕入先コード
-  String get companyName;
-  @override //仕入先名
-  String? get person;
-  @override //仕入先担当者
-  String? get closePayingMethod;
-  @override //締め支払い方法
-  String? get paymentClassification;
-  @override //支払い区分
-  String? get paymentMethod;
-  @override //支払い方法
-  String? get closeDate;
-  @override //仕入れ締め日
-  String? get paymentSchedule;
-  @override //支払い予定日
-  String? get taxRate;
-  @override //消費税率
-  String? get commentA;
-  @override //検収書コメント上段
-  String? get commentB;
-  @override //検収書コメント下段
-  String? get commentC;
-  @override //検収書コメントフッター
-  String? get commentD;
-  @override //支払明細書コメント上段
-  String? get commentE;
-  @override //支払明細書コメント下段
-  String? get commentF;
-  @override //支払明細書コメントフッター
-  String? get itemCode;
-  @override //商品コード
-  String? get itemName;
-  @override //商品名
-  String? get itemNameChild;
-  @override //商品名(下段)
-  int? get quantity;
-  @override //数量
-  String? get unit;
-  @override //単位
-  int? get price;
-  @override // 仕入れ単価
-  String? get taxClassification;
-  @override //税区分
-  String? get taxChargeMethod;
-  @override //内外税
-  String? get specialComment;
-  @override //備考 ,
-  String? get stockNumber;
-  @override //倉庫割り振り連番
-  String? get stockCode;
-  @override //倉庫コード
-  int? get stockQuantity;
-  @override //倉庫数量
-  String? get orderNumber;
+  String? get skipProcess; //処理スキップ
   @override
-  @JsonKey(ignore: true)
+  String? get purchasingNumber; //処理番号
+  @override
+  String? get rowNumber; //行番号
+  @override
+  String? get alignmentPattern; //連動パターン
+  @override
+  String? get departmentCode; //自社部門コード
+  @override
+  String? get departmentName; //自社部門名
+  @override
+  String? get personCode; //自社担当者
+  @override
+  String? get personName; //自社担当者名
+  @override
+  String? get printOrNot; //自社部門、担当者の印字
+  @override
+  String? get subjectNumber; //案件番号
+  @override
+  String? get subject; //件名
+  @override
+  String get companyCode; //仕入先コード
+  @override
+  String get companyName; //仕入先名
+  @override
+  String? get person; //仕入先担当者
+  @override
+  String? get closePayingMethod; //締め支払い方法
+  @override
+  String? get paymentClassification; //支払い区分
+  @override
+  String? get paymentMethod; //支払い方法
+  @override
+  String? get closeDate; //仕入れ締め日
+  @override
+  String? get paymentSchedule; //支払い予定日
+  @override
+  String? get taxRate; //消費税率
+  @override
+  String? get commentA; //検収書コメント上段
+  @override
+  String? get commentB; //検収書コメント下段
+  @override
+  String? get commentC; //検収書コメントフッター
+  @override
+  String? get commentD; //支払明細書コメント上段
+  @override
+  String? get commentE; //支払明細書コメント下段
+  @override
+  String? get commentF; //支払明細書コメントフッター
+  @override
+  String? get itemCode; //商品コード
+  @override
+  String? get itemName; //商品名
+  @override
+  String? get itemNameChild; //商品名(下段)
+  @override
+  int? get quantity; //数量
+  @override
+  String? get unit; //単位
+  @override
+  int? get price; // 仕入れ単価
+  @override
+  String? get taxClassification; //税区分
+  @override
+  String? get taxChargeMethod; //内外税
+  @override
+  String? get specialComment; //備考 ,
+  @override
+  String? get stockNumber; //倉庫割り振り連番
+  @override
+  String? get stockCode; //倉庫コード
+  @override
+  int? get stockQuantity; //倉庫数量
+  @override
+  String? get orderNumber;
+
+  /// Create a copy of EasybizModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EasybizModelImplCopyWith<_$EasybizModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
