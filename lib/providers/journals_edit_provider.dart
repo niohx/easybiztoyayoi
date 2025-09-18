@@ -15,6 +15,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/company_edit_model.dart';
 import '../models/journals_model.dart';
 
+// part 'journals_edit_provider.g.dart';
+
 final filteredJournalsEditProvider = Provider<Journals>((ref) {
   final _journals = ref.watch(journalsEditProvider);
   final searchString = ref.watch(searchWordProvider);

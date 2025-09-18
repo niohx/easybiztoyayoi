@@ -6,7 +6,7 @@ part of 'journals_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$journalsNotifierHash() => r'8706ffe0d06a08581a8f117462c7dd4e2ee54e44';
+String _$journalsNotifierHash() => r'4a515cb7985fd112b11bface8534e88cd4f55015';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -30,11 +30,11 @@ class _SystemHash {
 }
 
 abstract class _$JournalsNotifier
-    extends BuildlessAutoDisposeAsyncNotifier<Journals> {
+    extends BuildlessAutoDisposeAsyncNotifier<Journals?> {
   late final EditMode editMode;
   late final String? path;
 
-  FutureOr<Journals> build({
+  FutureOr<Journals?> build({
     required EditMode editMode,
     String? path,
   });
@@ -45,7 +45,7 @@ abstract class _$JournalsNotifier
 const journalsNotifierProvider = JournalsNotifierFamily();
 
 /// See also [JournalsNotifier].
-class JournalsNotifierFamily extends Family<AsyncValue<Journals>> {
+class JournalsNotifierFamily extends Family<AsyncValue<Journals?>> {
   /// See also [JournalsNotifier].
   const JournalsNotifierFamily();
 
@@ -87,7 +87,7 @@ class JournalsNotifierFamily extends Family<AsyncValue<Journals>> {
 
 /// See also [JournalsNotifier].
 class JournalsNotifierProvider
-    extends AutoDisposeAsyncNotifierProviderImpl<JournalsNotifier, Journals> {
+    extends AutoDisposeAsyncNotifierProviderImpl<JournalsNotifier, Journals?> {
   /// See also [JournalsNotifier].
   JournalsNotifierProvider({
     required EditMode editMode,
@@ -124,7 +124,7 @@ class JournalsNotifierProvider
   final String? path;
 
   @override
-  FutureOr<Journals> runNotifierBuild(
+  FutureOr<Journals?> runNotifierBuild(
     covariant JournalsNotifier notifier,
   ) {
     return notifier.build(
@@ -153,7 +153,7 @@ class JournalsNotifierProvider
   }
 
   @override
-  AutoDisposeAsyncNotifierProviderElement<JournalsNotifier, Journals>
+  AutoDisposeAsyncNotifierProviderElement<JournalsNotifier, Journals?>
       createElement() {
     return _JournalsNotifierProviderElement(this);
   }
@@ -175,7 +175,7 @@ class JournalsNotifierProvider
   }
 }
 
-mixin JournalsNotifierRef on AutoDisposeAsyncNotifierProviderRef<Journals> {
+mixin JournalsNotifierRef on AutoDisposeAsyncNotifierProviderRef<Journals?> {
   /// The parameter `editMode` of this provider.
   EditMode get editMode;
 
@@ -184,7 +184,7 @@ mixin JournalsNotifierRef on AutoDisposeAsyncNotifierProviderRef<Journals> {
 }
 
 class _JournalsNotifierProviderElement
-    extends AutoDisposeAsyncNotifierProviderElement<JournalsNotifier, Journals>
+    extends AutoDisposeAsyncNotifierProviderElement<JournalsNotifier, Journals?>
     with JournalsNotifierRef {
   _JournalsNotifierProviderElement(super.provider);
 
